@@ -1,0 +1,52 @@
+/* Ensure the parallax container takes up full height */
+.parallax-container {
+    height: 400px;
+  }
+  
+  /* Style the parallax image */
+  .parallax img {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Style the section with the welcome message */
+  .section {
+    padding: 4rem 0;
+  }
+  
+  /* Style the header */
+  .header {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Style the paragraph */
+  .grey-text {
+    color: #616161;
+  }
+  
+  /* Style the footer */
+  .page-footer {
+    padding: 1rem 0;
+  }
+  
+  /* Ensure the logo in the navbar is centered */
+  .nav-wrapper .brand-logo {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  /* Ensure navbar items are visible on small screens */
+  @media only screen and (max-width: 992px) {
+    .nav-wrapper ul {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  
+  /* Add some margin to footer text */
+  .page-footer p {
+    margin: 0;
+  }
+  
