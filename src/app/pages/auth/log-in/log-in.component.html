@@ -37,9 +37,10 @@
       </form>
       <hr />
       <span class="small-text providers">Have Google or GitHub?</span>
-      
-      <span class="small-text log-in-redirect"
-        >Don’t have an account yet?
+    <app-button-providers [isLogin]="true" />
+
+    <span class="small-text log-in-redirect"
+      >Don’t have an account yet?
         <a routerLink="/auth/sign-up">Sign up</a></span
       >
     </div>

@@ -8,6 +8,7 @@ import { Router, RouterModule } from '@angular/router';
 import { AuthService } from '../../../core/services/auth.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { CommonModule } from '@angular/common';
+import { ButtonProviders } from '../components/button-providers/button-providers.component';
 
 // Define or import the Credential type if needed
 interface Credential {
@@ -32,7 +33,8 @@ interface SignUpForm {
     MatButtonModule,
     RouterModule,
     ReactiveFormsModule,
-    CommonModule
+    CommonModule,
+    ButtonProviders,
   ],
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.css'],  // Corrected 'styleUrl' to 'styleUrls'

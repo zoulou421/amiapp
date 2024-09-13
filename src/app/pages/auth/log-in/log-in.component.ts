@@ -8,6 +8,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
 import { AuthService } from '../../../core/services/auth.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ButtonProviders } from '../components/button-providers/button-providers.component';
+import { CommonModule } from '@angular/common';
 
 // Ensure you have a Credential interface or type defined somewhere
 interface Credential {
@@ -30,6 +32,8 @@ interface LogInForm {
     MatButtonModule,
     RouterModule,
     ReactiveFormsModule,
+    CommonModule,
+    ButtonProviders
   ],
   templateUrl: './log-in.component.html',
   styleUrls: ['./log-in.component.css']  // Corrected 'styleUrl' to 'styleUrls'

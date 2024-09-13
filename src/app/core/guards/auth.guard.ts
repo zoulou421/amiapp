@@ -15,7 +15,7 @@ export const authGuard: CanActivateFn = () => {
   return authStateObs$().pipe(
     map((user: any) => {
       if (!user) {
-        router.navigateByUrl('auth/log-in');
+        router.navigateByUrl('auth/login-in');
         return false;
       }
       return true;

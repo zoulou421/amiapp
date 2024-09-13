@@ -5,6 +5,7 @@ import {
   AuthProvider,
   GithubAuthProvider,
   GoogleAuthProvider,
+  OAuthProvider,
   UserCredential,
   authState,
   createUserWithEmailAndPassword,
@@ -19,9 +20,13 @@ export interface Credential{
   providedIn: 'root'
 })
 export class AuthService {
+  signInWithPopup(provider: OAuthProvider) {
+      throw new Error('Method not implemented.');
+  }
  
   private auth:Auth=inject(Auth);
   readonly authState$=authState(this.auth);
+    currentUser: any;
 
   signUpWithEmailAndPassword(credential:Credential):Promise<UserCredential>{
     return createUserWithEmailAndPassword(this.auth,credential.email,credential.password)
