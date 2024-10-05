@@ -28,5 +28,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.AMIAPP_TOKEN }}  # Your GitHub token for authentication
-          publish_dir: ./  # Specify the /docs folder as your publish directory
-          publish_branch: gh-pages  # The branch to deploy to
+          publish_dir: ./dist/amiapp  # Specify the build output folder
+          publish_branch: main  # Deploy directly to the 'main' branch

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-firebase": {
+    "amiapp": {  
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/angular-firebase",
+            "outputPath": "dist/amiapp",  
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -61,10 +61,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "angular-firebase:build:production"
+              "buildTarget": "amiapp:build:production"  
             },
             "development": {
-              "buildTarget": "angular-firebase:build:development"
+              "buildTarget": "amiapp:build:development"  
             }
           },
           "defaultConfiguration": "development"
