@@ -25,9 +25,8 @@ jobs:
         run: npm run build --prod
 
       - name: Deploy to GitHub Pages
-        uses: JamesIArmes/github-pages-deploy-action@4.2.0
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          branch: gh-pages  # The branch to deploy to
-          folder: dist/amiapp  # Replace with your app's build output folder
-        env:
-          GITHUB_TOKEN: ${{ secrets.AMIAPP_TOKEN }}  # GitHub automatically provides this token
+          github_token: ${{ secrets.AMIAPP_TOKEN }}  # Your GitHub token for authentication
+          publish_dir: ./dist/amiapp  # Replace with your app's build output folder
+          publish_branch: gh-pages  # The branch to deploy to
