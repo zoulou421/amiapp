@@ -1,32 +1,26 @@
-name: Build and Deploy to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - main  # Adjust this to your primary branch if necessary
+      - main
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      
+    - name: Install dependencies
+      run: npm install
+      
+    - name: Build
+      run: npm run build --configuration production
+      
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.AMIAPP_TOKEN }}
+        publish_dir: ./dist/amiapp
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'  # Adjust this based on your project's needs
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build the application
-        run: npm run build --prod
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.AMIAPP_TOKEN }}  # Your GitHub token for authentication
-          publish_dir: ./dist/amiapp  # Specify the build output folder
-          publish_branch: gh-pages  # Deploy to the 'gh-pages' branch
