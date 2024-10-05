@@ -1,35 +1,84 @@
-<!-- Navbar -->
-<nav class="nav-extended blue-grey darken-3">
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo center">Formationkilo pour les professionnels</a>
-      <ul class="left hide-on-med-and-down">
-        <li><a routerLink="/home">Home</a></li>
-        <li><a routerLink="/about">About</a></li>
-      </ul>
-      <ul class="right hide-on-med-and-down">
-        <!--li><a (click)="logOut()">Logout</a></li-->
-      </ul>
-    </div>
+<div>
+
+  <!-- Navigation Bar -->
+  <nav class="teal">
+      <div class="nav-wrapper container">
+          <a href="#" class="brand-logo">Aide Mémoire Informatique (AMI)</a>
+          <a href="#" data-target="mobile-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a routerLink="/" >Accueil</a></li>
+            <li><a routerLink="/about">À propos</a></li>
+            <li><a routerLink="/memoire">Sujets de Mémoire</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><button (click)="logOut()" style="width: 100px;">Déconnexion</button></li>
+          </ul>
+      </div>
   </nav>
-  
-  <!-- Parallax Section -->
+
+  <!-- Mobile Menu -->
+  <ul class="sidenav" id="mobile-menu">
+    <li><a routerLink="/">Accueil</a></li>
+    <li><a routerLink="/about">À propos</a></li>
+    <li><a routerLink="/memoire">Sujets de Mémoire</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><button (click)="logOut()" style="width: 100px;">Déconnexion</button></li>
+  </ul>
+
+  <!-- About Section -->
+  <div class="about-section container">
+      <h1>À Propos de Nous</h1>
+      <p>Bienvenue sur notre plateforme dédiée à l'assistance dans la rédaction de mémoires en informatique. Nous sommes ici pour vous aider à chaque étape de votre parcours académique.</p>
+      <p>Depuis notre création, nous avons aidé de nombreux étudiants à réussir leur mémoire en leur fournissant des ressources, des conseils et un soutien personnalisé. Notre équipe d'experts est passionnée par l'éducation et se consacre à votre réussite.</p>
+      <p>Nous croyons fermement que chaque étudiant mérite les meilleures chances de succès. C'est pourquoi nous offrons une gamme de services conçus pour répondre à vos besoins spécifiques.</p>
+      <img src="https://www.nantesimmo9.com/medias/64ef3adf615ac-1200.jpg" alt="À propos de nous" class="about-image responsive-img">
+  </div>
+
+  <!-- Technologies Section -->
   <div class="row container"><br />
     <h3>Technologies: <br />
-       
-        1) PRISE en main: 
-        ==>JWT/ Node.Js//MonngoDb// angular 18(approche moderne) et (approche traditionnelle) <br />
-        2) 
-        ==>Facile: Node.Js//FIREBASE// angular 18(approche moderne) et (approche traditionnelle) <br />
-        3) 
-        ==> professionnels:DOCKER// Node.Js//FIREBASE// angular 18(approche moderne) et (approche traditionnelle)</h3>
-    <div>
+      1) PRISE en main: 
+      ==> JWT/ Node.Js/ MongoDb/ Angular 18 (approche moderne) et (approche traditionnelle) <br />
+      2) Facile: 
+      ==> Node.Js/ FIREBASE/ Angular 18 (approche moderne) et (approche traditionnelle) <br />
+      3) Professionnels: 
+      ==> DOCKER/ Node.Js/ FIREBASE/ Angular 18 (approche moderne) et (approche traditionnelle)
+    </h3>
+  </div>
 
-  
-  <!-- Scripts -->
+  <!-- Contact Section -->
+  <div id="contact" class="container section scrollspy">
+      <h3>Contactez-nous</h3>
+      <p>Pour toute question ou demande d'assistance, n'hésitez pas à nous contacter à l'adresse <strong>assistanceami.com</strong> ou par téléphone au <strong>(+221) 77 862 72 72</strong>.</p>
+  </div>
+
+  <!-- Footer Section -->
+  <footer class="page-footer teal">
+      <div class="container">
+          <div class="row">
+              <div class="col l6 s12">
+                  <h5 class="white-text">AMI - Assistance Mémoire Informatique</h5>
+                  <p class="grey-text text-lighten-4">Nous proposons une assistance complète pour les mémoires de fin d'études. Réussissez votre mémoire avec notre aide !</p>
+              </div>
+          </div>
+      </div>
+      <div class="footer-copyright">
+          <div class="container">
+              © 2024 AMI, Tous droits réservés.
+          </div>
+      </div>
+  </footer>
+
+  <!-- Import Materialize JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var elems = document.querySelectorAll('.parallax');
-      M.Parallax.init(elems);
-    });
+      document.addEventListener('DOMContentLoaded', function() {
+          // Initialize Sidenav for mobile
+          var sidenav = document.querySelectorAll('.sidenav');
+          M.Sidenav.init(sidenav);
+
+          // Initialize Scrollspy
+          var scrollSpy = document.querySelectorAll('.scrollspy');
+          M.ScrollSpy.init(scrollSpy);
+      });
   </script>
-  
+</div>

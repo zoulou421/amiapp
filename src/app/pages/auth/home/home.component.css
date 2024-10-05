@@ -1,3 +1,80 @@
+<<<<<<< HEAD
+     /* Custom styles */
+     .header-banner {
+      padding: 50px 0;
+      text-align: center;
+      color: white;
+  }
+
+  .header-banner h1 {
+      font-size: 3rem;
+  }
+
+  .header-banner p {
+      font-size: 1.5rem;
+  }
+
+  .parallax-container {
+      height: 400px;
+  }
+
+  .form-container {
+      margin-top: 50px;
+  }
+
+  /*IMAGE HOME : MAKE RESERVATION*/
+   /* Parallax Container Styling */
+   .parallax-container {
+    height: 500px; /* Adjust the height as needed */
+    position: relative;
+    overflow: hidden;
+}
+
+.parallax {
+    background-image: url('https://ifage.net/wp-content/uploads/2024/09/data-science-big-data.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+/* Header Banner Styling */
+.header-banner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.header-banner h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.header-banner p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    background-color: #26a69a; /* Materialize teal color */
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.cta-button:hover {
+    background-color: #00796b; /* Darker teal on hover */
+}
+=======
 /* Ensure the parallax container takes up full height */
 .parallax-container {
     height: 400px;
@@ -50,3 +127,4 @@
     margin: 0;
   }
   
+>>>>>>> bea949e9dd04f881de4d9419371d525e1793a39e

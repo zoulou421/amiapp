@@ -1,22 +1,23 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { AuthService } from '../../../core/services/auth.service';
 import { Router, RouterLink } from '@angular/router';
+import { HomeComponent } from '../home/home.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { AboutComponent } from '../about/about.component';
-import { SujetMemoireComponent } from '../sujet-memoire/sujet-memoire.component';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-sujet-memoire',
   standalone: true,
-  imports: [MatToolbarModule, MatButtonModule, RouterLink, AboutComponent, SujetMemoireComponent],
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'],
+  imports: [MatToolbarModule,MatButtonModule, RouterLink,AboutComponent,HomeComponent],
+  templateUrl: './sujet-memoire.component.html',
+  styleUrl: './sujet-memoire.component.css'
 })
-export class HomeComponent implements OnInit {
-  ngOnInit(): void {}
-
+export class SujetMemoireComponent implements OnInit{
+  ngOnInit(): void {
+  }
   private _router = inject(Router);
+
   private authservice = inject(AuthService);
 
   async logOut(): Promise<void> {

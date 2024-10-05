@@ -9,8 +9,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #f5f5f5; /* Light background color */
+   /* background-color: #f5f5f5;*/ /* Light background color */
     padding: 20px;
+
+    background:url("https://chicagounheard.org/wp-content/uploads/2021/01/AdobeStock_382408153-880x393-1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   
   .form__container {
