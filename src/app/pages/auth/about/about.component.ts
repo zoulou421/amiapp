@@ -18,7 +18,7 @@ export class AboutComponent implements OnInit {
   private authservice = inject(AuthService);
 
   ngOnInit(): void {
-    // Initialization logic can go here
+    
   }
 
   async logOut(): Promise<void> {
