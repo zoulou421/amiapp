@@ -1,0 +1,33 @@
+name: Build and Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Adjust this to your primary branch if necessary
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'  # Adjust this based on your project's needs
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build the application
+        run: npm run build --prod
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIArmes/github-pages-deploy-action@4.2.0
+        with:
+          branch: gh-pages  # The branch to deploy to
+          folder: dist/amiapp  # Replace with your app's build output folder
+        env:
+          GITHUB_TOKEN: ${{ secrets.AMIAPP_TOKEN }}  # GitHub automatically provides this token
