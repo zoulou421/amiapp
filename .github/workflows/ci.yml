@@ -24,9 +24,6 @@ jobs:
       - name: Build the Angular app
         run: npm run build -- --output-path=docs --base-href="/amiapp/" # Build output to 'docs/browser'
 
-      - name: Move built files to docs
-        run: mv docs/browser/* docs/ # Move files from 'docs/browser' to 'docs'
-
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
