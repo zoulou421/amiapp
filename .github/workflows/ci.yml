@@ -32,4 +32,4 @@ jobs:
           github_token: ${{ secrets.AMIAPP_TOKEN }}  # Use your specific token
           publish_dir: ./dist/amiapp  # Path to the production build
           publish_branch: main          # Deploy to main branch
-          destination_dir: /           # Deploy to root directory of GitHub Pages
+          destination_dir: /docs           # Deploy to root directory of GitHub Pages
