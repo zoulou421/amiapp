@@ -1,11 +1,11 @@
 version: '3.8'
 
 services:
-  angular-app:
+  amiapp:  # Changed service name to amiapp
     build:
-      context: .
-      dockerfile: Dockerfile
+      context: .  # This points to the current directory
+      dockerfile: Dockerfile  # This specifies the Dockerfile to use
     ports:
-      - "8080:8080"
+      - "8080:8080"  # Map host port 8080 to container port 8080
     environment:
-      - NODE_ENV=production
+      - NODE_ENV=production  # Set environment variable for production

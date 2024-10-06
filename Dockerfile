@@ -1,5 +1,5 @@
 # Use the official Node.js image as the base image
-FROM node:18 AS build
+FROM node:20 AS build  
 
 # Set the working directory
 WORKDIR /app
@@ -13,14 +13,14 @@ RUN npm install
 # Copy the rest of the application code
 COPY . .
 
-# Build the application
-RUN npm run build --prod
+# Build the application with the production configuration
+RUN npm run build --configuration production
 
 # Install http-server to serve the app
 RUN npm install -g http-server
 
 # Set the working directory for serving the app
-WORKDIR /app/dist/amiapp  # Replace 'your-app-name' with the actual output folder name
+WORKDIR /app/dist/amiapp  # Ensure this matches the output directory of your build
 
 # Expose the port
 EXPOSE 8080
