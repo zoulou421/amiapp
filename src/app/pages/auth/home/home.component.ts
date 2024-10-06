@@ -1,8 +1,8 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { RouterLink, Router } from '@angular/router';
 import { AuthService } from '../../../core/services/auth.service';
-import { Router, RouterLink } from '@angular/router';
 import { AboutComponent } from '../about/about.component';
 import { SujetMemoireComponent } from '../sujet-memoire/sujet-memoire.component';
 

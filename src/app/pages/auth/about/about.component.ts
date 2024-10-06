@@ -1,10 +1,11 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { AuthService } from '../../../core/services/auth.service';
-import { Router, RouterLink } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { SujetMemoireComponent } from '../sujet-memoire/sujet-memoire.component';
+import { RouterLink, Router } from '@angular/router';
 import { HomeComponent } from '../home/home.component';
+import { SujetMemoireComponent } from '../sujet-memoire/sujet-memoire.component';
+
 
 @Component({
   selector: 'app-about',
