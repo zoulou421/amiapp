@@ -13,14 +13,14 @@ RUN npm install
 # Copy the rest of the application code
 COPY . .
 
-# Build the application with the production configuration
-RUN npm run build --configuration production --output-path=docs --base-href=/amiapp
+# Build the application with the production configuration and specified output path and base-href
+RUN npm run build -- --configuration production --output-path=docs --base-href=/amiapp
 
 # Install http-server to serve the app
 RUN npm install -g http-server
 
 # Set the working directory for serving the app
-WORKDIR /app/docs  # Ensure this matches the output directory of your build
+WORKDIR /app/docs/browser  # Change to reflect the correct location of your built app
 
 # Expose the port
 EXPOSE 8080
