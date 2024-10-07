@@ -13,24 +13,21 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "docs", 
-            "baseHref": "/amiapp/" , 
-            "index": "src/index.html",
-            "browser": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
-            "tsConfig": "tsconfig.app.json",
+            "outputPath": "docs",  
+            "baseHref": "/amiapp/", 
+            "index": "src/index.html", 
+            "browser": "src/main.ts", 
+            "tsConfig": "tsconfig.app.json", 
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "public" 
               }
             ],
             "styles": [
-              "node_modules/materialize-css/dist/css/materialize.min.css",
-              "@angular/material/prebuilt-themes/cyan-orange.css",
-              "src/styles.css"
+              "node_modules/materialize-css/dist/css/materialize.min.css", 
+              "@angular/material/prebuilt-themes/cyan-orange.css", 
+              "src/styles.css" 
             ],
             "scripts": []
           },
@@ -57,7 +54,7 @@
               "sourceMap": true
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": "production" 
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",

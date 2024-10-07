@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # Trigger deployment on push to the main branch
+      - main  # Triggers the workflow on push to the main branch (change if using a different branch)
 
 jobs:
   build:
@@ -11,26 +11,21 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'  # Using Node.js version 20
+          node-version: '20'  # Use the Node.js version appropriate for your project
 
       - name: Install dependencies
         run: npm install
 
-      - name: Install Angular CLI globally
-        run: npm install -g @angular/cli
-
       - name: Build the Angular app
-        run: ng build --configuration production --output-path docs --base-href /amiapp/
+        run: npm run build -- --configuration production
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          github_token: ${{ secrets.AMIAPP_TOKEN }}  # Use your specific GitHub Pages deployment token
-          publish_dir: ./docs/  # Path to the production build (set to 'docs' folder)
-          publish_branch: main  # Deploy to the 'main' branch
-          destination_dir: /docs  # Deploy to the 'docs' folder of the main branch
+          branch: main  # The branch where GitHub Pages deploys your site
+          folder: docs/browser  # The folder where the Angular build is located (e.g., dist/amiapp or docs)
