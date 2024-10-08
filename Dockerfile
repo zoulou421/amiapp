@@ -1,29 +1,24 @@
-# Use the official Node.js image as the base image
-FROM node:20 AS build  
+FROM node:20-alpine as build
 
-# Set the working directory
 WORKDIR /app
 
-# Copy package.json and package-lock.json files
 COPY package*.json ./
 
-# Install dependencies
 RUN npm install
 
-# Copy the rest of the application code
 COPY . .
 
-# Build the application with the production configuration and specified output path and base-href
-RUN npm run build -- --configuration production --output-path=docs --base-href=/amiapp
+RUN npm run build
 
-# Install http-server to serve the app
-RUN npm install -g http-server
+FROM nginx:alpine
 
-# Set the working directory for serving the app
-WORKDIR /app/docs/browser  # Change to reflect the correct location of your built app
+COPY --from=build /app/dist/amiapp/browser /usr/share/nginx/html
 
-# Expose the port
-EXPOSE 8080
+EXPOSE 80
 
-# Command to run the app
-CMD ["http-server", "-p", "8080"]
+CMD ["nginx","-g","daemon off;"]
+
+#CMD to execute:
+#docker build -t angular18-app .
+#docker run -d -p 8080:80 angular18-app
+

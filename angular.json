@@ -13,10 +13,13 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "docs",  
+            "outputPath": "dist/amiapp/browser",  
             "baseHref": "/amiapp/", 
             "index": "src/index.html", 
-            "browser": "src/main.ts", 
+            "browser": "src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ], 
             "tsConfig": "tsconfig.app.json", 
             "assets": [
               {
