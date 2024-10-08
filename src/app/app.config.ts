@@ -5,6 +5,7 @@ import { routes } from './app.routes';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 export const appConfig: ApplicationConfig = {
   providers: 
@@ -19,7 +20,8 @@ export const appConfig: ApplicationConfig = {
             "authDomain": "angular18auth.firebaseapp.com", 
             "messagingSenderId": "90710170117" 
         })), 
-      provideAuth(() => getAuth())
+      provideAuth(() => getAuth()),
+      { provide: LocationStrategy, useClass: HashLocationStrategy } // Use HashLocationStrategy
   ]
 };
 
