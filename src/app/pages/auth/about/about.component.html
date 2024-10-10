@@ -60,15 +60,19 @@
             <div class="row">
                 <div class="col l6 s12">
                     <h5 class="white-text">Aide Mémoire Informatique (AMI)</h5>
-                    <p class="grey-text text-lighten-4">Notre mission est de vous offrir un accompagnement personnalisé pour la rédaction de vos mémoires.</p>
+                    <p class="grey-text text-lighten-4">Notre mission est de vous offrir un accompagnement personnalisé
+                        pour la rédaction de vos mémoires.</p>
                 </div>
                 <div class="col l4 offset-l2 s12">
                     <h5 class="white-text">Liens rapides</h5>
-                    <ul>
-                        <li><a class="grey-text text-lighten-3" routerLink="/">Accueil</a></li>
-                        <li><a class="grey-text text-lighten-3" routerLink="/about">À propos</a></li>
-                        <li><a class="grey-text text-lighten-3" routerLink="/memoire">Sujets de Mémoire</a></li>
-                        <li><a class="grey-text text-lighten-3" routerLink="#contact">Contact</a></li>
+                    <ul >
+                        <li><a routerLink="/" style="color:white;">Accueil</a></li>
+                        <li><a routerLink="/about" style="color:white;">À propos</a></li>
+                        <li><a routerLink="/memoire" style="color:white;">Sujets de Mémoire</a></li>
+                        <li><a routerLink="#contact" style="color:white;">Contact</a></li>
+                        <li><a class="waves-effect waves-light btn-small white teal-text"
+                                (click)="logOut()" >Déconnexion</a></li>
+
                     </ul>
                 </div>
             </div>
@@ -82,5 +86,4 @@
 
     <!-- Import Materialize JS and initialize components -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
 </div>

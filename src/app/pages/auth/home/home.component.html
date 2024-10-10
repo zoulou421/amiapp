@@ -9,7 +9,8 @@
                 <li><a routerLink="/about">À propos</a></li>
                 <li><a routerLink="/memoire">Sujets de Mémoire</a></li>
                 <li><a routerLink="#contact">Contact</a></li>
-                <li><a class="waves-effect waves-light btn-small white teal-text" (click)="logOut()">Déconnexion</a></li>
+                <li><a class="waves-effect waves-light btn-small white teal-text" (click)="logOut()">Déconnexion</a>
+                </li>
             </ul>
         </div>
     </nav>
@@ -23,6 +24,7 @@
         <li><a class="waves-effect waves-light btn-small white teal-text" (click)="logOut()">Déconnexion</a></li>
     </ul>
 
+
     <!-- Parallax Section -->
     <div class="parallax-container" style="height: 500px;">
         <div class="parallax">
@@ -31,7 +33,8 @@
         <div class="center-align white-text" style="margin-top: 150px;">
             <h1 style="font-size: 3.5rem; font-weight: bold;">Aide Mémoire Informatique</h1>
             <p style="font-size: 1.2rem;">Accélérez la rédaction de votre mémoire avec AMI</p>
-            <a href="#sujet-memoire" class="btn-large waves-effect waves-light amber darken-2 cta-button pulse">Découvrir des Sujets</a>
+            <a href="#sujet-memoire"
+                class="btn-large waves-effect waves-light amber darken-2 cta-button pulse">Découvrir des Sujets</a>
         </div>
     </div>
 
@@ -40,11 +43,18 @@
         <div class="row">
             <div class="col s12 m6">
                 <h3 class="teal-text text-darken-2">Bienvenue sur AMI !</h3>
-                <p>AMI accompagne les étudiants en informatique dans la rédaction de leurs mémoires, offrant des conseils, des ressources, et des sujets diversifiés pour réussir vos travaux de fin d’études.</p>
+                <p>Cette plateforme est dédiée à accompagner les étudiants en informatique dans la rédaction de leurs
+                    mémoires et la création d'applications. AMI offre une gamme variée de conseils et de ressources,
+                    adaptés aux besoins spécifiques des étudiants.</p>
+
+                <p>Que ce soit pour le choix d’un sujet, la méthodologie de recherche, ou des techniques de rédaction,
+                    AMI est disponible pour vous accompagner tout au long de votre parcours académique.</p>
+
                 <a href="#sujet-memoire" class="btn waves-effect waves-light teal darken-2">Explorer les Sujets</a>
             </div>
             <div class="col s12 m6">
-                <img src="https://www.shutterstock.com/image-photo/mature-female-student-working-on-600nw-760347823.jpg" alt="Students working" class="responsive-img">
+                <img src="https://www.shutterstock.com/image-photo/mature-female-student-working-on-600nw-760347823.jpg"
+                    alt="Students working" class="responsive-img">
             </div>
         </div>
     </div>
@@ -52,7 +62,7 @@
     <!-- Form Section -->
     <div class="section grey lighten-4" style="padding: 50px 0;">
         <div class="container">
-            <h3 class="center-align teal-text text-darken-2">Choisissez un Sujet de Mémoire</h3>
+            <h3 class="center-align teal-text text-darken-2">Prenez Rendez-vous 24h avant en ligne</h3>
             <form action="#" method="POST" enctype="multipart/form-data" class="animated-form row">
                 <div class="input-field col s12 m6 animated-input">
                     <input type="text" id="name" name="name" class="validate" required>
@@ -66,38 +76,41 @@
                     <input type="tel" id="phone" name="phone" class="validate" pattern="[0-9]{10}" required>
                     <label for="phone">Numéro de téléphone</label>
                 </div>
+
                 <div class="input-field col s12 m6 animated-input">
-                    <select id="pays" name="pays" required>
+                    <input type="date" id="rendezvous-date" name="rendezvous-date" class="validate" required>
+                    <label for="rendezvous-date">Date du rendez-vous</label>
+                </div>
+                <div class="input-field col s12 m6 animated-input">
+                    <input type="time" id="rendezvous-time" name="rendezvous-time" class="validate" required>
+                    <label for="rendezvous-time">Heure du rendez-vous</label>
+                </div>
+
+                <div class="input-field col s12 m6 animated-input">
+                    <select id="pays-origine" name="pays-origine" required>
                         <option value="" disabled selected>Choisissez votre pays d'origine</option>
                         <option value="france">France</option>
-                        <option value="senegal">Sénégal</option>
+                        <option value="belgique">Belgique</option>
+                        <option value="suisse">Suisse</option>
                         <option value="canada">Canada</option>
                         <option value="autre">Autre</option>
                     </select>
-                    <label for="pays">Pays d'origine</label>
+                    <label for="pays-origine">Pays d'origine</label>
                 </div>
-                <div class="input-field col s12 m6 animated-input">
-                    <select id="sexe" name="sexe" required>
-                        <option value="" disabled selected>Choisissez votre sexe</option>
-                        <option value="masculin">Masculin</option>
-                        <option value="féminin">Féminin</option>
-                        <option value="autre">Autre</option>
-                    </select>
-                    <label for="sexe">Sexe</label>
+
+                <div class="input-field col s12 animated-input">
+                    <textarea id="objectif" name="objectif" class="materialize-textarea" required></textarea>
+                    <label for="objectif">Objectif du rendez-vous</label>
                 </div>
-                <div class="input-field col s12 m6 animated-input">
-                    <select id="filier" name="filier" required>
-                        <option value="" disabled selected>Choisissez votre filière de formation</option>
-                        <option value="informatique">Informatique</option>
-                        <option value="mathematiques">Mathématiques</option>
-                        <option value="biologie">Biologie</option>
-                    </select>
-                    <label for="filier">Filière de formation</label>
+                <div class="input-field col s12 animated-input">
+                    <textarea id="questions" name="questions" class="materialize-textarea"></textarea>
+                    <label for="questions">Questions supplémentaires</label>
                 </div>
                 <div class="file-field input-field col s12 animated-input">
                     <div class="btn teal darken-2">
                         <span>Fichier</span>
-                        <input type="file" id="memoire-file" name="memoire-file" accept=".doc,.docx,.pdf,image/*" required>
+                        <input type="file" id="memoire-file" name="memoire-file" accept=".doc,.docx,.pdf,image/*"
+                            required>
                     </div>
                     <div class="file-path-wrapper">
                         <input class="file-path validate" type="text" placeholder="Téléchargez votre mémoire">
@@ -109,16 +122,27 @@
             </form>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('select');
+            M.FormSelect.init(elems);
+        });
+    </script>
+
 
     <!-- Contact Section -->
     <div id="contact" class="container section scrollspy">
         <div class="row">
             <div class="col s12 center-align">
                 <h3>Contactez-nous</h3>
-                <p>Pour toute assistance, contactez-nous à <strong>assistance&#64;ami-platform.com</strong> ou appelez-nous au <strong>(+221) 77 862 72 72</strong>.</p>
+                <p>Pour toute assistance, contactez-nous à <strong>ami-platform&#64;gmail.com</strong> ou
+                    appelez-nous au <strong>(+221) 77 862 72 72</strong>.</p>
                 <div>
-                    <a href="#" class="btn-floating btn-large waves-effect waves-light teal darken-2"><i class="material-icons">email</i></a>
-                    <a href="#" class="btn-floating btn-large waves-effect waves-light teal darken-2"><i class="material-icons">phone</i></a>
+                    <a href="#" class="btn-floating btn-large waves-effect waves-light teal darken-2"><i
+                            class="material-icons">email</i></a>
+                    <a href="#" class="btn-floating btn-large waves-effect waves-light teal darken-2"><i
+                            class="material-icons">phone</i></a>
                 </div>
             </div>
         </div>
@@ -130,15 +154,19 @@
             <div class="row">
                 <div class="col l6 s12">
                     <h5 class="white-text">Aide Mémoire Informatique (AMI)</h5>
-                    <p class="grey-text text-lighten-4">Notre mission est de vous offrir un accompagnement personnalisé pour la rédaction de vos mémoires.</p>
+                    <p class="grey-text text-lighten-4">Notre mission est de vous offrir un accompagnement personnalisé
+                        pour la rédaction de vos mémoires.</p>
                 </div>
                 <div class="col l4 offset-l2 s12">
                     <h5 class="white-text">Liens rapides</h5>
-                    <ul>
-                        <li><a class="grey-text text-lighten-3" href="#!">Accueil</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">À propos</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Sujets de Mémoire</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Contact</a></li>
+                    <ul >
+                        <li><a routerLink="/" style="color:white;">Accueil</a></li>
+                        <li><a routerLink="/about" style="color:white;">À propos</a></li>
+                        <li><a routerLink="/memoire" style="color:white;">Sujets de Mémoire</a></li>
+                        <li><a routerLink="#contact" style="color:white;">Contact</a></li>
+                        <li><a class="waves-effect waves-light btn-small white teal-text"
+                                (click)="logOut()" >Déconnexion</a></li>
+
                     </ul>
                 </div>
             </div>
