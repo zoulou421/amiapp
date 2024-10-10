@@ -27,7 +27,8 @@
                 "input": "public" 
               }
             ],
-            "styles": [ 
+            "styles": [
+              "node_modules/materialize-css/dist/css/materialize.min.css", 
               "@angular/material/prebuilt-themes/cyan-orange.css", 
               "src/styles.css" 
             ],
