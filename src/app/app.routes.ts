@@ -36,4 +36,9 @@ export const routes: Routes = [
             },
         ],
     },
+    {
+        path: '**', // Route pour redirection en cas de chemin non trouvé
+        redirectTo: '', // Redirection vers la page d'accueil
+        pathMatch: 'full',
+    },
 ];

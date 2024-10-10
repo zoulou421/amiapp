@@ -1,16 +1,18 @@
 <div>
 
     <!-- Navigation Bar -->
-    <nav class="teal">
+    <nav class="nav-extended teal darken-2">
         <div class="nav-wrapper container">
-            <a href="#" class="brand-logo">Aide Mémoire Informatique (AMI)</a>
-            <a href="#" data-target="mobile-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <a href="#" class="brand-logo left"><i class="material-icons">school</i> AMI</a>
+            <!-- Menu Trigger for mobile (sidenav) -->
+            <a href="#" data-target="mobile-menu" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
+            <!-- Desktop Menu -->
             <ul class="right hide-on-med-and-down">
                 <li><a routerLink="/">Accueil</a></li>
                 <li><a routerLink="/about">À propos</a></li>
                 <li><a routerLink="/memoire">Sujets de Mémoire</a></li>
-                <li><a routerLink="/contact">Contact</a></li>
-                <button (click)="logOut()" style="width: 100px;">Déconnexion</button>
+                <li><a routerLink="#contact">Contact</a></li>
+                <li><a class="waves-effect waves-light btn-small white teal-text" (click)="logOut()">Déconnexion</a></li>
             </ul>
         </div>
     </nav>
@@ -20,13 +22,13 @@
         <li><a routerLink="/">Accueil</a></li>
         <li><a routerLink="/about">À propos</a></li>
         <li><a routerLink="/memoire">Sujets de Mémoire</a></li>
-        <li><a routerLink="/contact">Contact</a></li>
-        <button (click)="logOut()" style="width: 100px;">Déconnexion</button>
+        <li><a routerLink="#contact">Contact</a></li>
+        <li><a class="waves-effect waves-light btn-small white teal-text" (click)="logOut()">Déconnexion</a></li>
     </ul>
 
     <!-- Main Section -->
     <div class="container section">
-        <h2>Conception et Implémentation des Applications</h2>
+        <h2 class="center-align">Conception et Implémentation des Applications</h2>
 
         <p class="flow-text teal-text text-darken-1">
             Cette page est dédiée aux informations sur la conception et l'implémentation d'applications dans le cadre de votre mémoire. Vous y trouverez des éléments clés pour bien structurer et réaliser votre projet d'application, depuis la phase de conception jusqu'à l'implémentation finale.
@@ -37,9 +39,6 @@
             <h4>Conception de l'Application</h4>
             <p>
                 La phase de conception est une étape fondamentale pour le développement de toute application. Elle consiste à définir les spécifications fonctionnelles, identifier les besoins des utilisateurs, et créer des modèles (UML, diagrammes de cas d’utilisation, diagrammes de classes) qui guideront la structure de l’application.
-            </p>
-            <p>
-                Quelques points essentiels à aborder dans cette section :
             </p>
             <ul class="collection">
                 <li class="collection-item">1. Analyse des besoins</li>
@@ -54,7 +53,6 @@
             <p>
                 L'implémentation consiste à transformer la conception en code exécutable. Cette phase inclut le développement des fonctionnalités de l’application, le choix des technologies adaptées, et la mise en place des meilleures pratiques de développement.
             </p>
-            <p>Points à inclure :</p>
             <ul class="collection">
                 <li class="collection-item">1. Mise en place de la structure du projet</li>
                 <li class="collection-item">2. Développement des fonctionnalités principales (authentification, gestion des utilisateurs, etc.)</li>
@@ -70,12 +68,12 @@
             </p>
             <ul class="collection">
                 <li class="collection-item">1. Frontend : Angular, React</li>
-                <li class="collection-item">2. Backend : Node.js, Java EE,Spring Framework,Python,C#</li>
+                <li class="collection-item">2. Backend : Node.js, Java EE, Spring Framework, Python, C#</li>
                 <li class="collection-item">3. Bases de données : MySQL, MongoDB</li>
-                <li class="collection-item">4. Gestion des utilisateurs : Firebase Authentication,JWT,Spring Security, Keycloak</li>
+                <li class="collection-item">4. Gestion des utilisateurs : Firebase Authentication, JWT, Spring Security, Keycloak</li>
             </ul>
         </div>
-        
+
         <div class="section">
             <h4>Bonnes Pratiques</h4>
             <p>
@@ -91,21 +89,41 @@
 
     </div>
 
-    <!-- Footer -->
-    <footer class="page-footer teal">
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">Aide Mémoire Informatique (AMI)</h5>
-                    <p class="grey-text text-lighten-4">Votre plateforme dédiée à la réussite de votre mémoire en informatique.</p>
-                </div>
+   <!-- Footer Section -->
+   <footer class="page-footer teal darken-3">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">Aide Mémoire Informatique (AMI)</h5>
+                <p class="grey-text text-lighten-4">Notre mission est de vous offrir un accompagnement personnalisé pour la rédaction de vos mémoires.</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Liens rapides</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" routerLink="/">Accueil</a></li>
+                    <li><a class="grey-text text-lighten-3" routerLink="/about">À propos</a></li>
+                    <li><a class="grey-text text-lighten-3" routerLink="/memoire">Sujets de Mémoire</a></li>
+                    <li><a class="grey-text text-lighten-3" routerLink="#contact">Contact</a></li>
+                </ul>
             </div>
         </div>
-        <div class="footer-copyright">
-            <div class="container">
-                © 2024 AMI, Tous droits réservés.
-            </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container center-align">
+            © 2024 AMI, Tous droits réservés.
         </div>
-    </footer>
+    </div>
+</footer>
+
+<!-- Initialize Materialize Components -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.sidenav');
+        var instances = M.Sidenav.init(elems);
+    });
+</script>
+
+<!-- Import Materialize JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 </div>

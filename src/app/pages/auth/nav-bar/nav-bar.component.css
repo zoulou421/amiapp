@@ -1,0 +1,67 @@
+/* Ensure mobile responsiveness */
+@media only screen and (max-width: 992px) {
+    .nav-wrapper .brand-logo {
+      font-size: 1.5rem;
+    }
+  
+    .sidenav {
+      width: 250px;
+    }
+  
+    .sidenav a {
+      padding: 15px;
+      font-size: 1.2rem;
+    }
+  
+    /* Ensure mobile menu is properly aligned */
+    .sidenav-trigger {
+      position: relative;
+      left: 0;
+    }
+  
+    .navbar-nav {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .brand-logo {
+      position: relative;
+      left: 10px;
+    }
+  }
+  
+  /* Desktop (large screen) menu adjustments */
+  @media only screen and (min-width: 993px) {
+    .nav-wrapper {
+      padding: 0 15px;
+    }
+  
+    .brand-logo {
+      font-size: 2.1rem;
+    }
+  
+    .sidenav-trigger {
+      display: none; /* Hide sidenav trigger on desktop */
+    }
+  }
+  
+  /* General styles */
+  .nav-wrapper .brand-logo {
+    font-weight: 600;
+  }
+  
+  .nav-wrapper .sidenav-trigger i {
+    color: white;
+  }
+  
+  /* Button styling */
+  .waves-effect.waves-light.btn-small {
+    padding: 0 1.5rem;
+    line-height: 2.2rem;
+  }
+  
+  /* Ensure icons are vertically aligned */
+  .nav-wrapper .material-icons {
+    vertical-align: middle;
+  }
+  
