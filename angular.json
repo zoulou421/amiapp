@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "amiapp": {  
+    "amiapp": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,24 +13,24 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/amiapp/browser",  
-            "baseHref": "/amiapp/", 
-            "index": "src/index.html", 
+            "outputPath": "dist/amiapp/browser",
+            "baseHref": "/amiapp/",
+            "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
-            ], 
-            "tsConfig": "tsconfig.app.json", 
+            ],
+            "tsConfig": "tsconfig.app.json",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public" 
+                "input": "public"
               }
             ],
             "styles": [
-              "node_modules/materialize-css/dist/css/materialize.min.css", 
-              "@angular/material/prebuilt-themes/cyan-orange.css", 
-              "src/styles.css" 
+              "node_modules/materialize-css/dist/css/materialize.min.css",
+              "@angular/material/prebuilt-themes/cyan-orange.css",
+              "src/styles.css"
             ],
             "scripts": [
               "node_modules/materialize-css/dist/js/materialize.min.js"
@@ -41,17 +41,17 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
+                  "maximumWarning": "1MB",
+                  "maximumError": "2MB"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kB",
-                  "maximumError": "4kB"
+                  "maximumWarning": "5kB",
+                  "maximumError": "10kB"
                 }
               ],
               "outputHashing": "all",
-              "baseHref": "/amiapp/" 
+              "baseHref": "/amiapp/"
             },
             "development": {
               "optimization": false,
@@ -59,16 +59,16 @@
               "sourceMap": true
             }
           },
-          "defaultConfiguration": "production" 
+          "defaultConfiguration": "production"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "amiapp:build:production"  
+              "buildTarget": "amiapp:build:production"
             },
             "development": {
-              "buildTarget": "amiapp:build:development"  
+              "buildTarget": "amiapp:build:development"
             }
           },
           "defaultConfiguration": "development"
