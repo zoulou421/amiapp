@@ -12,7 +12,7 @@ RUN npm install
 COPY . .
 
 # Build the Angular project
-RUN npm run build
+RUN npm run build -- --output-path=dist/amiapp
 
 # Serve the application using Nginx
 FROM nginx:alpine

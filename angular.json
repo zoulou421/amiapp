@@ -29,7 +29,8 @@
             ],
             "styles": [
               "node_modules/materialize-css/dist/css/materialize.min.css",
-              "@angular/material/prebuilt-themes/cyan-orange.css"
+              "@angular/material/prebuilt-themes/cyan-orange.css",
+              "src/styles.css"
             ],
             "scripts": [
               "node_modules/materialize-css/dist/js/materialize.min.js",

@@ -1,5 +1,6 @@
 import { AfterViewInit, Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+
 import { materialize } from 'rxjs';
 @Component({
   selector: 'app-root',
