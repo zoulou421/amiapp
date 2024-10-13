@@ -5,16 +5,51 @@ import { AuthService } from '../../../core/services/auth.service';
 import { Router, RouterLink } from '@angular/router';
 import { AboutComponent } from '../about/about.component';
 import { SujetMemoireComponent } from '../sujet-memoire/sujet-memoire.component';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { IFormData } from '../../../core/interface/form-data.interface';
+import { RendezvousService } from '../../../core/services/rendezvous-service';
+import { CommonModule } from '@angular/common';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [MatToolbarModule, MatButtonModule, RouterLink, AboutComponent, SujetMemoireComponent],
+  imports: [CommonModule, ReactiveFormsModule, MatToolbarModule, MatButtonModule, RouterLink, AboutComponent, SujetMemoireComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  ngOnInit(): void {}
+  formData!: FormGroup;
+  private fb = inject(FormBuilder);
+  private rendezvousService = inject(RendezvousService);
+  private snackBar = inject(MatSnackBar);
+  
+  formObject: IFormData = {
+    id: '',
+    name: '',
+    email: '',
+    phone: '',
+    rendezvousDate: '',
+    rendezvousTime: '',
+    academicLevel: 'licence',
+    objectif: '',
+    questions: '',
+    memoireFile: null 
+  };
+
+  ngOnInit(): void {
+    this.formData = this.fb.group({
+      name: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
+      phone: ['', [Validators.required]],
+      rendezvousDate: ['', [Validators.required]],
+      rendezvousTime: ['', [Validators.required]],
+      academicLevel: ['licence', [Validators.required]],
+      objectif: ['', [Validators.required]],
+      questions: [''],
+      memoireFile: [null] 
+    });
+  }
 
   private _router = inject(Router);
   private authservice = inject(AuthService);
@@ -25,6 +60,41 @@ export class HomeComponent implements OnInit {
       this._router.navigateByUrl('/auth/login-in');
     } catch (error) {
       console.log(error);
+    }
+  }
+
+  // Method to handle file input changes with validation for allowed formats
+  onFileChange(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files.length) {
+      const file = input.files[0];
+      const allowedTypes = ['application/pdf', 'image/jpeg', 'image/png', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+      
+      // Validate file type
+      if (allowedTypes.includes(file.type)) {
+        this.formData.patchValue({ memoireFile: file });
+      } else {
+        this.snackBar.open('Type de fichier non autorisé! Formats acceptés: PDF, JPG, PNG, DOCX.', 'Fermer', { duration: 3000 });
+        this.formData.patchValue({ memoireFile: null }); // Reset file input
+      }
+    }
+  }
+
+  submitForm(): void {
+    if (this.formData.valid) {
+      console.log(this.formData.value);
+
+      this.rendezvousService.addRendezvous(this.formData.value).then(() => {
+        console.log('Data successfully written to Firestore');
+        this.snackBar.open('Rendez-vous enregistré avec succès!', 'Fermer', {
+          duration: 3000,
+        });
+        this.formData.reset();
+      }).catch((error) => {
+        console.error('Error writing document: ', error);
+      });
+    } else {
+      console.log('Form is invalid');
     }
   }
 }

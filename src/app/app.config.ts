@@ -7,6 +7,10 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+
+import { getStorage, provideStorage } from '@angular/fire/storage';
+
 export const appConfig: ApplicationConfig = {
   providers: 
   [provideZoneChangeDetection({ eventCoalescing: true }),
@@ -20,7 +24,15 @@ export const appConfig: ApplicationConfig = {
             "authDomain": "angular18auth.firebaseapp.com", 
             "messagingSenderId": "90710170117" 
         })), 
-      provideAuth(() => getAuth()),
+      //provideAuth(() => getAuth()),
+      provideAuth(() => getAuth()),// Provides Firebase Authentication service
+
+     // Provide Firebase Authentication service
+    provideFirestore(() => getFirestore()), // Provides Firebase Firestore service
+    
+    provideStorage(() => getStorage()),// Fournit le service Firebase Storage
+    
+      
       { provide: LocationStrategy, useClass: HashLocationStrategy } // Use HashLocationStrategy
   ]
 };

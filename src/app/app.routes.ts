@@ -5,6 +5,7 @@ import { LogInComponent } from './pages/auth/log-in/log-in.component';
 import { authGuard, publicGuard } from './core/guards';
 import { AboutComponent } from './pages/auth/about/about.component';
 import { SujetMemoireComponent } from './pages/auth/sujet-memoire/sujet-memoire.component';
+import { RendezvousListComponent } from './pages/auth/rendezvous-list/rendezvous-list.component';
 
 export const routes: Routes = [
     {
@@ -21,6 +22,12 @@ export const routes: Routes = [
         path: 'memoire',
         canActivate: [authGuard],
         component: SujetMemoireComponent,
+    },
+
+    {
+        path: 'RendezvousList',
+        canActivate: [authGuard],
+        component: RendezvousListComponent,
     },
     {
         path: 'auth',

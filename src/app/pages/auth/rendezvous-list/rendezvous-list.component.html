@@ -1,0 +1,15 @@
+<div *ngIf="loading">Loading...</div>
+<div *ngIf="!loading && rendezvous.length === 0">No data available.</div>
+<ul *ngIf="!loading && rendezvous.length > 0">
+  <li *ngFor="let item of rendezvous">
+    <strong>Name:</strong> {{ item.name }} <br>
+    <strong>Email:</strong> {{ item.email }} <br>
+    <strong>Phone:</strong> {{ item.phone }} <br>
+    <strong>Rendezvous Date:</strong> {{ item.rendezvousDate }} <br>
+    <strong>Rendezvous Time:</strong> {{ item.rendezvousTime }} <br>
+    <strong>Academic Level:</strong> {{ item.academicLevel }} <br>
+    <strong>Objective:</strong> {{ item.objectif }} <br>
+    <strong>Questions:</strong> {{ item.questions }} <br>
+  </li>
+</ul>
+

@@ -59,80 +59,98 @@
         </div>
     </div>
 
-    <!-- Form Section -->
-    <div class="section grey lighten-4" style="padding: 50px 0;">
+    
+     <!-- Form Section -->
+     <div class="section grey lighten-4" style="padding: 50px 0;">
         <div class="container">
-            <h3 class="center-align teal-text text-darken-2">Prenez Rendez-vous 24h avant en ligne</h3>
-            <form action="#" method="POST" enctype="multipart/form-data" class="animated-form row">
-                <div class="input-field col s12 m6 animated-input">
-                    <input type="text" id="name" name="name" class="validate" required>
-                    <label for="name">Nom complet</label>
+          <h3 class="center-align teal-text text-darken-2">Prenez Rendez-vous 24h avant en ligne</h3>
+          <form [formGroup]="formData" (ngSubmit)="submitForm()" class="animated-form row" enctype="multipart/form-data">
+            <!-- Full Name Input -->
+            <div class="input-field col s12 m6 animated-input">
+              <input type="text" id="name" formControlName="name" class="validate" required>
+              <label for="name">Nom complet</label>
+            </div>
+      
+            <!-- Email Input -->
+            <div class="input-field col s12 m6 animated-input">
+              <input type="email" id="email" formControlName="email" class="validate" required>
+              <label for="email">Email</label>
+            </div>
+      
+            <!-- Phone Input -->
+            <!--div class="input-field col s12 m6 animated-input">
+              <input type="tel" id="phone" formControlName="phone" class="validate" pattern="[0-9]{10}" required>
+              <label for="phone">Numéro de téléphone</label>
+            </div-->
+            <div>
+                <label for="phone">Phone:</label>
+                <input id="phone" formControlName="phone" type="text" required />
+                <div *ngIf="formData.get('phone')?.invalid && formData.get('phone')?.touched">
+                  <span *ngIf="formData.get('phone')?.errors?.['required']">Phone number is required.</span>
+                  <span *ngIf="formData.get('phone')?.errors?.['pattern']">Phone number must be 10 digits.</span>
                 </div>
-                <div class="input-field col s12 m6 animated-input">
-                    <input type="email" id="email" name="email" class="validate" required>
-                    <label for="email">Email</label>
-                </div>
-                <div class="input-field col s12 m6 animated-input">
-                    <input type="tel" id="phone" name="phone" class="validate" pattern="[0-9]{10}" required>
-                    <label for="phone">Numéro de téléphone</label>
-                </div>
-
-                <div class="input-field col s12 m6 animated-input">
-                    <input type="date" id="rendezvous-date" name="rendezvous-date" class="validate" required>
-                    <label for="rendezvous-date">Date du rendez-vous</label>
-                </div>
-                <div class="input-field col s12 m6 animated-input">
-                    <input type="time" id="rendezvous-time" name="rendezvous-time" class="validate" required>
-                    <label for="rendezvous-time">Heure du rendez-vous</label>
-                </div>
-
-                
-                <div class="container">
-                    <div class="input-field col s12 m6 animated-input">
-                        <select id="pays-origine" name="pays-origine" required>
-                            <option value="" >Choisissez votre pays d'origine</option>
-                            <option value="france">France</option>
-                            <option value="belgique">Belgique</option>
-                            <option value="suisse">Suisse</option>
-                            <option value="canada">Canada</option>
-                            <option value="autre">Autre</option>
-                        </select>
-                        <label for="pays-origine">Pays d'origine</label>
-                    </div>
-                </div>
-
-                <div class="input-field col s12 animated-input">
-                    <textarea id="objectif" name="objectif" class="materialize-textarea" required></textarea>
-                    <label for="objectif">Objectif du rendez-vous</label>
-                </div>
-                <div class="input-field col s12 animated-input">
-                    <textarea id="questions" name="questions" class="materialize-textarea"></textarea>
-                    <label for="questions">Questions supplémentaires</label>
-                </div>
-                <div class="file-field input-field col s12 animated-input">
-                    <div class="btn teal darken-2">
-                        <span>Fichier</span>
-                        <input type="file" id="memoire-file" name="memoire-file" accept=".doc,.docx,.pdf,image/*"
-                            required>
-                    </div>
-                    <div class="file-path-wrapper">
-                        <input class="file-path validate" type="text" placeholder="Téléchargez votre mémoire">
-                    </div>
-                </div>
-                <div class="col s12 center-align">
-                    <button class="btn waves-effect waves-light teal darken-2" type="submit">Soumettre</button>
-                </div>
-            </form>
+              </div>
+              
+      
+            <!-- Date Input -->
+            <div class="input-field col s12 m6 animated-input">
+              <input type="date" id="rendezvous-date" formControlName="rendezvousDate" class="validate" required>
+              <label for="rendezvous-date">Date du rendez-vous</label>
+            </div>
+      
+            <!-- Time Input -->
+            <div class="input-field col s12 m6 animated-input">
+              <input type="time" id="rendezvous-time" formControlName="rendezvousTime" class="validate" required>
+              <label for="rendezvous-time">Heure du rendez-vous</label>
+            </div>
+      
+            <!-- Academic Level Selection -->
+            <div class="input-field col s12 m6 animated-input">
+              <p>
+                <label>
+                  <input type="radio" id="licence" formControlName="academicLevel" value="licence" required />
+                  <span>Licence Informatique</span>
+                </label>
+              </p>
+              <p>
+                <label>
+                  <input type="radio" id="master" formControlName="academicLevel" value="master" required />
+                  <span>Master Informatique</span>
+                </label>
+              </p>
+            </div>
+      
+            <!-- Objectif du Rendez-vous Input -->
+            <div class="input-field col s12 animated-input">
+              <textarea id="objectif" formControlName="objectif" class="materialize-textarea" required></textarea>
+              <label for="objectif">Objectif du rendez-vous</label>
+            </div>
+      
+            <!-- Questions Input -->
+            <div class="input-field col s12 animated-input">
+              <textarea id="questions" formControlName="questions" class="materialize-textarea"></textarea>
+              <label for="questions">Questions supplémentaires</label>
+            </div>
+      
+            <!-- File Upload -->
+            <div class="file-field input-field col s12 animated-input">
+              <div class="btn teal darken-2">
+                <span>Fichier</span>
+                <input type="file" id="memoire-file" (change)="onFileChange($event)" accept=".doc,.docx,.pdf,image/*" required>
+              </div>
+              <div class="file-path-wrapper">
+                <input class="file-path validate" type="text" placeholder="Téléchargez votre mémoire">
+              </div>
+            </div>
+      
+            <!-- Submit Button -->
+            <div class="col s12 center-align">
+              <button class="btn waves-effect waves-light teal darken-2" type="submit">Soumettre</button>
+            </div>
+          </form>
         </div>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var elems = document.querySelectorAll('select');
-            M.FormSelect.init(elems);
-        });
-    </script>
-
+      </div>
+      
 
     <!-- Contact Section -->
     <div id="contact" class="container section scrollspy">
