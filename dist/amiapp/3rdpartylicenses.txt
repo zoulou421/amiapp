@@ -207,6 +207,21 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 --------------------------------------------------------------------------------
+Package: @firebase/webchannel-wrapper
+License: "Apache-2.0"
+
+
+--------------------------------------------------------------------------------
+Package: @firebase/firestore
+License: "Apache-2.0"
+
+
+--------------------------------------------------------------------------------
+Package: @firebase/storage
+License: "Apache-2.0"
+
+
+--------------------------------------------------------------------------------
 Package: zone.js
 License: "MIT"
 
