@@ -107,3 +107,9 @@
   margin: 0;
 }
 
+.custom-snackbar {
+  background-color: green; /* Set background color to green */
+  color: white; /* Set text color to white for better contrast */
+  border: 2px solid darkgreen; /* Add a border */
+}
+

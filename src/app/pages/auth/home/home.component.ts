@@ -11,6 +11,9 @@ import { RendezvousService } from '../../../core/services/rendezvous-service';
 import { CommonModule } from '@angular/common';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
+declare var M: any; // Declare Materialize CSS
+
+
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -23,6 +26,13 @@ export class HomeComponent implements OnInit {
   private fb = inject(FormBuilder);
   private rendezvousService = inject(RendezvousService);
   private snackBar = inject(MatSnackBar);
+
+
+  ngAfterViewInit() {
+    // Initialize the sidenav
+    const elems = document.querySelectorAll('.sidenav');
+    M.Sidenav.init(elems);
+  }
   
   formObject: IFormData = {
     id: '',
@@ -87,7 +97,8 @@ export class HomeComponent implements OnInit {
       this.rendezvousService.addRendezvous(this.formData.value).then(() => {
         console.log('Data successfully written to Firestore');
         this.snackBar.open('Rendez-vous enregistré avec succès!', 'Fermer', {
-          duration: 3000,
+          duration: 5000,
+          panelClass: ['custom-snackbar'] // Apply the custom class here
         });
         this.formData.reset();
       }).catch((error) => {

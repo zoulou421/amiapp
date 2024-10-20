@@ -6,6 +6,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { SujetMemoireComponent } from '../sujet-memoire/sujet-memoire.component';
 import { HomeComponent } from '../home/home.component';
 
+declare var M: any; // Declare Materialize CSS
+
 @Component({
   selector: 'app-about',
   standalone: true,
@@ -21,6 +23,12 @@ export class AboutComponent implements OnInit {
     // Initialization logic can go here
   }
 
+  ngAfterViewInit() {
+    // Initialize the sidenav
+    const elems = document.querySelectorAll('.sidenav');
+    M.Sidenav.init(elems);
+  }
+  
   async logOut(): Promise<void> {
     try {
       await this.authservice.logOut();

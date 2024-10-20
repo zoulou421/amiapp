@@ -3,6 +3,8 @@ import { RouterOutlet } from '@angular/router';
 
 import { materialize } from 'rxjs';
 import { RendezvousListComponent } from "./pages/auth/rendezvous-list/rendezvous-list.component";
+
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -12,4 +14,6 @@ import { RendezvousListComponent } from "./pages/auth/rendezvous-list/rendezvous
 })
 export class AppComponent {
     title = 'angular-firebase';
+
+   
 }
