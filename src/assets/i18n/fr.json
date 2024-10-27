@@ -1,0 +1,27 @@
+{
+    "HOME": "Accueil",
+    "ABOUT": "À propos",
+    "MEMOIRE": "Sujets de mémoire",
+    "CONTACT": "Contact",
+    "LOGOUT": "Déconnexion",
+    "WELCOME": "Bienvenue chez AMI!",
+    "SUBMIT": "Soumettre",
+    "FILE_TYPE_NOT_ALLOWED": "Type de fichier non autorisé.",
+    "Rendezvous_SUCCESS": "La rendez-vous a été créé avec succès !",
+    "NAME": "Nom",
+    "EMAIL": "E-mail",
+    "PHONE": "Numéro de téléphone",
+    "RENDEZVOUS_DATE": "Date de la rendez-vous",
+    "RENDEZVOUS_TIME": "Heure de la rendez-vous",
+    "ACADEMIC_LEVEL": "Niveau académique",
+    "OBJECTIF": "Objectif",
+    "QUESTIONS": "Questions",
+    "MEMOIRE_FILE": "Fichier de mémoire",
+    "UPLOAD": "Télécharger",
+    "SELECT_LANGUAGE": "Sélectionner la langue",
+    "LANGUAGE_ENGLISH": "Anglais",
+    "LANGUAGE_FRENCH": "Français",
+    "LANGUAGE_GERMAN": "Allemand"
+  }
+  
+  

@@ -1,0 +1,25 @@
+{
+    "HOME": "Startseite",
+    "ABOUT": "Über",
+    "MEMOIRE": "Themen für Abschlussarbeiten",
+    "CONTACT": "Kontakt",
+    "LOGOUT": "Abmelden",
+    "WELCOME": "Willkommen bei AMI!",
+    "SUBMIT": "Einreichen",
+    "FILE_TYPE_NOT_ALLOWED": "Dateityp nicht erlaubt.",
+    "Rendezvous_SUCCESS": "Der Termin wurde erfolgreich erstellt!",
+    "NAME": "Name",
+    "EMAIL": "E-Mail",
+    "PHONE": "Telefonnummer",
+    "RENDEZVOUS_DATE": "Termindatum",
+    "RENDEZVOUS_TIME": "Uhrzeit des Termins",
+    "ACADEMIC_LEVEL": "Akademisches Niveau",
+    "OBJECTIF": "Ziel",
+    "QUESTIONS": "Fragen",
+    "MEMOIRE_FILE": "Abschlussarbeitsdatei",
+    "UPLOAD": "Hochladen",
+    "SELECT_LANGUAGE": "Sprache auswählen",
+    "LANGUAGE_ENGLISH": "Englisch",
+    "LANGUAGE_FRENCH": "Französisch"
+  }
+  

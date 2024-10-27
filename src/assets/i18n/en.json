@@ -1,0 +1,25 @@
+{
+    "HOME": "Home",
+    "ABOUT": "About",
+    "MEMOIRE": "Thesis Topics",
+    "CONTACT": "Contact",
+    "LOGOUT": "Logout",
+    "WELCOME": "Welcome to AMI!",
+    "SUBMIT": "Submit",
+    "FILE_TYPE_NOT_ALLOWED": "File type not allowed.",
+    "Rendezvous_SUCCESS": "Rendezvous successfully created!",
+    "NAME": "Name",
+    "EMAIL": "Email",
+    "PHONE": "Phone",
+    "RENDEZVOUS_DATE": "Rendezvous Date",
+    "RENDEZVOUS_TIME": "Rendezvous Time",
+    "ACADEMIC_LEVEL": "Academic Level",
+    "OBJECTIF": "Objective",
+    "QUESTIONS": "Questions",
+    "MEMOIRE_FILE": "Thesis File",
+    "UPLOAD": "Upload",
+    "SELECT_LANGUAGE": "Select Language",
+    "LANGUAGE_ENGLISH": "English",
+    "LANGUAGE_FRENCH": "French"
+  }
+  

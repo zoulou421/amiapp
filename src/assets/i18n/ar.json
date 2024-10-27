@@ -1,0 +1,25 @@
+{
+    "HOME": "الرئيسية",
+    "ABOUT": "حول",
+    "MEMOIRE": "مواضيع الرسالة",
+    "CONTACT": "اتصل",
+    "LOGOUT": "تسجيل الخروج",
+    "WELCOME": "مرحبًا بكم في AMI!",
+    "SUBMIT": "إرسال",
+    "FILE_TYPE_NOT_ALLOWED": "نوع الملف غير مسموح به.",
+    "Rendezvous_SUCCESS": "تم إنشاء الموعد بنجاح!",
+    "NAME": "الاسم",
+    "EMAIL": "البريد الإلكتروني",
+    "PHONE": "رقم الهاتف",
+    "RENDEZVOUS_DATE": "تاريخ الموعد",
+    "RENDEZVOUS_TIME": "وقت الموعد",
+    "ACADEMIC_LEVEL": "المستوى الأكاديمي",
+    "OBJECTIF": "الهدف",
+    "QUESTIONS": "أسئلة",
+    "MEMOIRE_FILE": "ملف الرسالة",
+    "UPLOAD": "رفع",
+    "SELECT_LANGUAGE": "اختر اللغة",
+    "LANGUAGE_ENGLISH": "الإنجليزية",
+    "LANGUAGE_FRENCH": "الفرنسية"
+  }
+  

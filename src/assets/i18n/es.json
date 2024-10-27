@@ -1,0 +1,26 @@
+{
+    "HOME": "Inicio",
+    "ABOUT": "Acerca de",
+    "MEMOIRE": "Temas de tesis",
+    "CONTACT": "Contacto",
+    "LOGOUT": "Cerrar sesión",
+    "WELCOME": "¡Bienvenido a AMI!",
+    "SUBMIT": "Enviar",
+    "FILE_TYPE_NOT_ALLOWED": "Tipo de archivo no permitido.",
+    "Rendezvous_SUCCESS": "¡La cita se ha creado con éxito!",
+    "NAME": "Nombre",
+    "EMAIL": "Correo electrónico",
+    "PHONE": "Número de teléfono",
+    "RENDEZVOUS_DATE": "Fecha de la cita",
+    "RENDEZVOUS_TIME": "Hora de la cita",
+    "ACADEMIC_LEVEL": "Nivel académico",
+    "OBJECTIF": "Objetivo",
+    "QUESTIONS": "Preguntas",
+    "MEMOIRE_FILE": "Archivo de tesis",
+    "UPLOAD": "Subir",
+    "SELECT_LANGUAGE": "Seleccionar idioma",
+    "LANGUAGE_ENGLISH": "Inglés",
+    "LANGUAGE_FRENCH": "Francés",
+    "LANGUAGE_GERMAN": "Alemán"
+  }
+  
