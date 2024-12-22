@@ -28,18 +28,12 @@ jobs:
       - name: Build Angular Project
         run: npm run build -- --output-path=dist/amiapp 
 
-      # Step 5: Move build files to root of dist/amiapp (remove 'browser' folder)
-      - name: Move Build Files
-        run: |
-          mv dist/amiapp/browser/* dist/amiapp/
-          rm -r dist/amiapp/browser
-
-      # Step 6: Deploy to GitHub Pages
+      # Step 5: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.AMIAPP_TOKEN }}
-          publish_dir: ./dist/amiapp  # Now points to the correct directory without the 'browser' subfolder
+          publish_dir: ./dist/amiapp/browser
 
   docker_build:
     runs-on: ubuntu-latest
