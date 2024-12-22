@@ -1,204 +1,173 @@
 <div>
   <!-- Navigation Bar -->
-<nav class="nav-extended teal darken-2">
- <div class="nav-wrapper container">
-     <a href="#" class="brand-logo left"><i class="material-icons">school</i> AMI</a>
-     <a href="#" data-target="mobile-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-     <ul class="right hide-on-med-and-down">
-         <li><a routerLink="/">Accueil</a></li>
-         <li><a routerLink="/about">À propos</a></li>
-         <li><a routerLink="/memoire">Sujets de Mémoire</a></li>
-         <li><a routerLink="#contact">Contact</a></li>
-         <li><a class="waves-effect waves-light btn-small white teal-text" (click)="logOut()">Déconnexion</a></li>
-     </ul>
- </div>
-</nav>
+  <nav class="nav-extended purple darken-2">
+    <div class="nav-wrapper container">
+      <a href="#" class="brand-logo left"><i class="material-icons">school</i> AMI</a>
+      <a href="#" data-target="mobile-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a routerLink="/">Accueil</a></li>
+        <li><a routerLink="/about">À propos</a></li>
+        <li><a routerLink="/memoire">Sujets de Mémoire</a></li>
+        <li><a routerLink="#contact">Contact</a></li>
+        <li><a class="waves-effect waves-light btn-small white purple-text" (click)="logOut()">Déconnexion</a></li>
+        <li><a href="#" class="dropdown-trigger btn purple" data-target="profile-dropdown"><i class="material-icons">account_circle</i></a></li>
+      </ul>
+    </div>
+  </nav>
 
-<!-- Mobile Menu -->
-<ul class="sidenav" id="mobile-menu">
- <li><a routerLink="/">Accueil</a></li>
- <li><a routerLink="/about">À propos</a></li>
- <li><a routerLink="/memoire">Sujets de Mémoire</a></li>
- <li><a routerLink="#contact">Contact</a></li>
- <li><a class="waves-effect waves-light btn-small white teal-text" (click)="logOut()">Déconnexion</a></li>
-</ul>
+  <!-- Mobile Menu -->
+  <ul class="sidenav" id="mobile-menu">
+    <li><a routerLink="/">Accueil</a></li>
+    <li><a routerLink="/about">À propos</a></li>
+    <li><a routerLink="/memoire">Sujets de Mémoire</a></li>
+    <li><a routerLink="#contact">Contact</a></li>
+    <li><a class="waves-effect waves-light btn-small white purple-text" (click)="logOut()">Déconnexion</a></li>
+  </ul>
 
+  <!-- Parallax Section -->
+  <div class="parallax-container" style="height: 500px;width:100%;">
+    <div class="parallax">
+      <img src="https://source.unsplash.com/1600x900/?student,technology" alt="AMI">
+    </div>
+    <div class="center-align white-text" style="margin-top: 150px;">
+      <h1 style="font-size: 3.5rem; font-weight: bold;">Aide Mémoire Informatique</h1>
+      <p style="font-size: 1.5rem;">Accélérez la rédaction de votre mémoire avec AMI</p>
+      <a href="#sujet-memoire" class="btn-large waves-effect waves-light purple darken-2 cta-button pulse">Découvrir des Sujets</a>
+    </div>
+  </div>
 
+  <!-- About Section -->
+  <div id="about" class="container section scrollspy">
+    <div class="row">
+      <div class="col s12 m6">
+        <h3 class="purple-text text-darken-2" style="font-weight: bolder;">Bienvenue sur AMI !</h3>
+        <p>Cette plateforme est dédiée à accompagner les étudiants en informatique dans la rédaction de leurs mémoires et la création d'applications. AMI offre une gamme variée de conseils et de ressources, adaptés aux besoins spécifiques des étudiants.</p>
+        <p>Que ce soit pour le choix d’un sujet, la méthodologie de recherche, ou des techniques de rédaction, AMI est disponible pour vous accompagner tout au long de votre parcours académique.</p>
+        <a href="#sujet-memoire" class="btn waves-effect waves-light purple darken-2">Explorer les Sujets</a>
+      </div>
+      <div class="col s12 m6">
+        <img src="https://amely.org/wp-content/uploads/2022/04/image-AAN-e1650552513963.png" alt="Students working" class="responsive-img">
+      </div>
+    </div>
+  </div>
 
-   <!-- Parallax Section -->
-   <div class="parallax-container" style="height: 500px;width:100%;">
-       <div class="parallax">
-           <img src="https://source.unsplash.com/1600x900/?student,technology" alt="AMI">
-       </div>
-       <div class="center-align white-text" style="margin-top: 150px;">
-           <h1 style="font-size: 3.5rem; font-weight: bold;">Aide Mémoire Informatique</h1>
-           <p style="font-size: 1.2rem;">Accélérez la rédaction de votre mémoire avec AMI</p>
-           <a href="#sujet-memoire"
-               class="btn-large waves-effect waves-light darken-2 cta-button pulse">Découvrir des Sujets</a>
-       </div>
-   </div>
+  <!-- Form Section -->
+  <div class="section grey lighten-4" style="padding: 50px 0;">
+    <div class="container">
+      <h3 class="center-align purple" style="font-weight: bolder; color: white;">Prenez Rendez-vous 24h avant en ligne</h3>
+      <form [formGroup]="formData" (ngSubmit)="submitForm()" class="animated-form row" enctype="multipart/form-data">
+        <div class="input-field col s12 m6 animated-input">
+          <input type="text" id="name" formControlName="name" class="validate" required>
+          <label for="name">Nom complet</label>
+        </div>
 
-   <!-- About Section -->
-   <div id="about" class="container section scrollspy">
-       <div class="row">
-           <div class="col s12 m6">
-               <h3 class="teal-text text-darken-2">Bienvenue sur AMI !</h3>
-               <p>Cette plateforme est dédiée à accompagner les étudiants en informatique dans la rédaction de leurs
-                   mémoires et la création d'applications. AMI offre une gamme variée de conseils et de ressources,
-                   adaptés aux besoins spécifiques des étudiants.</p>
+        <div class="input-field col s12 m6 animated-input">
+          <input type="email" id="email" formControlName="email" class="validate" required>
+          <label for="email">Email</label>
+        </div>
 
-               <p>Que ce soit pour le choix d’un sujet, la méthodologie de recherche, ou des techniques de rédaction,
-                   AMI est disponible pour vous accompagner tout au long de votre parcours académique.</p>
+        <div class="input-field col s12 m6 animated-input">
+          <input type="tel" id="phone" formControlName="phone" class="validate" pattern="[0-9]{10}" required>
+          <label for="phone">Numéro de téléphone</label>
+          <div *ngIf="formData.get('phone')?.invalid && formData.get('phone')?.touched">
+            <span *ngIf="formData.get('phone')?.errors?.['required']">Phone number is required.</span>
+            <span *ngIf="formData.get('phone')?.errors?.['pattern']">Phone number must be 10 digits.</span>
+          </div>
+        </div>
 
-               <a href="#sujet-memoire" class="btn waves-effect waves-light teal darken-2">Explorer les Sujets</a>
-           </div>
-           <div class="col s12 m6">
-               <img src="https://www.shutterstock.com/image-photo/mature-female-student-working-on-600nw-760347823.jpg"
-                   alt="Students working" class="responsive-img">
-           </div>
-       </div>
-   </div>
+        <div class="input-field col s12 m6 animated-input">
+          <input type="date" id="rendezvous-date" formControlName="rendezvousDate" class="validate" required>
+          <label for="rendezvous-date">Date du rendez-vous</label>
+        </div>
 
-   
-    <!-- Form Section -->
-    <div class="section grey lighten-4" style="padding: 50px 0;">
-       <div class="container">
-         <h3 class="center-align teal-text text-darken-2">Prenez Rendez-vous 24h avant en ligne</h3>
-         <form [formGroup]="formData" (ngSubmit)="submitForm()" class="animated-form row" enctype="multipart/form-data">
-           <!-- Full Name Input -->
-           <div class="input-field col s12 m6 animated-input">
-             <input type="text" id="name" formControlName="name" class="validate" required>
-             <label for="name">Nom complet</label>
-           </div>
-     
-           <!-- Email Input -->
-           <div class="input-field col s12 m6 animated-input">
-             <input type="email" id="email" formControlName="email" class="validate" required>
-             <label for="email">Email</label>
-           </div>
-     
-           <!-- Phone Input -->
-           <!--div class="input-field col s12 m6 animated-input">
-             <input type="tel" id="phone" formControlName="phone" class="validate" pattern="[0-9]{10}" required>
-             <label for="phone">Numéro de téléphone</label>
-           </div-->
-           <div>
-               <label for="phone">Phone:</label>
-               <input id="phone" formControlName="phone" type="text" required />
-               <div *ngIf="formData.get('phone')?.invalid && formData.get('phone')?.touched">
-                 <span *ngIf="formData.get('phone')?.errors?.['required']">Phone number is required.</span>
-                 <span *ngIf="formData.get('phone')?.errors?.['pattern']">Phone number must be 10 digits.</span>
-               </div>
-             </div>
-             
-     
-           <!-- Date Input -->
-           <div class="input-field col s12 m6 animated-input">
-             <input type="date" id="rendezvous-date" formControlName="rendezvousDate" class="validate" required>
-             <label for="rendezvous-date">Date du rendez-vous</label>
-           </div>
-     
-           <!-- Time Input -->
-           <div class="input-field col s12 m6 animated-input">
-             <input type="time" id="rendezvous-time" formControlName="rendezvousTime" class="validate" required>
-             <label for="rendezvous-time">Heure du rendez-vous</label>
-           </div>
-     
-           <!-- Academic Level Selection -->
-           <div class="input-field col s12 m6 animated-input">
-             <p>
-               <label>
-                 <input type="radio" id="licence" formControlName="academicLevel" value="licence" required />
-                 <span>Licence Informatique</span>
-               </label>
-             </p>
-             <p>
-               <label>
-                 <input type="radio" id="master" formControlName="academicLevel" value="master" required />
-                 <span>Master Informatique</span>
-               </label>
-             </p>
-           </div>
-     
-           <!-- Objectif du Rendez-vous Input -->
-           <div class="input-field col s12 animated-input">
-             <textarea id="objectif" formControlName="objectif" class="materialize-textarea" required></textarea>
-             <label for="objectif">Objectif du rendez-vous</label>
-           </div>
-     
-           <!-- Questions Input -->
-           <div class="input-field col s12 animated-input">
-             <textarea id="questions" formControlName="questions" class="materialize-textarea"></textarea>
-             <label for="questions">Questions supplémentaires</label>
-           </div>
-     
-           <!-- File Upload -->
-           <div class="file-field input-field col s12 animated-input">
-             <div class="btn teal darken-2">
-               <span>Fichier</span>
-               <input type="file" id="memoire-file" (change)="onFileChange($event)" accept=".doc,.docx,.pdf,image/*" required>
-             </div>
-             <div class="file-path-wrapper">
-               <input class="file-path validate" type="text" placeholder="Téléchargez votre mémoire">
-             </div>
-           </div>
-     
-           <!-- Submit Button -->
-           <div class="col s12 center-align">
-             <button class="btn waves-effect waves-light teal darken-2" type="submit">Soumettre</button>
-           </div>
-         </form>
-       </div>
-     </div>
-     
+        <div class="input-field col s12 m6 animated-input">
+          <input type="time" id="rendezvous-time" formControlName="rendezvousTime" class="validate" required>
+          <label for="rendezvous-time">Heure du rendez-vous</label>
+        </div>
 
-   <!-- Contact Section -->
-   <div id="contact" class="container section scrollspy">
-       <div class="row">
-           <div class="col s12 center-align">
-               <h3>Contactez-nous</h3>
-               <p>Pour toute assistance, contactez-nous à <strong>ami-platform&#64;gmail.com</strong> ou
-                   appelez-nous au <strong>(+221) 77 862 72 72</strong>.</p>
-               <div>
-                   <a href="#" class="btn-floating btn-large waves-effect waves-light teal darken-2"><i
-                           class="material-icons">email</i></a>
-                   <a href="#" class="btn-floating btn-large waves-effect waves-light teal darken-2"><i
-                           class="material-icons">phone</i></a>
-               </div>
-           </div>
-       </div>
-   </div>
+        <div class="input-field col s12 m6 animated-input">
+          <p>
+            <label>
+              <input type="radio" id="licence" formControlName="academicLevel" value="licence" required />
+              <span>Licence Informatique</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="radio" id="master" formControlName="academicLevel" value="master" required />
+              <span>Master Informatique</span>
+            </label>
+          </p>
+        </div>
 
-   <!-- Footer Section -->
-   <footer class="page-footer teal darken-3">
-       <div class="container">
-           <div class="row">
-               <div class="col l6 s12">
-                   <h5 class="white-text">Aide Mémoire Informatique (AMI)</h5>
-                   <p class="grey-text text-lighten-4">Notre mission est de vous offrir un accompagnement personnalisé
-                       pour la rédaction de vos mémoires.</p>
-               </div>
-               <div class="col l4 offset-l2 s12">
-                   <h5 class="white-text">Liens rapides</h5>
-                   <ul >
-                       <li><a routerLink="/" style="color:white;">Accueil</a></li>
-                       <li><a routerLink="/about" style="color:white;">À propos</a></li>
-                       <li><a routerLink="/memoire" style="color:white;">Sujets de Mémoire</a></li>
-                       <li><a routerLink="#contact" style="color:white;">Contact</a></li>
-                       <li><a class="waves-effect waves-light btn-small white teal-text"
-                               (click)="logOut()" >Déconnexion</a></li>
+        <div class="input-field col s12 animated-input">
+          <textarea id="objectif" formControlName="objectif" class="materialize-textarea" required></textarea>
+          <label for="objectif">Objectif du rendez-vous</label>
+        </div>
 
-                   </ul>
-               </div>
-           </div>
-       </div>
-       <div class="footer-copyright">
-           <div class="container center-align">
-               © 2024 AMI, Tous droits réservés.
-           </div>
-       </div>
-   </footer>
+        <div class="input-field col s12 animated-input">
+          <textarea id="questions" formControlName="questions" class="materialize-textarea"></textarea>
+          <label for="questions">Questions supplémentaires</label>
+        </div>
 
-   <!-- Import Materialize JS and initialize components -->
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <div class="file-field input-field col s12 animated-input">
+          <div class="btn purple darken-2">
+            <span>Fichier</span>
+            <input type="file" id="memoire-file" (change)="onFileChange($event)" accept=".doc,.docx,.pdf,image/*" required>
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text" placeholder="Téléchargez votre mémoire">
+          </div>
+        </div>
+
+        <div class="col s12 center-align">
+          <button class="btn waves-effect waves-light purple darken-2" type="submit">Soumettre</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Contact Section -->
+  <div id="contact" class="container section scrollspy">
+    <div class="row">
+      <div class="col s12 center-align">
+        <h3>Contactez-nous</h3>
+        <p>Pour toute assistance, contactez-nous à <strong>ami-platform&#64;gmail.com</strong> ou appelez-nous au <strong>(+221) 77 862 72 72</strong>.</p>
+        <div>
+          <a href="#" class="btn-floating btn-large waves-effect waves-light purple darken-2"><i class="material-icons">email</i></a>
+          <a href="#" class="btn-floating btn-large waves-effect waves-light purple darken-2"><i class="material-icons">phone</i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer class="page-footer purple darken-3">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Aide Mémoire Informatique (AMI)</h5>
+          <p class="grey-text text-lighten-4">Notre mission est de vous offrir un accompagnement personnalisé pour la rédaction de vos mémoires.</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Liens rapides</h5>
+          <ul>
+            <li><a routerLink="/" style="color:white;">Accueil</a></li>
+            <li><a routerLink="/about" style="color:white;">À propos</a></li>
+            <li><a routerLink="/memoire" style="color:white;">Sujets de Mémoire</a></li>
+            <li><a routerLink="#contact" style="color:white;">Contact</a></li>
+            <li><a class="waves-effect waves-light btn-small white purple-text" (click)="logOut()">Déconnexion</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container center-align">
+        © 2024 AMI, Tous droits réservés.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Import Materialize JS and initialize components -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </div>

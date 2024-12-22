@@ -53,7 +53,7 @@
 }
 
 .cta-button {
-    background-color: #26a69a; /* Materialize teal color */
+    background-color: purple; /* Materialize teal color #26a69a*/
     color: white;
     padding: 10px 20px;
     font-size: 1.1rem;
@@ -63,7 +63,7 @@
 }
 
 .cta-button:hover {
-    background-color: #00796b; /* Darker teal on hover */
+    background-color: purple; /* Darker teal on hover #00796b*/
 }
 
 /* Style the section with the welcome message */

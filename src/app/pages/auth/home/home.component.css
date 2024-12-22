@@ -22,7 +22,7 @@
 
 /* Style the parallax image */
 .parallax {
-  background-image: url('https://ifage.net/wp-content/uploads/2024/09/data-science-big-data.jpg');
+  background-image: url('https://static3.cegos.fr/content/uploads/2024/12/20104942/L-and-D-trends-Mag-min.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -53,7 +53,7 @@
 }
 
 .cta-button {
-  background-color: #26a69a; /* Materialize teal color */
+  background-color: orchid; /* Materialize teal color #26a69a*/
   color: white;
   padding: 10px 20px;
   font-size: 1.1rem;
@@ -63,7 +63,7 @@
 }
 
 .cta-button:hover {
-  background-color: #00796b; /* Darker teal on hover */
+  background-color: orchid; /* Darker teal on hover #00796b*/
 }
 
 /* Style the section with the welcome message */
@@ -108,8 +108,8 @@
 }
 
 .custom-snackbar {
-  background-color: green; /* Set background color to green */
+  background-color: purple; /* Set background color to green green */
   color: white; /* Set text color to white for better contrast */
-  border: 2px solid darkgreen; /* Add a border */
+  border: 2px solid purple; /* Add a border  darkgreen*/
 }
 

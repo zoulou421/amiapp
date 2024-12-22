@@ -1,14 +1,19 @@
-<div class="form">
-    <div class="form__container">
-        <h1>Sign up</h1>
+<div class="form" >
+    <div class="form__container" >
+
+        <div class="container center-align">
+            <h6 style="color: purple;font-weight: bolder;">Création de votre Compte</h6>
+            <i class="material-icons large">account_circle</i>
+          </div>
+
         <form [formGroup]="form" (ngSubmit)="signUp()">
             <!-- First Name -->
             <div>
                 <mat-form-field appearance="fill">
-                    <mat-label>First Name</mat-label>
+                    <mat-label>Votre prénom</mat-label>
                     <input matInput formControlName="names" placeholder="Enter your first name" />
                     <mat-error *ngIf="form.get('names')?.hasError('required') && form.get('names')?.touched">
-                        First name is required
+                        Le prénom est obligatoire
                     </mat-error>
                 </mat-form-field>
             </div>
@@ -16,10 +21,10 @@
             <!-- Last Name -->
             <div>
                 <mat-form-field appearance="fill">
-                    <mat-label>Last Name</mat-label>
+                    <mat-label>Votre nom de famille</mat-label>
                     <input matInput formControlName="lastName" placeholder="Enter your last name" />
                     <mat-error *ngIf="form.get('lastName')?.hasError('required') && form.get('lastName')?.touched">
-                        Last name is required
+                        Le nom de famille est obligatoire
                     </mat-error>
                 </mat-form-field>
             </div>
@@ -30,10 +35,10 @@
                     <mat-label>Email</mat-label>
                     <input matInput formControlName="email" placeholder="Enter your email" />
                     <mat-error *ngIf="form.get('email')?.hasError('required') && form.get('email')?.touched">
-                        Email is required
+                        Email est obligatoire
                     </mat-error>
                     <mat-error *ngIf="form.get('email')?.hasError('email') && form.get('email')?.touched">
-                        Please enter a valid email
+                        Svp, veuillez saisir un email valide
                     </mat-error>
                 </mat-form-field>
             </div>
@@ -41,7 +46,7 @@
             <!-- Password -->
             <div>
                 <mat-form-field appearance="fill">
-                    <mat-label>Enter your password</mat-label>
+                    <mat-label>Entrer votre Mot de passe</mat-label>
                     <input matInput [type]="hide ? 'password' : 'text'" formControlName="password"
                         placeholder="Enter your password" />
                     <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
@@ -49,14 +54,14 @@
                         <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
                     </button>
                     <mat-error *ngIf="form.get('password')?.hasError('required') && form.get('password')?.touched">
-                        Password is required
+                        Mot de passe est obligatoire
                     </mat-error>
                 </mat-form-field>
             </div>
 
             <!-- Submit Button -->
             <div>
-                <button mat-flat-button color="accent" type="submit" [disabled]="form.invalid">Sign up</button>
+                <button mat-flat-button color="accent" type="submit" [disabled]="form.invalid">Je crée mon compte</button>
             </div>
         </form>
 
@@ -66,7 +71,7 @@
         <!-- Social Sign-In -->
         <div class="social-sign-in">
 
-            <span class="small-text providers">Have Google or GitHub?</span>
+            <span class="small-text providers">Avez-vous Google ou GitHub?</span>
             <app-button-providers />
 
             <!--div class="social-buttons">
@@ -89,8 +94,8 @@
 
         <!-- Log in Redirect -->
         <span class="small-text log-in-redirect">
-            Already have an account? 
-        <a routerLink="/auth/login-in">Log-In </a>
+            Avez-vous déjà un compte ? 
+        <a routerLink="/auth/login-in">Se Connecter </a>
         </span>
     </div>
 </div>
