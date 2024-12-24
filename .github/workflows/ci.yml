@@ -26,14 +26,20 @@ jobs:
 
       # Step 4: Build the Angular project
       - name: Build Angular Project
-        run: npm run build -- --output-path=dist/amiapp 
+        run: npm run build -- --output-path=dist/amiapp
 
-      # Step 5: Deploy to GitHub Pages
+      # Step 5: Move contents from browser folder if needed
+      - name: Move Compiled Files
+        run: |
+          mv dist/amiapp/browser/* dist/amiapp/
+          rmdir dist/amiapp/browser
+
+      # Step 6: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.AMIAPP_TOKEN }}
-          publish_dir: ./dist/amiapp/browser
+          publish_dir: ./dist/amiapp
 
   docker_build:
     runs-on: ubuntu-latest
@@ -47,6 +53,6 @@ jobs:
       - name: Build Docker Image
         run: docker build -t amiapp-app-v2 .
 
-      # Step 3: Run Docker Container (Optional: for testing)
+      # Step 3: Run Docker Container (Optional)
       - name: Run Docker Container
-        run: docker run -d -p 8080:80 amiapp-app
+        run: docker run -d -p 8080:80 amiapp-app-v2
