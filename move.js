@@ -1,16 +1,24 @@
-const { moveFile } = require('move-file');
-const path = require('path');
+// move.js
+import { moveFile } from 'move-file'; // Use import instead of require
+import path from 'path';
+import fs from 'fs/promises'; // Use fs/promises for async file operations
+
+const sourceDir = path.join(process.cwd(), 'dist', 'amiapp', 'browser');
+const destDir = path.join(process.cwd(), 'dist', 'amiapp');
 
 (async () => {
   try {
-    // Définir les chemins source et destination
-    const sourceDir = path.join(__dirname, 'dist', 'amiapp', 'browser', '*');
-    const destDir = path.join(__dirname, 'dist', 'amiapp');
-
-    // Déplacer tous les fichiers du dossier browser vers amiapp
-    await moveFile(sourceDir, destDir);
-    console.log('Fichiers déplacés avec succès !');
+    // Move all files from browser to amiapp
+    const files = await fs.readdir(sourceDir);
+    await Promise.all(files.map(file => 
+      moveFile(path.join(sourceDir, file), path.join(destDir, file))
+    ));
+    
+    // Remove the browser directory after moving files
+    await fs.rmdir(sourceDir, { recursive: true });
+    console.log('Files moved successfully!');
   } catch (error) {
-    console.error('Erreur lors du déplacement des fichiers :', error);
+    console.error('Error moving files:', error);
   }
 })();
+
