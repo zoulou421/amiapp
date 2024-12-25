@@ -52,9 +52,12 @@
   </div>
 
   <!-- Form Section -->
-  <div class="section grey lighten-4" style="padding: 50px 0;">
+  <div class="section grey lighten-4" style="padding: 50px 0;background-image: url('https://ifage.net/wp-content/uploads/2024/09/data-science-big-data.jpg');
+   background-repeat: no-repeat;background-size: 100%;">
     <div class="container">
-      <h3 class="center-align purple" style="font-weight: bolder; color: white;">Prenez Rendez-vous 24h avant en ligne</h3>
+      <div class="center-align purple">
+        <h3  style="font-weight: bolder;" class="white-text">Prenez Rendez-vous 24h avant en ligne</h3>
+      </div>
       <form [formGroup]="formData" (ngSubmit)="submitForm()" class="animated-form row" enctype="multipart/form-data">
         <div class="input-field col s12 m6 animated-input">
           <input type="text" id="name" formControlName="name" class="validate" required>
