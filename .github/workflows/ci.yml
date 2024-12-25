@@ -31,11 +31,11 @@ jobs:
       # Étape 5 : Déplacez les fichiers du sous-dossier 'browser'
       - name: Move Files to Root
         run: |
-          mkdir -p ./dist/amiapp/root && mv ./dist/amiapp/browser/* ./dist/amiapp/root/
+          mkdir -p ./dist/amiapp/ && mv ./dist/amiapp/browser/* ./dist/amiapp/
           
       # Étape 6 : Déployez sur GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{secrets.AMIAPP_TOKEN}}  # Token d'accès pour l'authentification
-          publish_dir: ./dist/amiapp/root  # Répertoire à publier sur GitHub Pages
+          publish_dir: ./dist/amiapp/  # Répertoire à publier sur GitHub Pages
