@@ -1,86 +1,111 @@
 <div>
     <!-- Navigation Bar -->
-    <nav class="nav-extended purple darken-3">
-        <div class="nav-wrapper container">
-            <a href="#" class="brand-logo left"><i class="material-icons">school</i> AMI</a>
-            <a href="#" data-target="mobile-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
-                <li><a routerLink="/">Accueil</a></li>
-                <li><a routerLink="/about">À propos</a></li>
-                <li><a routerLink="/memoire">Sujets de Mémoire</a></li>
-                <li><a routerLink="#contact">Contact</a></li>
-                <li><a class="waves-effect waves-light btn-small white purple-text text-darken-3" (click)="logOut()">Déconnexion</a></li>
-                <li><a href="#" class="dropdown-trigger btn purple" data-target="profile-dropdown"><i class="material-icons">account_circle</i></a></li>
-            </ul>
-        </div>
+    <nav class="nav-extended purple darken-2">
+      <div class="nav-wrapper container">
+        <a href="#" class="brand-logo left"><i class="material-icons">school</i> AMI</a>
+        <a href="#" data-target="mobile-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a routerLink="/">Accueil</a></li>
+          <li><a routerLink="/about">À propos</a></li>
+          <li><a routerLink="/memoire">Sujets de Mémoire</a></li>
+          <li><a routerLink="#contact">Contact</a></li>
+          <li><a class="waves-effect waves-light btn-small white purple-text" (click)="logOut()">Déconnexion</a></li>
+          <li><a href="#" class="dropdown-trigger btn purple" data-target="profile-dropdown"><i class="material-icons">account_circle</i></a></li>
+        </ul>
+      </div>
     </nav>
-
+  
     <!-- Mobile Menu -->
     <ul class="sidenav" id="mobile-menu">
-        <li><a routerLink="/">Accueil</a></li>
-        <li><a routerLink="/about">À propos</a></li>
-        <li><a routerLink="/memoire">Sujets de Mémoire</a></li>
-        <li><a routerLink="#contact">Contact</a></li>
-        <li><a class="waves-effect waves-light btn-small white purple-text text-darken-3" (click)="logOut()">Déconnexion</a></li>
+      <li><a routerLink="/">Accueil</a></li>
+      <li><a routerLink="/about">À propos</a></li>
+      <li><a routerLink="/memoire">Sujets de Mémoire</a></li>
+      <li><a routerLink="#contact">Contact</a></li>
+      <li><a class="waves-effect waves-light btn-small white purple-text" (click)="logOut()">Déconnexion</a></li>
     </ul>
 
-   <!-- Section À Propos -->
-<div class="container section scrollspy">
-    <!-- Section Title -->
-    <h1 class="center-align purple-text text-darken-2">À Propos de Nous</h1>
-
-    
-    <!-- Description -->
-    <div class="row">
-        <div class="col s12">
-            <p class="flow-text">
-                Bienvenue sur notre plateforme dédiée à l'assistance dans la rédaction de mémoires en informatique. 
-                Nous sommes ici pour vous accompagner à chaque étape de votre parcours académique.
-            </p>
+    <!-- Section Qui sommes-nous ? -->
+    <div class="container section scrollspy">
+        <h1 class="center-align purple-text text-darken-2">Qui sommes-nous ?</h1>
+        <div class="row">
+            <div class="col s12 m6">
+                <h5 class="purple-text">Présentation de l'équipe</h5>
+                <p>Notre équipe est composée d'experts académiques et techniques passionnés par la réussite des étudiants. 
+                Fondée par un groupe de professionnels de l'éducation et de la technologie, la plateforme est un pont 
+                entre la théorie académique et les besoins réels des étudiants.</p>
+            </div>
+            <div class="col s12 m6">
+                <img src="https://www.nantesimmo9.com/medias/64ef3adf615ac-1200.jpg" alt="Équipe fondatrice" class="responsive-img z-depth-2"
+                style="max-width: 80%; border: 3px solid #9c27b0; border-radius: 12px;"
+                >
+            </div>
         </div>
-        <div class="col s12">
-            <p class="flow-text">
-                Depuis notre création, nous avons aidé de nombreux étudiants à réussir leur mémoire en leur fournissant 
-                des ressources, des conseils et un soutien personnalisé. Notre équipe d'experts est passionnée par 
-                l'éducation et se consacre à votre réussite.
-            </p>
-        </div>
-        <div class="col s12">
-            <p class="flow-text">
-                Nous croyons fermement que chaque étudiant mérite les meilleures chances de succès. 
-                C'est pourquoi nous offrons une gamme de services conçus pour répondre à vos besoins spécifiques.
-            </p>
+        <div class="row">
+            <div class="col s12">
+                <h5 class="purple-text">Historique</h5>
+                <p>Créée en 2020, notre plateforme a commencé comme une initiative locale pour aider les étudiants en informatique 
+                à structurer leurs mémoires. Aujourd'hui, nous sommes une référence pour des milliers d'étudiants dans plusieurs pays.</p>
+            </div>
         </div>
     </div>
-    
-    <!-- Image Section -->
-    <div class="center-align">
-        <img 
-            src="https://www.nantesimmo9.com/medias/64ef3adf615ac-1200.jpg" 
-            alt="À propos de nous" 
-            class="responsive-img z-depth-2" 
-            style="max-width: 80%; border: 3px solid #9c27b0; border-radius: 12px;">
+
+    <!-- Section Notre mission -->
+    <div class="container section scrollspy">
+        <h1 class="center-align purple-text text-darken-2">Notre mission</h1>
+        <div class="row">
+            <div class="col s12 m6">
+                <h5 class="purple-text">Vision</h5>
+                <p>Faciliter la réussite académique et professionnelle des étudiants grâce à un accompagnement personnalisé 
+                et à des outils modernes adaptés à leurs besoins.</p>
+            </div>
+            <div class="col s12 m6">
+                <img src="https://www.fratmat.info/media/k2/items/cache/945e9e50963febcd89a4326ccdbdfc2b_XL.jpg" alt="Vision" class="responsive-img z-depth-2"
+                style="max-width: 80%; border: 3px solid #9c27b0; border-radius: 12px;"
+                >
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <h5 class="purple-text">Objectifs</h5>
+                <ul>
+                    <li>Offrir une assistance personnalisée pour la rédaction de mémoires.</li>
+                    <li>Élargir nos services pour inclure des formations en ligne et des ateliers.</li>
+                    <li>Devenir un acteur incontournable de l'accompagnement académique en ligne.</li>
+                </ul>
+            </div>
+        </div>
     </div>
-</div>
 
-
-    <!-- Section Technologies -->
-    <div class="container section">
-        <h3 class="center-align purple-text text-darken-2">Nos Technologies</h3>
-        <ul class="collection with-header">
-            <li class="collection-header"><h5>Prise en main :</h5></li>
-            <li class="collection-item">JWT / Node.js / MongoDB / Angular 18 (moderne & traditionnelle)</li>
-            <li class="collection-header"><h5>Facile :</h5></li>
-            <li class="collection-item">Node.js / Firebase / Angular 18 (moderne & traditionnelle)</li>
-            <li class="collection-header"><h5>Professionnels :</h5></li>
-            <li class="collection-item">Docker / Node.js / Firebase / Angular 18 (moderne & traditionnelle)</li>
-        </ul>
-    </div>
-
-    <!-- Section Contact -->
-    <div id="contact" class="container section scrollspy">
-        <h3 class="center-align purple-text text-darken-2">Contactez-nous</h3>
-        <p class="flow-text center-align">Pour toute question ou demande d'assistance, contactez-nous à <strong>assistanceami.com</strong> ou par téléphone au <strong>(+221) 77 862 72 72</strong>.</p>
+    <!-- Section Nos partenaires -->
+    <div class="container section scrollspy">
+        <h1 class="center-align purple-text text-darken-2">Nos partenaires</h1>
+        <div class="row">
+            <div class="col s12">
+                <h5 class="purple-text">Universités et entreprises</h5>
+                <p>Nous collaborons avec plusieurs institutions prestigieuses pour garantir la qualité de nos services.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 m4 center-align">
+                <img src="https://via.placeholder.com/150" alt="Université 1" class="responsive-img">
+                <p><a href="#" class="purple-text text-darken-2">Université 1</a></p>
+            </div>
+            <div class="col s12 m4 center-align">
+                <img src="https://via.placeholder.com/150" alt="Université 2" class="responsive-img">
+                <p><a href="#" class="purple-text text-darken-2">Université 2</a></p>
+            </div>
+            <div class="col s12 m4 center-align">
+                <img src="https://via.placeholder.com/150" alt="Entreprise partenaire" class="responsive-img">
+                <p><a href="#" class="purple-text text-darken-2">Entreprise partenaire</a></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <h5 class="purple-text">Témoignages</h5>
+                <blockquote>"Une plateforme révolutionnaire qui a changé notre façon d'accompagner les étudiants." - Université 1</blockquote>
+                <blockquote>"AMI nous a permis de mieux préparer nos étudiants aux défis académiques." - Université 2</blockquote>
+            </div>
+        </div>
     </div>
 
     <!-- Footer Section -->
@@ -89,30 +114,22 @@
             <div class="row">
                 <div class="col l6 s12">
                     <h5 class="white-text">Aide Mémoire Informatique (AMI)</h5>
-                    <p class="grey-text text-lighten-4">Notre mission est de vous offrir un accompagnement personnalisé
-                        pour la rédaction de vos mémoires.</p>
+                    <p class="grey-text text-lighten-4">Notre mission est de vous offrir un accompagnement personnalisé pour la rédaction de vos mémoires.</p>
                 </div>
                 <div class="col l4 offset-l2 s12">
                     <h5 class="white-text">Liens rapides</h5>
                     <ul>
                         <li><a routerLink="/" style="color:white;">Accueil</a></li>
-                        <li><a routerLink="/about" style="color:white;">À propos</a></li>
-                        <li><a routerLink="/memoire" style="color:white;">Sujets de Mémoire</a></li>
+                        <li><a routerLink="/about" style="color:white;">Qui sommes-nous ?</a></li>
+                        <li><a routerLink="/mission" style="color:white;">Notre mission</a></li>
+                        <li><a routerLink="/partners" style="color:white;">Nos partenaires</a></li>
                         <li><a routerLink="#contact" style="color:white;">Contact</a></li>
-                        <li><a class="waves-effect waves-light btn-small white purple-text text-darken-3"
-                                (click)="logOut()">Déconnexion</a></li>
                     </ul>
                 </div>
             </div>
         </div>
-
         <div class="footer-copyright">
-            <div class="container center-align">
-                © 2024 AMI, Tous droits réservés.
-            </div>
+            <div class="container center-align">© 2024 AMI, Tous droits réservés.</div>
         </div>
     </footer>
-
-    <!-- Import Materialize JS and initialize components -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </div>
