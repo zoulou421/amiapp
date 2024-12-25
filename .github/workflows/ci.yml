@@ -26,7 +26,7 @@ jobs:
 
       # Step 4: Build the Angular project
       - name: Build Angular Project
-        run: npm run build -- --output-path=dist/amiapp --base-href="/" 
+        run: npm run build -- --output-path=dist/amiapp  
 
       # Step 5: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
@@ -35,18 +35,4 @@ jobs:
           github_token: ${{secrets.AMIAPP2024_TOKEN}}
           publish_dir: ./dist/amiapp/browser
 
-  docker_build:
-    runs-on: ubuntu-latest
-
-    steps:
-      # Step 1: Checkout the repository
-      - name: Checkout Code
-        uses: actions/checkout@v3
-
-      # Step 2: Build Docker Image
-      - name: Build Docker Image
-        run: docker build -t amiapp-app-v2 .
-
-      # Step 3: Run Docker Container (Optional: for testing)
-      - name: Run Docker Container
-        run: docker run -d -p 8080:80 amiapp-app
+  
