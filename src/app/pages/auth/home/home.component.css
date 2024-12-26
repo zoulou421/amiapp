@@ -22,7 +22,7 @@
 
 /* Style the parallax image */
 .parallax {
-  background-image: url('/assets/images/L-and-D-trends-Mag-min.jpg');
+  background-image: url("/assets/images/header_img.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
