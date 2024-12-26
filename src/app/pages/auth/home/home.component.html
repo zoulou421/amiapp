@@ -8,6 +8,7 @@
         <li><a routerLink="/">Accueil</a></li>
         <li><a routerLink="/about">À propos</a></li>
         <li><a routerLink="/memoire">Sujets de Mémoire</a></li>
+        <li><a routerLink="/Plagiat">Plagiat</a></li>
         <li><a routerLink="#contact">Contact</a></li>
         <li><a class="waves-effect waves-light btn-small white purple-text" (click)="logOut()">Déconnexion</a></li>
         <li><a href="#" class="dropdown-trigger btn purple" data-target="profile-dropdown"><i class="material-icons">account_circle</i></a></li>
@@ -20,6 +21,7 @@
     <li><a routerLink="/">Accueil</a></li>
     <li><a routerLink="/about">À propos</a></li>
     <li><a routerLink="/memoire">Sujets de Mémoire</a></li>
+    <li><a routerLink="/Plagiat">Plagiat</a></li>
     <li><a routerLink="#contact">Contact</a></li>
     <li><a class="waves-effect waves-light btn-small white purple-text" (click)="logOut()">Déconnexion</a></li>
   </ul>
@@ -27,12 +29,15 @@
   <!-- Parallax Section -->
   <div class="parallax-container" style="height: 500px;width:100%;">
     <div class="parallax">
-      <img src="https://source.unsplash.com/1600x900/?student,technology" alt="AMI">
+      <!--img src="https://source.unsplash.com/1600x900/?student,technology" alt="AMI"-->
     </div>
     <div class="center-align white-text" style="margin-top: 150px;">
       <h1 style="font-size: 3.5rem; font-weight: bold;">Aide Mémoire Informatique</h1>
       <p style="font-size: 1.5rem;">Accélérez la rédaction de votre mémoire avec AMI</p>
-      <a href="#sujet-memoire" class="btn-large waves-effect waves-light purple darken-2 cta-button pulse">Découvrir des Sujets</a>
+      <a routerLink="/Plagiat" class="btn-large waves-effect waves-light purple darken-2 cta-button pulse">
+       <!-- Icon for 'Analyseur de sujets' -->
+      <i class="material-icons left">search</i> Analysez votre document ou sujet
+      </a>
     </div>
   </div>
 
@@ -46,13 +51,13 @@
         <a href="#sujet-memoire" class="btn waves-effect waves-light purple darken-2">Explorer les Sujets</a>
       </div>
       <div class="col s12 m6">
-        <img src="https://amely.org/wp-content/uploads/2022/04/image-AAN-e1650552513963.png" alt="Students working" class="responsive-img">
+        <img src="assets/images/accompagnement-admin-numerique.png" alt="Students working" class="responsive-img">
       </div>
     </div>
   </div>
 
   <!-- Form Section -->
-  <div class="section grey lighten-4" style="padding: 50px 0;background-image: url('https://ifage.net/wp-content/uploads/2024/09/data-science-big-data.jpg');
+  <div class="section grey lighten-4" style="padding: 50px 0;background-image: url('assets/images/data-science-big-data.jpg');
    background-repeat: no-repeat;background-size: 100%;">
     <div class="container">
       <div class="center-align purple">

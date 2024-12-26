@@ -6,6 +6,8 @@ import { authGuard, publicGuard } from './core/guards';
 import { AboutComponent } from './pages/auth/about/about.component';
 import { SujetMemoireComponent } from './pages/auth/sujet-memoire/sujet-memoire.component';
 import { RendezvousListComponent } from './pages/auth/rendezvous-list/rendezvous-list.component';
+import { TemoignagesComponent } from './pages/auth/temoignages/temoignages.component';
+import { PlagiatComponent } from './pages/auth/plagiat/plagiat.component';
 
 export const routes: Routes = [
     {
@@ -25,10 +27,23 @@ export const routes: Routes = [
     },
 
     {
-        path: 'RendezvousList',
+        path: 'RendezvousList####',
         canActivate: [authGuard],
         component: RendezvousListComponent,
     },
+
+    {
+        path: 'Temoignages',
+        canActivate: [authGuard],
+        component: TemoignagesComponent,
+    },
+
+    {
+        path: 'Plagiat',
+        canActivate: [authGuard],
+        component: PlagiatComponent,
+    },
+    
     {
         path: 'auth',
         canActivate: [publicGuard],

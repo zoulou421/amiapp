@@ -22,7 +22,7 @@
 
 /* Style the parallax image */
 .parallax {
-    background-image: url('https://ifage.net/wp-content/uploads/2024/09/data-science-big-data.jpg');
+    background-image: url('/public/assets/images/data-science-big-data.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

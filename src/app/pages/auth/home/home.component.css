@@ -22,7 +22,7 @@
 
 /* Style the parallax image */
 .parallax {
-  background-image: url('https://static3.cegos.fr/content/uploads/2024/12/20104942/L-and-D-trends-Mag-min.jpg');
+  background-image: url('/assets/images/L-and-D-trends-Mag-min.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

@@ -1,0 +1,12 @@
+.card {
+    margin-bottom: 20px;
+  }
+  
+  textarea.materialize-textarea {
+    min-height: 150px;
+  }
+  
+  button {
+    margin-top: 20px;
+  }
+  
