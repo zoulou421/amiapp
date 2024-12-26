@@ -22,7 +22,7 @@
 
 /* Style the parallax image */
 .parallax {
-  background-image: url('/assets/images/header2_img.jpg');
+  background-image: url('/assets/images/header.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
