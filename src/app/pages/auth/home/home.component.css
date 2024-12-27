@@ -22,7 +22,7 @@
 
 /* Style the parallax image: https://live.staticflickr.com/4179/34399166802_6d3e4cac75_c.jpg */
 .parallax{
-  background-image: url('/assets/images/header.jpg');
+  background-image: url('https://live.staticflickr.com/4179/34399166802_6d3e4cac75_c.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
