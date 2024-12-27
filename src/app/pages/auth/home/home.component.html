@@ -1,9 +1,9 @@
-
 <div>
   <!-- Navigation Bar -->
   <nav class="nav-extended purple darken-2">
     <div class="nav-wrapper container">
-      <a href="#" class="brand-logo left" ><i class="material-icons"><img src="assets/images/ami-logo.png?v=1" alt="AMI" style="height: 40px; vertical-align: middle;"  /></i> </a>
+      <a href="#" class="brand-logo left"><i class="material-icons"><img src="assets/images/ami-logo.png?v=1" alt="AMI"
+            style="height: 40px; vertical-align: middle;" /></i> </a>
       <a href="#" data-target="mobile-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a routerLink="/">Accueil</a></li>
@@ -13,21 +13,24 @@
         <li><a routerLink="/Temoignages">Temoignages</a></li>
         <li><a routerLink="/Portfolio">Portfolio</a></li>
         <li><a class="waves-effect waves-light btn-small white purple-text" (click)="logOut()">Déconnexion</a></li>
-        <li><a href="#" class="dropdown-trigger btn purple" data-target="profile-dropdown"><i class="material-icons">account_circle</i></a></li>
+        <li><a href="#" class="dropdown-trigger btn purple" data-target="profile-dropdown"><i
+              class="material-icons">account_circle</i></a></li>
       </ul>
     </div>
   </nav>
 
-   <!-- Mobile Menu -->
-   <ul class="sidenav" id="mobile-menu">
-      <li><a routerLink="/">Accueil</a></li>
-      <li><a routerLink="/about">À propos</a></li>
-      <li><a routerLink="/memoire">Sujets de Mémoire</a></li>
-      <li><a routerLink="/Plagiat">Plagiat</a></li>
-      <li><a routerLink="/Temoignages">Temoignages</a></li>
-      <li><a routerLink="/Portfolio">Portfolio</a></li>
-      <li><a class="waves-effect waves-light btn-small white purple-text" (click)="logOut()">Déconnexion</a></li>
-    </ul>
+  <!-- Mobile Menu -->
+  <ul class="sidenav" id="mobile-menu">
+    <li><a routerLink="/">Accueil</a></li>
+    <li><a routerLink="/about">À propos</a></li>
+    <li><a routerLink="/memoire">Sujets de Mémoire</a></li>
+    <li><a routerLink="/Plagiat">Plagiat</a></li>
+    <li><a routerLink="/Temoignages">Temoignages</a></li>
+    <li><a routerLink="/Portfolio">Portfolio</a></li>
+    <li><a class="waves-effect waves-light btn-small white purple-text" (click)="logOut()">Déconnexion</a></li>
+    <li><a href="#" class="dropdown-trigger btn purple" data-target="profile-dropdown"><i
+      class="material-icons">account_circle</i></a></li>
+  </ul>
 
 
   <!-- Parallax Section -->
@@ -38,9 +41,24 @@
     <div class="center-align white-text" style="margin-top: 150px;">
       <h1 style="font-size: 3.5rem; font-weight: bold;">Aide Mémoire Informatique</h1>
       <p style="font-size: 1.5rem;">Accélérez la rédaction de votre mémoire avec AMI</p>
-      <a routerLink="/Plagiat" class="btn-large waves-effect waves-light purple darken-2 cta-button pulse">
-       <!-- Icon for 'Analyseur de sujets' -->
-      <i class="material-icons left">search</i> Analysez votre document ou sujet
+      <a routerLink="/Plagiat"
+        class="btn-large waves-effect waves-light purple darken-2 cta-button pulse center-content">
+        <style>
+          .center-content {
+            display: inline-flex;
+            /* Change from flex to inline-flex to fit content */
+            align-items: center;
+            /* Vertically center the content */
+            justify-content: center;
+            /* Horizontally center the content */
+            text-align: center;
+            /* Align the text */
+            padding: 0 1.5rem;
+            /* Adjust padding for better spacing */
+          }
+        </style>
+        <!-- Icon for 'Analyseur de sujets' -->
+        <i class="material-icons left">search</i> Analysez votre document ou sujet
       </a>
     </div>
   </div>
@@ -50,9 +68,13 @@
     <div class="row">
       <div class="col s12 m6">
         <h3 class="purple-text text-darken-2" style="font-weight: bolder;">Bienvenue sur AMI !</h3>
-        <p>Cette plateforme est dédiée à accompagner les étudiants en informatique dans la rédaction de leurs mémoires et la création d'applications. AMI offre une gamme variée de conseils et de ressources, adaptés aux besoins spécifiques des étudiants.</p>
-        <p>Que ce soit pour le choix d’un sujet, la méthodologie de recherche, ou des techniques de rédaction, AMI est disponible pour vous accompagner tout au long de votre parcours académique.</p>
-        <a href="#sujet-memoire" class="btn waves-effect waves-light purple darken-2">Explorer les Sujets(<b>+5000</b>)</a>
+        <p>Cette plateforme est dédiée à accompagner les étudiants en informatique dans la rédaction de leurs mémoires
+          et la création d'applications. AMI offre une gamme variée de conseils et de ressources, adaptés aux besoins
+          spécifiques des étudiants.</p>
+        <p>Que ce soit pour le choix d’un sujet, la méthodologie de recherche, ou des techniques de rédaction, AMI est
+          disponible pour vous accompagner tout au long de votre parcours académique.</p>
+        <a href="#sujet-memoire" class="btn waves-effect waves-light purple darken-2">Explorer les
+          Sujets(<b>+5000</b>)</a>
       </div>
       <div class="col s12 m6">
         <img src="assets/images/accompagnement-admin-numerique.png" alt="Students working" class="responsive-img">
@@ -65,7 +87,7 @@
    background-repeat: no-repeat;background-size: 100%;">
     <div class="container">
       <div class="center-align purple">
-        <h3  style="font-weight: bolder;" class="white-text">Prenez Rendez-vous 24h avant en ligne</h3>
+        <h3 style="font-weight: bolder;" class="white-text">Prenez Rendez-vous 24h avant en ligne</h3>
       </div>
       <form [formGroup]="formData" (ngSubmit)="submitForm()" class="animated-form row" enctype="multipart/form-data">
         <div class="input-field col s12 m6 animated-input">
@@ -134,7 +156,8 @@
         <div class="file-field input-field col s12 animated-input">
           <div class="btn purple darken-2">
             <span>Fichier</span>
-            <input type="file" id="memoire-file" (change)="onFileChange($event)" accept=".doc,.docx,.pdf,image/*" required>
+            <input type="file" id="memoire-file" (change)="onFileChange($event)" accept=".doc,.docx,.pdf,image/*"
+              required>
           </div>
           <div class="file-path-wrapper">
             <input class="file-path validate" type="text" placeholder="Téléchargez votre mémoire">
@@ -153,10 +176,13 @@
     <div class="row">
       <div class="col s12 center-align">
         <h3>Contactez-nous</h3>
-        <p>Pour toute assistance, contactez-nous à <strong>ami-platform&#64;gmail.com</strong> ou appelez-nous au <strong>(+221) 77 862 72 72</strong>.</p>
+        <p>Pour toute assistance, contactez-nous à <strong>ami-platform&#64;gmail.com</strong> ou appelez-nous au
+          <strong>(+221) 77 862 72 72</strong>.</p>
         <div>
-          <a href="#" class="btn-floating btn-large waves-effect waves-light purple darken-2"><i class="material-icons">email</i></a>
-          <a href="#" class="btn-floating btn-large waves-effect waves-light purple darken-2"><i class="material-icons">phone</i></a>
+          <a href="#" class="btn-floating btn-large waves-effect waves-light purple darken-2"><i
+              class="material-icons">email</i></a>
+          <a href="#" class="btn-floating btn-large waves-effect waves-light purple darken-2"><i
+              class="material-icons">phone</i></a>
         </div>
       </div>
     </div>
@@ -168,7 +194,8 @@
       <div class="row">
         <div class="col l6 s12">
           <h5 class="white-text">Aide Mémoire Informatique (AMI)</h5>
-          <p class="grey-text text-lighten-4">Notre mission est de vous offrir un accompagnement personnalisé pour la rédaction de vos mémoires.</p>
+          <p class="grey-text text-lighten-4">Notre mission est de vous offrir un accompagnement personnalisé pour la
+            rédaction de vos mémoires.</p>
         </div>
         <div class="col l4 offset-l2 s12">
           <h5 class="white-text">Liens rapides</h5>
