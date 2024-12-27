@@ -21,7 +21,7 @@
 }
 
 /* Style the parallax image */
-.parallax {
+.parallaxApp {
     background-image: url('/public/assets/images/data-science-big-data.jpg');
     background-size: cover;
     background-position: center;

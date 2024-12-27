@@ -8,6 +8,7 @@ import { SujetMemoireComponent } from './pages/auth/sujet-memoire/sujet-memoire.
 import { RendezvousListComponent } from './pages/auth/rendezvous-list/rendezvous-list.component';
 import { TemoignagesComponent } from './pages/auth/temoignages/temoignages.component';
 import { PlagiatComponent } from './pages/auth/plagiat/plagiat.component';
+import { PortfolioComponent } from './pages/auth/portfolio/portfolio.component';
 
 export const routes: Routes = [
     {
@@ -42,6 +43,12 @@ export const routes: Routes = [
         path: 'Plagiat',
         canActivate: [authGuard],
         component: PlagiatComponent,
+    },
+
+    {
+        path: 'Portfolio',
+        canActivate: [authGuard],
+        component: PortfolioComponent,
     },
     
     {

@@ -1,3 +1,4 @@
+
 <div>
   <!-- Navigation Bar -->
   <nav class="nav-extended purple darken-2">
@@ -9,59 +10,64 @@
         <li><a routerLink="/about">À propos</a></li>
         <li><a routerLink="/memoire">Sujets de Mémoire</a></li>
         <li><a routerLink="/Plagiat">Plagiat</a></li>
-        <li><a routerLink="#contact">Contact</a></li>
+        <li><a routerLink="/Temoignages">Temoignages</a></li>
+        <li><a routerLink="/Portfolio">Portfolio</a></li>
         <li><a class="waves-effect waves-light btn-small white purple-text" (click)="logOut()">Déconnexion</a></li>
         <li><a href="#" class="dropdown-trigger btn purple" data-target="profile-dropdown"><i class="material-icons">account_circle</i></a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- Mobile Menu -->
-  <ul class="sidenav" id="mobile-menu">
-    <li><a routerLink="/">Accueil</a></li>
-    <li><a routerLink="/about">À propos</a></li>
-    <li><a routerLink="/memoire">Sujets de Mémoire</a></li>
-    <li><a routerLink="/Plagiat">Plagiat</a></li>
-    <li><a routerLink="#contact">Contact</a></li>
-    <li><a class="waves-effect waves-light btn-small white purple-text" (click)="logOut()">Déconnexion</a></li>
-  </ul>
+   <!-- Mobile Menu -->
+   <ul class="sidenav" id="mobile-menu">
+      <li><a routerLink="/">Accueil</a></li>
+      <li><a routerLink="/about">À propos</a></li>
+      <li><a routerLink="/memoire">Sujets de Mémoire</a></li>
+      <li><a routerLink="/Plagiat">Plagiat</a></li>
+      <li><a routerLink="/Temoignages">Temoignages</a></li>
+      <li><a routerLink="/Portfolio">Portfolio</a></li>
+      <li><a class="waves-effect waves-light btn-small white purple-text" (click)="logOut()">Déconnexion</a></li>
+    </ul>
 
   <!-- Main Section -->
   <div class="container section">
-    <h2 class="center-align">Conception et Implémentation des Applications</h2>
-
+    <div style="background-color: rgba(129, 8, 250, 0.152);">
+      <h2 class="center-align purple-text text-darken-2">Conception et Implémentation des Applications</h2>    
+    </div>
     <p>
       Cette page est dédiée aux informations sur la conception et l'implémentation d'applications dans le cadre de votre mémoire. Vous y trouverez des éléments clés pour bien structurer et réaliser votre projet d'application, depuis la phase de conception jusqu'à l'implémentation finale.
     </p>
+    <img src="assets/images/subject1.png"
+     alt="Introduction" class="responsive-img" style="margin: 20px auto; display: block; max-width: 80%; border: 3px solid #9c27b0; border-radius: 12px;">
 
     <!-- Key Sections -->
-    <div class="section">
+    <div class="section row">
+      <div>
+
+      </div>
+      <div>
+        
+      </div>
       <h4>Conception de l'Application</h4>
       <p>
         La phase de conception est une étape fondamentale pour le développement de toute application. Elle consiste à définir les spécifications fonctionnelles, identifier les besoins des utilisateurs, et créer des modèles (UML, diagrammes de cas d’utilisation, diagrammes de classes) qui guideront la structure de l’application.
       </p>
+      <img src="assets/images/subject2.jpg" alt="Conception" class="responsive-img" style="margin: 20px auto; display: block; max-width: 50%; border: 3px solid #9c27b0; border-radius: 12px;">
       <ul class="collection">
         <li class="collection-item">1. Analyse des besoins</li>
         <li class="collection-item">2. Modélisation UML (diagrammes de classes, de séquence, etc.)</li>
         <li class="collection-item">3. Choix des technologies (framework, outils de développement)</li>
         <li class="collection-item">4. Architecture de l’application</li>
       </ul>
-      <!-- UML Diagram Editor -->
-      <div class="section">
-        <h5>Éditeur UML Intégré</h5>
-        <p>
-          Utilisez l'éditeur UML pour dessiner des diagrammes de classes, de séquences, et bien plus. Cet outil est conçu pour vous aider à structurer vos applications en modélisant visuellement les relations entre les différents composants du système.
-        </p>
-        <!-- Exemple d'intégration d'un éditeur UML -->
-        <iframe src="https://www.uml-diagrams.org/online-uml-diagram-editor" width="100%" height="500px"></iframe>
-      </div>
     </div>
+    
 
     <div class="section">
       <h4>Implémentation</h4>
       <p>
         L'implémentation consiste à transformer la conception en code exécutable. Cette phase inclut le développement des fonctionnalités de l’application, le choix des technologies adaptées, et la mise en place des meilleures pratiques de développement.
       </p>
+      <img src="assets/images/subject3.jpg" alt="Implémentation" class="responsive-img" style="margin: 20px auto; display: block; max-width: 50%; border: 3px solid #9c27b0; border-radius: 12px;">
       <ul class="collection">
         <li class="collection-item">1. Mise en place de la structure du projet</li>
         <li class="collection-item">2. Développement des fonctionnalités principales (authentification, gestion des utilisateurs, etc.)</li>
@@ -75,6 +81,7 @@
       <p>
         Pour faciliter le développement d'une application robuste et performante, voici quelques technologies et frameworks recommandés :
       </p>
+      <img src="assets/images/subject4.png" alt="Outils Recommandés" class="responsive-img" style="margin: 20px auto; display: block; max-width: 50%; border: 3px solid #9c27b0; border-radius: 12px;">
       <ul class="collection">
         <li class="collection-item">1. Frontend : Angular, React</li>
         <li class="collection-item">2. Backend : Node.js, Java EE, Spring Framework, Python, C#</li>
@@ -88,6 +95,7 @@
       <p>
         Quelques bonnes pratiques à suivre pour garantir la qualité et la maintenabilité de votre application :
       </p>
+      <img src="assets/images/subject5.png" alt="Bonnes Pratiques" class="responsive-img" style="margin: 20px auto; display: block; max-width: 50%; border: 3px solid #9c27b0; border-radius: 12px;">
       <ul class="collection">
         <li class="collection-item">1. Utilisation de Git pour la gestion du code source</li>
         <li class="collection-item">2. Documentation claire du projet</li>
@@ -95,7 +103,6 @@
         <li class="collection-item">4. Suivi de l'évolution avec des outils comme Jira ou Trello</li>
       </ul>
     </div>
-
   </div>
 
   <!-- Footer Section -->
@@ -112,7 +119,8 @@
             <li><a routerLink="/" style="color:white;">Accueil</a></li>
             <li><a routerLink="/about" style="color:white;">À propos</a></li>
             <li><a routerLink="/memoire" style="color:white;">Sujets de Mémoire</a></li>
-            <li><a routerLink="#contact" style="color:white;">Contact</a></li>
+            <li><a routerLink="/Temoignages" style="color:white;">Temoignages</a></li>
+            <li><a routerLink="/Portfolio" style="color:white;">Portfolio</a></li>
             <li><a class="waves-effect waves-light btn-small white purple-text" (click)="logOut()">Déconnexion</a></li>
           </ul>
         </div>
@@ -124,7 +132,4 @@
       </div>
     </div>
   </footer>
-
-  <!-- Import Materialize JS and initialize components -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </div>

@@ -1,0 +1,307 @@
+<div>
+    <!-- Navigation Bar -->
+    <nav class="nav-extended purple darken-2">
+      <div class="nav-wrapper container">
+        <a href="#" class="brand-logo left"><i class="material-icons">school</i> AMI</a>
+        <a href="#" data-target="mobile-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a routerLink="/">Accueil</a></li>
+          <li><a routerLink="/about">À propos</a></li>
+          <li><a routerLink="/memoire">Sujets de Mémoire</a></li>
+          <li><a routerLink="/Plagiat">Plagiat</a></li>
+          <li><a routerLink="/Temoignages">Temoignages</a></li>
+          <li><a routerLink="/Portfolio">Portfolio</a></li>
+          <li><a class="waves-effect waves-light btn-small white purple-text" (click)="logOut()">Déconnexion</a></li>
+          <li><a href="#" class="dropdown-trigger btn purple" data-target="profile-dropdown"><i class="material-icons">account_circle</i></a></li>
+        </ul>
+      </div>
+    </nav>
+  
+    <!-- Mobile Menu -->
+    <ul class="sidenav" id="mobile-menu">
+      <li><a routerLink="/">Accueil</a></li>
+      <li><a routerLink="/about">À propos</a></li>
+      <li><a routerLink="/memoire">Sujets de Mémoire</a></li>
+      <li><a routerLink="/Plagiat">Plagiat</a></li>
+      <li><a routerLink="/Temoignages">Temoignages</a></li>
+      <li><a routerLink="/Portfolio">Portfolio</a></li>
+      <li><a class="waves-effect waves-light btn-small white purple-text" (click)="logOut()">Déconnexion</a></li>
+    </ul>
+  
+
+<div class="container section">
+   <div style="background-color: rgba(129, 8, 250, 0.152); height: 50px;width: 100%;">
+    <h2 class="center-align purple-text text-darken-2">Nos Applications Professionnelles</h2>
+  </div><br /><br />
+
+    <div class="row">
+        <div>
+            <h5 class="purple-text"> 20+ applications professionnelles</h5>
+            <p>Découvrez plus de 20 applications robustes et professionnelles que nous avons développées avec nos étudiants, allant de la gestion des
+                 utilisateurs à la création d'applications mobiles et web sur mesure. Chacune de nos solutions est
+                  conçue pour répondre à des besoins spécifiques, en mettant l'accent sur l'efficacité, l'ergonomie 
+                  et l'innovation. Nos applications sont déjà utilisées dans divers
+                 secteurs, notamment la santé, l'éducation, le commerce en ligne, et bien plus encore..</p>
+        </div>
+
+        
+    
+        <div style="margin-top: 10px;">
+            <img src="assets/images/portfolio1.png" alt="Équipe fondatrice" class="responsive-img z-depth-2"
+            style="max-width: 100%; border: 3px solid #9c27b0; border-radius: 12px;"
+            >
+            <p>
+              Que vous soyez une petite entreprise ou une grande organisation, nos outils sont personnalisables et évolutifs 
+              pour accompagner votre croissance. Grâce à une expertise éprouvée et une maîtrise des technologies modernes, nous créons des solutions qui transforment les défis complexes en opportunités simples et performantes. 
+              Faites le choix de l'excellence et explorez des logiciels qui allient design intuitif et puissance fonctionnelle.
+          </p>
+        </div>
+    </div>
+    
+    
+    <!-- Portfolio Grid -->
+    <div class="row">
+      <!-- Application 1 -->
+      <div class="col s12 m6 l4">
+        <div class="card">
+          <div class="card-image">
+            <img src="assets/images/application1.png" alt="Application 1" style=" border: 3px solid #9c27b0; border-radius: 12px;">
+            <span class="card-title" style="background-color: #9c27b0;">Application 1</span>
+          </div>
+          <div class="card-content">
+            <p>Application web de gestion de contenu, permettant une gestion flexible et intuitive des articles et utilisateurs.</p>
+          </div>
+          <div class="card-action">
+            <a href="#" class="btn purple white-text">Voir la démo</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Application 2 -->
+      <div class="col s12 m6 l4">
+        <div class="card">
+          <div class="card-image">
+            <img src="assets/images/application1.png" alt="Application 2" style=" border: 3px solid #9c27b0; border-radius: 12px;">
+            <span class="card-title" style="background-color: #9c27b0;">Application 2</span>
+          </div>
+          <div class="card-content">
+            <p>Application mobile pour le suivi des projets, avec des fonctionnalités de notification et de collaboration en temps réel.</p>
+          </div>
+          <div class="card-action">
+            <a href="#" class="btn purple white-text">Voir la démo</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Application 3 -->
+      <div class="col s12 m6 l4">
+        <div class="card">
+          <div class="card-image">
+            <img src="assets/images/application1.png" alt="Application 3" style=" border: 3px solid #9c27b0; border-radius: 12px;">
+            <span class="card-title" style="background-color: #9c27b0;">Application 3</span>
+          </div>
+          <div class="card-content">
+            <p>Plateforme e-commerce permettant la gestion des produits, des commandes et des utilisateurs de manière fluide.</p>
+          </div>
+          <div class="card-action">
+            <a href="#" class="btn purple white-text">Voir la démo</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Application 4 -->
+      <div class="col s12 m6 l4">
+        <div class="card">
+          <div class="card-image">
+            <img src="assets/images/application1.png" alt="Application 4" style=" border: 3px solid #9c27b0; border-radius: 12px;">
+            <span class="card-title" style="background-color: #9c27b0;">Application 4</span>
+          </div>
+          <div class="card-content">
+            <p>Solution d'analyse de données en temps réel, permettant de visualiser des statistiques via des graphiques dynamiques.</p>
+          </div>
+          <div class="card-action">
+            <a href="#" class="btn purple white-text">Voir la démo</a>
+          </div>
+        </div>
+      </div>
+
+       <!-- Application 4 -->
+       <div class="col s12 m6 l4">
+        <div class="card">
+          <div class="card-image">
+            <img src="assets/images/application1.png" alt="Application 5" style=" border: 3px solid #9c27b0; border-radius: 12px;">
+            <span class="card-title" style="background-color: #9c27b0;">Application 5</span>
+          </div>
+          <div class="card-content">
+            <p>Solution d'analyse de données en temps réel, permettant de visualiser des statistiques via des graphiques dynamiques.</p>
+          </div>
+          <div class="card-action">
+            <a href="#" class="btn purple white-text">Voir la démo</a>
+          </div>
+        </div>
+      </div>
+
+       <!-- Application 4 -->
+       <div class="col s12 m6 l4">
+        <div class="card">
+          <div class="card-image">
+            <img src="assets/images/application1.png" alt="Application 6" style=" border: 3px solid #9c27b0; border-radius: 12px;">
+            <span class="card-title" style="background-color: #9c27b0;">Application 6</span>
+          </div>
+          <div class="card-content">
+            <p>Solution d'analyse de données en temps réel, permettant de visualiser des statistiques via des graphiques dynamiques.</p>
+          </div>
+          <div class="card-action">
+            <a href="#" class="btn purple white-text">Voir la démo</a>
+          </div>
+        </div>
+      </div>
+
+       <!-- Application 4 -->
+       <div class="col s12 m6 l4">
+        <div class="card">
+          <div class="card-image">
+            <img src="assets/images/application1.png" alt="Application 7" style=" border: 3px solid #9c27b0; border-radius: 12px;">
+            <span class="card-title" style="background-color: #9c27b0;">Application 7</span>
+          </div>
+          <div class="card-content">
+            <p>Solution d'analyse de données en temps réel, permettant de visualiser des statistiques via des graphiques dynamiques.</p>
+          </div>
+          <div class="card-action">
+            <a href="#" class="btn purple white-text">Voir la démo</a>
+          </div>
+        </div>
+      </div>
+
+       <!-- Application 4 -->
+       <div class="col s12 m6 l4">
+        <div class="card">
+          <div class="card-image">
+            <img src="assets/images/application1.png" alt="Application 7" style=" border: 3px solid #9c27b0; border-radius: 12px;">
+            <span class="card-title" style="background-color: #9c27b0;">Application 8</span>
+          </div>
+          <div class="card-content">
+            <p>Solution d'analyse de données en temps réel, permettant de visualiser des statistiques via des graphiques dynamiques.</p>
+          </div>
+          <div class="card-action">
+            <a href="#" class="btn purple white-text">Voir la démo</a>
+          </div>
+        </div>
+      </div>
+
+       <!-- Application 4 -->
+       <div class="col s12 m6 l4">
+        <div class="card">
+          <div class="card-image">
+            <img src="assets/images/application1.png" alt="Application 8" style=" border: 3px solid #9c27b0; border-radius: 12px;">
+            <span class="card-title" style="background-color: #9c27b0;">Application 9</span>
+          </div>
+          <div class="card-content">
+            <p>Solution d'analyse de données en temps réel, permettant de visualiser des statistiques via des graphiques dynamiques.</p>
+          </div>
+          <div class="card-action">
+            <a href="#" class="btn purple white-text">Voir la démo</a>
+          </div>
+        </div>
+      </div>
+
+       <!-- Application 4 -->
+       <div class="col s12 m6 l4">
+        <div class="card">
+          <div class="card-image">
+            <img src="assets/images/application1.png" alt="Application 9" style=" border: 3px solid #9c27b0; border-radius: 12px;">
+            <span class="card-title" style="background-color: #9c27b0;">Application 10</span>
+          </div>
+          <div class="card-content">
+            <p>Solution d'analyse de données en temps réel, permettant de visualiser des statistiques via des graphiques dynamiques.</p>
+          </div>
+          <div class="card-action">
+            <a href="#" class="btn purple white-text">Voir la démo</a>
+          </div>
+        </div>
+      </div>
+
+       <!-- Application 4 -->
+       <div class="col s12 m6 l4">
+        <div class="card">
+          <div class="card-image">
+            <img src="assets/images/application1.png" alt="Application 10" style=" border: 3px solid #9c27b0; border-radius: 12px;">
+            <span class="card-title" style="background-color: #9c27b0;">Application 11</span>
+          </div>
+          <div class="card-content">
+            <p>Solution d'analyse de données en temps réel, permettant de visualiser des statistiques via des graphiques dynamiques.</p>
+          </div>
+          <div class="card-action">
+            <a href="#" class="btn purple white-text">Voir la démo</a>
+          </div>
+        </div>
+      </div>
+
+       <!-- Application 4 -->
+       <div class="col s12 m6 l4">
+        <div class="card">
+          <div class="card-image">
+            <img src="assets/images/application1.png" alt="Application 11" style=" border: 3px solid #9c27b0; border-radius: 12px;">
+            <span class="card-title" style="background-color: #9c27b0;">Application 12</span>
+          </div>
+          <div class="card-content">
+            <p>Solution d'analyse de données en temps réel, permettant de visualiser des statistiques via des graphiques dynamiques.</p>
+          </div>
+          <div class="card-action">
+            <a href="#" class="btn purple white-text">Voir la démo</a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Plus d'applications (dynamique) -->
+      <div class="col s12">
+        <button class="btn-large purple waves-effect waves-light center-align" (click)="loadMoreApplications()">Voir plus d'applications</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal Structure (Example) -->
+  <div id="app-modal" class="modal">
+    <div class="modal-content">
+      <h4 style="background-color: #9c27b0;">Application 12</h4>
+      <p>Description détaillée de l'application.</p>
+      <img src="assets/images/application1.png" alt="App 1" class="responsive-img" style=" border: 3px solid #9c27b0; border-radius: 12px;">
+    </div>
+    <div class="modal-footer">
+      <a href="#" class="modal-close waves-effect waves-green btn-flat">Fermer</a>
+    </div>
+  </div>
+  
+   <!-- Footer Section -->
+   <footer class="page-footer purple darken-3">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Aide Mémoire Informatique (AMI)</h5>
+          <p class="grey-text text-lighten-4">Notre mission est de vous offrir un accompagnement personnalisé pour la rédaction de vos mémoires.</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Liens rapides</h5>
+          <ul>
+            <li><a routerLink="/" style="color:white;">Accueil</a></li>
+            <li><a routerLink="/about" style="color:white;">À propos</a></li>
+            <li><a routerLink="/memoire" style="color:white;">Sujets de Mémoire</a></li>
+            <li><a routerLink="/Temoignages" style="color:white;">Temoignages</a></li>
+            <li><a routerLink="/Portfolio" style="color:white;">Portfolio</a></li>
+            <li><a class="waves-effect waves-light btn-small white purple-text" (click)="logOut()">Déconnexion</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container center-align">
+        © 2024 AMI, Tous droits réservés.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Import Materialize JS and initialize components -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</div>
+
+  

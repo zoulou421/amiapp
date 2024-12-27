@@ -1,0 +1,31 @@
+.temoignages-container {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .video-container {
+    margin-bottom: 30px;
+  }
+  
+  iframe {
+    width: 100%;
+    height: 315px;
+    max-width: 560px;
+    margin: 0 auto;
+    display: block;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
