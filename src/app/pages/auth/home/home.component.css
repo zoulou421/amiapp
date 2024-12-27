@@ -21,8 +21,7 @@
 }
 
 /* Style the parallax image: https://live.staticflickr.com/4179/34399166802_6d3e4cac75_c.jpg */
-.parallax{
-  background-image: url('/assets/images/ami-header.jpg?v=1');
+.parallax{  
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
