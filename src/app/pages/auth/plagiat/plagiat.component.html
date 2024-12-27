@@ -1,34 +1,33 @@
 <div>
-    
-<div>
-    <!-- Navigation Bar -->
-    <nav class="nav-extended purple darken-2">
-      <div class="nav-wrapper container">
-        <a href="#" class="brand-logo left"><i class="material-icons">school</i> AMI</a>
-        <a href="#" data-target="mobile-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-        <ul class="right hide-on-med-and-down">
-          <li><a routerLink="/">Accueil</a></li>
-          <li><a routerLink="/about">À propos</a></li>
-          <li><a routerLink="/memoire">Sujets de Mémoire</a></li>
-          <li><a routerLink="/Plagiat">Plagiat</a></li>
-          <li><a routerLink="/Temoignages">Temoignages</a></li>
-          <li><a routerLink="/Portfolio">Portfolio</a></li>
-          <li><a class="waves-effect waves-light btn-small white purple-text" (click)="logOut()">Déconnexion</a></li>
-          <li><a href="#" class="dropdown-trigger btn purple" data-target="profile-dropdown"><i class="material-icons">account_circle</i></a></li>
-        </ul>
-      </div>
-    </nav>
-  
-     <!-- Mobile Menu -->
-     <ul class="sidenav" id="mobile-menu">
-        <li><a routerLink="/">Accueil</a></li>
-        <li><a routerLink="/about">À propos</a></li>
-        <li><a routerLink="/memoire">Sujets de Mémoire</a></li>
-        <li><a routerLink="/Plagiat">Plagiat</a></li>
-        <li><a routerLink="/Temoignages">Temoignages</a></li>
-        <li><a routerLink="/Portfolio">Portfolio</a></li>
-        <li><a class="waves-effect waves-light btn-small white purple-text" (click)="logOut()">Déconnexion</a></li>
-      </ul>
+    <div>
+        <!-- Navigation Bar -->
+        <nav class="nav-extended purple darken-2">
+          <div class="nav-wrapper container">
+            <a href="#" class="brand-logo left" ><i ><img src="/assets/images/logo.png" style="height: 50px;" class="material-icons" /></i> </a>
+            <a href="#" data-target="mobile-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+              <li><a routerLink="/">Accueil</a></li>
+              <li><a routerLink="/about">À propos</a></li>
+              <li><a routerLink="/memoire">Sujets de Mémoire</a></li>
+              <li><a routerLink="/Plagiat">Plagiat</a></li>
+              <li><a routerLink="/Temoignages">Temoignages</a></li>
+              <li><a routerLink="/Portfolio">Portfolio</a></li>
+              <li><a class="waves-effect waves-light btn-small white purple-text" (click)="logOut()">Déconnexion</a></li>
+              <li><a href="#" class="dropdown-trigger btn purple" data-target="profile-dropdown"><i class="material-icons">account_circle</i></a></li>
+            </ul>
+          </div>
+        </nav>
+      
+         <!-- Mobile Menu -->
+         <ul class="sidenav" id="mobile-menu">
+            <li><a routerLink="/">Accueil</a></li>
+            <li><a routerLink="/about">À propos</a></li>
+            <li><a routerLink="/memoire">Sujets de Mémoire</a></li>
+            <li><a routerLink="/Plagiat">Plagiat</a></li>
+            <li><a routerLink="/Temoignages">Temoignages</a></li>
+            <li><a routerLink="/Portfolio">Portfolio</a></li>
+            <li><a class="waves-effect waves-light btn-small white purple-text" (click)="logOut()">Déconnexion</a></li>
+          </ul>
       
         <!-- Main Content -->
         <div class="container section">
@@ -122,35 +121,33 @@
     </div>
 
     <!-- Footer Section -->
-    <footer class="page-footer purple darken-3">
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">Aide Mémoire Informatique (AMI)</h5>
-                    <p class="grey-text text-lighten-4">Notre mission est de vous offrir un accompagnement personnalisé
-                        pour la rédaction de vos mémoires.</p>
-                </div>
-                <div class="col l4 offset-l2 s12">
-                    <h5 class="white-text">Liens rapides</h5>
-                    <ul>
-                        <li><a routerLink="/" style="color:white;">Accueil</a></li>
-                        <li><a routerLink="/about" style="color:white;">À propos</a></li>
-                        <li><a routerLink="/memoire" style="color:white;">Sujets de Mémoire</a></li>
-                        <li><a routerLink="/Temoignages" style="color:white;">Temoignages</a></li>
-                        <li><a routerLink="/Portfolio" style="color:white;">Portfolio</a></li>
-                        <li><a class="waves-effect waves-light btn-small white purple-text"
-                                (click)="logOut()">Déconnexion</a></li>
-                    </ul>
-                </div>
-            </div>
+  <footer class="page-footer purple darken-3">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Aide Mémoire Informatique (AMI)</h5>
+          <p class="grey-text text-lighten-4">Notre mission est de vous offrir un accompagnement personnalisé pour la rédaction de vos mémoires.</p>
         </div>
-        <div class="footer-copyright">
-            <div class="container center-align">
-                © 2024 AMI, Tous droits réservés.
-            </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Liens rapides</h5>
+          <ul>
+            <li><a routerLink="/" style="color:white;">Accueil</a></li>
+            <li><a routerLink="/about" style="color:white;">À propos</a></li>
+            <li><a routerLink="/memoire" style="color:white;">Sujets de Mémoire</a></li>
+            <li><a routerLink="/Temoignages" style="color:white;">Temoignages</a></li>
+            <li><a routerLink="/Portfolio" style="color:white;">Portfolio</a></li>
+            <li><a class="waves-effect waves-light btn-small white purple-text" (click)="logOut()">Déconnexion</a></li>
+          </ul>
         </div>
-    </footer>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container center-align">
+        © 2024 AMI, Tous droits réservés.| Développeur: Bonevy BEBY
+      </div>
+    </div>
+  </footer>
 
-    <!-- Import Materialize JS and initialize components -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- Import Materialize JS and initialize components -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </div>
