@@ -14,15 +14,14 @@
   }
   
   /* Ensure the parallax container takes up full height */
-  .parallax-containerAbout {
+  .parallax-container {
     height: 500px; /* Adjust the height as needed */
     position: relative;
     overflow: hidden;
   }
   
-  /* Style the parallax image */
+  /* Style the parallax image background-image: url('https://ifage.net/wp-content/uploads/2024/09/data-science-big-data.jpg'); */
   .parallaxAbout {
-    background-image: url('https://ifage.net/wp-content/uploads/2024/09/data-science-big-data.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

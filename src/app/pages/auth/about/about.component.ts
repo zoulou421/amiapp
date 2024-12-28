@@ -5,13 +5,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { SujetMemoireComponent } from '../sujet-memoire/sujet-memoire.component';
 import { HomeComponent } from '../home/home.component';
+import { CommonModule } from '@angular/common';
 
 declare var M: any; // Declare Materialize CSS
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [MatToolbarModule, MatButtonModule, RouterLink, SujetMemoireComponent, HomeComponent],
+  imports: [MatToolbarModule, MatButtonModule, RouterLink, SujetMemoireComponent, HomeComponent,CommonModule],
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.css']  // Corrected "styleUrl" to "styleUrls"
 })
