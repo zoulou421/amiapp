@@ -53,7 +53,7 @@
                 }
               ],
               "outputHashing": "all",
-              "baseHref": "/"
+              "baseHref": "/amiapp/"
             },
             "development": {
               "optimization": false,
