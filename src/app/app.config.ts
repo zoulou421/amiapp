@@ -23,7 +23,7 @@ export const appConfig: ApplicationConfig = {
       appId: "1:90710170117:web:77d9bb3d15205bf0d71a6c",
       storageBucket: "angular18auth.appspot.com",
       apiKey: "AIzaSyA_Uu7zI0zyaNiTIpUflTIRHyJm7wzeRgg",
-      authDomain: "angular18auth.firebaseapp.com",
+      authDomain: "ami-platform.com",
       messagingSenderId: "90710170117"
     })),
     provideAuth(() => getAuth()), // Provides Firebase Authentication service
@@ -35,3 +35,4 @@ export const appConfig: ApplicationConfig = {
 
 // This is where you can configure your translation directly
 // If using standalone components, import TranslationModule in each component where you need translation
+//authDomain: "angular18auth.firebaseapp.com" angular18auth.firebaseapp.com replace by 
