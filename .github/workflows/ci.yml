@@ -27,9 +27,12 @@ jobs:
       # Étape 5 : Déplacez les fichiers du sous-dossier 'browser'/Move Files to Root (clean then move)
       - name: Move Files to Root
         run: |
-          rm -rf ./dist/amiapp/*
-          mv ./dist/amiapp/browser/* ./dist/amiapp/
-          rm -rf ./dist/amiapp/browser
+          sudo apt-get update && sudo apt-get install -y rsync
+          if [ -d "./dist/amiapp/browser" ]; then
+            rsync -a ./dist/amiapp/browser/ ./dist/amiapp/
+            rm -rf ./dist/amiapp/browser
+          else
+            echo "Directory ./dist/amiapp/browser does not exist"
 
       # Étape 6 : Déployez sur GitHub Pages
       - name: Deploy to GitHub Pages
