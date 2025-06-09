@@ -33,6 +33,8 @@ jobs:
             rm -rf ./dist/amiapp/browser
           else
             echo "Directory ./dist/amiapp/browser does not exist"
+            exit 1
+          fi
 
       # Étape 6 : Déployez sur GitHub Pages
       - name: Deploy to GitHub Pages
