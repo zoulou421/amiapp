@@ -8,7 +8,7 @@ import { SujetMemoireComponent } from '../sujet-memoire/sujet-memoire.component'
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { IFormData } from '../../../core/interface/form-data.interface';
 import { RendezvousService } from '../../../core/services/rendezvous-service';
-import { CommonModule } from '@angular/common';
+import {CommonModule, NgOptimizedImage} from '@angular/common';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 declare var M: any; // Declare Materialize CSS
@@ -17,7 +17,7 @@ declare var M: any; // Declare Materialize CSS
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, MatToolbarModule, MatButtonModule, RouterLink, AboutComponent, SujetMemoireComponent],
+  imports: [CommonModule, ReactiveFormsModule, MatToolbarModule, MatButtonModule, RouterLink, AboutComponent, SujetMemoireComponent, NgOptimizedImage],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit {
     const elems = document.querySelectorAll('.sidenav');
     M.Sidenav.init(elems);
   }
-  
+
   formObject: IFormData = {
     id: '',
     name: '',
@@ -44,7 +44,7 @@ export class HomeComponent implements OnInit {
     academicLevel: 'licence',
     objectif: '',
     questions: '',
-    memoireFile: null 
+    memoireFile: null
   };
 
   ngOnInit(): void {
@@ -57,7 +57,7 @@ export class HomeComponent implements OnInit {
       academicLevel: ['licence', [Validators.required]],
       objectif: ['', [Validators.required]],
       questions: [''],
-      memoireFile: [null] 
+      memoireFile: [null]
     });
   }
 
@@ -79,7 +79,7 @@ export class HomeComponent implements OnInit {
     if (input.files && input.files.length) {
       const file = input.files[0];
       const allowedTypes = ['application/pdf', 'image/jpeg', 'image/png', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
-      
+
       // Validate file type
       if (allowedTypes.includes(file.type)) {
         this.formData.patchValue({ memoireFile: file });
@@ -108,4 +108,25 @@ export class HomeComponent implements OnInit {
       console.log('Form is invalid');
     }
   }
+
+  testimonials = [
+    {
+      name: 'Fatou S.',
+      feedback: 'Grâce à AMI, mon mémoire a été validé du premier coup !',
+      date: 'Mai 2024'
+    },
+    {
+      name: 'Moussa D.',
+      feedback: 'L’accompagnement personnalisé est vraiment un plus.',
+      date: 'Avril 2024'
+    },
+    {
+      name: 'Awa N.',
+      feedback: 'J’ai trouvé mon sujet de mémoire en moins d’une semaine.',
+      date: 'Mars 2024'
+    }
+    // Ajoute d’autres témoignages si besoin
+  ];
+
+
 }
