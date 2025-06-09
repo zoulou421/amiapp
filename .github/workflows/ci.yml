@@ -24,10 +24,12 @@ jobs:
       - name: Install Dependencies
         run: npm ci  # Utilisez npm ci pour des installations propres et rapides
 
-      # Étape 5 : Déplacez les fichiers du sous-dossier 'browser'
+      # Étape 5 : Déplacez les fichiers du sous-dossier 'browser'/Move Files to Root (clean then move)
       - name: Move Files to Root
         run: |
-          mkdir -p ./dist/amiapp/ && mv ./dist/amiapp/browser/* ./dist/amiapp/
+          rm -rf ./dist/amiapp/*
+          mv ./dist/amiapp/browser/* ./dist/amiapp/
+          rm -rf ./dist/amiapp/browser
 
       # Étape 6 : Déployez sur GitHub Pages
       - name: Deploy to GitHub Pages
