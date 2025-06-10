@@ -149,33 +149,80 @@
         </div>
     </div>
 
-    <!-- Footer Section -->
-  <footer class="page-footer purple darken-3">
+  <!--footer-->
+  <footer class="page-footer gradient-footer">
     <div class="container">
       <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Aide Mémoire Informatique (AMI)</h5>
-          <p class="grey-text text-lighten-4">Notre mission est de vous offrir un accompagnement personnalisé pour la rédaction de vos mémoires.</p>
+
+        <!-- Logo & Présentation -->
+        <div class="col l3 s12">
+          <h5 class="white-text">AMI</h5>
+          <p class="grey-text text-lighten-4">
+            Aide Mémoire Informatique est une plateforme dédiée à l'accompagnement des étudiants dans leurs projets de fin d’études.
+          </p>
         </div>
-        <div class="col l4 offset-l2 s12">
-          <h5 class="white-text">Liens rapides</h5>
-          <ul>
-            <li><a routerLink="/" style="color:white;">Accueil</a></li>
-            <li><a routerLink="/about" style="color:white;">À propos</a></li>
-            <li><a routerLink="/memoire" style="color:white;">Sujets de Mémoire</a></li>
-            <li><a routerLink="/Temoignages" style="color:white;">Temoignages</a></li>
-            <li><a routerLink="/Portfolio" style="color:white;">Portfolio</a></li>
-            <li><a class="waves-effect waves-light btn-small white purple-text" (click)="logOut()">Déconnexion</a></li>
-          </ul>
+
+        <!-- Newsletter -->
+        <div class="col l4 s12">
+          <h5 class="white-text">S’abonner à la newsletter</h5>
+          <form (submit)="subscribeNewsletter()" class="newsletter-form">
+            <div class="input-field">
+              <input type="email" id="newsletter" placeholder="Votre email" class="validate white-text" required>
+            </div>
+            <button class="btn white purple-text text-darken-3 waves-effect waves-dark" type="submit">S’abonner</button>
+          </form>
         </div>
+
+        <!-- Réseaux sociaux -->
+        <div class="col l5 s12">
+          <h5 class="white-text">Contact & Réseaux</h5>
+          <p class="white-text">WhatsApp :
+            <a href="https://wa.me/2250700000000" target="_blank" class="white-text text-lighten-2">
+              +225 07 00 00 00 00
+            </a>
+          </p>
+          <div class="social-icons">
+            <a href="https://www.linkedin.com/company/ami-platform" target="_blank" class="btn-floating btn-small white"><i class="fab fa-linkedin-in purple-text"></i></a>
+            <a href="https://www.facebook.com/ami.platform" target="_blank" class="btn-floating btn-small white"><i class="fab fa-facebook-f purple-text"></i></a>
+            <a href="https://www.instagram.com/ami.platform" target="_blank" class="btn-floating btn-small white"><i class="fab fa-instagram purple-text"></i></a>
+            <a href="https://twitter.com/ami_platform" target="_blank" class="btn-floating btn-small white"><i class="fab fa-x-twitter purple-text"></i></a>
+            <a href="https://www.youtube.com/@ami-platform" target="_blank" class="btn-floating btn-small white"><i class="fab fa-youtube purple-text"></i></a>
+          </div>
+        </div>
+
       </div>
     </div>
+
     <div class="footer-copyright">
-      <div class="container center-align">
-        © 2024 AMI, Tous droits réservés.| Développeur: Bonevy BEBY
+      <div class="container center-align white-text">
+        © 2024 AMI - Tous droits réservés. | Développé par <strong>Bonevy BEBY</strong>
       </div>
     </div>
   </footer>
+
+  <style>
+    .gradient-footer {
+      background: linear-gradient(to right, #6a1b9a, #8e24aa, #9c27b0);
+    }
+
+    .newsletter-form input[type="email"]::placeholder {
+      color: #eeeeee;
+    }
+
+    .newsletter-form input[type="email"] {
+      border-bottom: 1px solid #fff;
+      color: white;
+    }
+
+    .social-icons a {
+      margin-right: 8px;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.15);
+    }
+  </style>
 
   <!-- Import Materialize JS and initialize components -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

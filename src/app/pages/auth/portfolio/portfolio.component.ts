@@ -1,11 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../../core/services/auth.service';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports:[RouterLink],
+  imports: [RouterLink, ReactiveFormsModule],
   templateUrl: './portfolio.component.html',
   styleUrls: ['./portfolio.component.css']
 })
@@ -32,7 +33,7 @@ export class PortfolioComponent {
 
   private _router = inject(Router);
     private authservice = inject(AuthService);
-  
+
     async logOut(): Promise<void> {
       try {
         await this.authservice.logOut();
@@ -41,5 +42,9 @@ export class PortfolioComponent {
         console.log(error);
       }
     }
+
+  subscribeNewsletter() {
+
+  }
 }
 

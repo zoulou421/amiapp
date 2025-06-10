@@ -25,7 +25,7 @@ import { AuthService } from '../../../core/services/auth.service';
       ReactiveFormsModule,
       CommonModule,
       FormsModule
-      
+
     ]
 })
 export class PlagiatComponent {
@@ -135,6 +135,10 @@ export class PlagiatComponent {
     } catch (error) {
       console.error('Error during logout:', error);
     }
+  }
+
+  subscribeNewsletter() {
+
   }
 }
 

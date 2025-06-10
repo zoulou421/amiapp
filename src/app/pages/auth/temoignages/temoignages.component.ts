@@ -3,11 +3,12 @@ import { SafeUrlPipe } from '../../../pipes/safe-url.pipe';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../../core/services/auth.service';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @Component({
   selector: 'app-temoignages',
   standalone: true,
-  imports: [SafeUrlPipe,CommonModule,RouterLink], // Ajout du pipe dans les imports
+  imports: [SafeUrlPipe, CommonModule, RouterLink, ReactiveFormsModule], // Ajout du pipe dans les imports
   templateUrl: './temoignages.component.html',
   styleUrls: ['./temoignages.component.css'],
 })
@@ -58,8 +59,8 @@ export class TemoignagesComponent {
       description: 'Marie partage comment elle a réussi avec nous.',
       url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
     },
-    
-    
+
+
   ];
 
   hasMoreVideos = true;
@@ -70,7 +71,7 @@ export class TemoignagesComponent {
 
     private _router = inject(Router);
     private authservice = inject(AuthService);
-  
+
     async logOut(): Promise<void> {
       try {
         await this.authservice.logOut();
@@ -79,4 +80,8 @@ export class TemoignagesComponent {
         console.log(error);
       }
     }
+
+  subscribeNewsletter() {
+
+  }
 }

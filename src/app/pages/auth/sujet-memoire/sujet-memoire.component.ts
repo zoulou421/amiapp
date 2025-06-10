@@ -5,6 +5,7 @@ import { HomeComponent } from '../home/home.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { AboutComponent } from '../about/about.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 declare var M: any; // Declare Materialize CSS
 
@@ -12,7 +13,7 @@ declare var M: any; // Declare Materialize CSS
 @Component({
   selector: 'app-sujet-memoire',
   standalone: true,
-  imports: [MatToolbarModule,MatButtonModule, RouterLink,AboutComponent,HomeComponent],
+  imports: [MatToolbarModule, MatButtonModule, RouterLink, AboutComponent, HomeComponent, ReactiveFormsModule],
   templateUrl: './sujet-memoire.component.html',
   styleUrl: './sujet-memoire.component.css'
 })
@@ -36,5 +37,9 @@ export class SujetMemoireComponent implements OnInit{
     } catch (error) {
       console.log(error);
     }
+  }
+
+  subscribeNewsletter() {
+
   }
 }

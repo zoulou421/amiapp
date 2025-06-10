@@ -129,4 +129,9 @@ export class HomeComponent implements OnInit {
   ];
 
 
+  subscribeNewsletter() {
+    M.toast({ html: 'Merci pour votre abonnement à la newsletter ! 🙌', classes: 'rounded purple darken-3 white-text' });
+  }
+
+
 }
