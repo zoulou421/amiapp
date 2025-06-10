@@ -1,40 +1,64 @@
 <div>
   <!-- Navigation Bar -->
-  <nav class="nav-extended purple darken-2">
+  <nav class="nav-extended white">
     <div class="nav-wrapper container">
-      <a href="#" class="brand-logo left"><i class="material-icons"><img src="assets/images/ami-logo.png?v=1" alt="AMI"
-            style="height: 40px; vertical-align: middle;" /></i> </a>
-      <a href="#" data-target="mobile-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <!-- Logo -->
+      <a href="#" class="brand-logo left">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEguW77e9JG5zR-ARR6q0g5M5lWF6gYFiH67mSXu_eOe9YwWDUBOQd4xBTCVYEqfC8ez1u4AcTh9QgKT6rJ19rHwlMGikKk6X4IyDytfDsHYLfoxx1rXIjHIpwhBM36G74pqV7CBjPvRHHrpAUVvM1xnMsKK3OsR1kBfwIXhfKvFdtmDdjYkylfzJJPBjzo/s1600/logo-ami-platform-removebg-preview.png?v=1"
+             alt="AMI" style="height: 40px;" />
+      </a>
+
+      <!-- Mobile menu trigger -->
+      <a href="#" data-target="mobile-menu" class="sidenav-trigger right">
+        <i class="material-icons purple-text text-darken-4">menu</i>
+      </a>
+
+      <!-- Desktop Menu -->
       <ul class="right hide-on-med-and-down">
-        <li><a routerLink="/">Accueil</a></li>
-        <li><a routerLink="/about">À propos</a></li>
-        <li><a routerLink="/memoire">Sujets de Mémoire</a></li>
-        <li><a routerLink="/Plagiat">Plagiat</a></li>
-        <li><a routerLink="/Temoignages">Temoignages</a></li>
-        <li><a routerLink="/Portfolio">Portfolio</a></li>
-        <li><a class="waves-effect waves-light btn-small white purple-text" (click)="logOut()">Déconnexion</a></li>
-        <li><a href="#" class="dropdown-trigger btn purple" data-target="profile-dropdown"><i
-              class="material-icons">account_circle</i></a></li>
+        <li><a class="purple-text text-darken-4" routerLink="/">Accueil</a></li>
+        <li><a class="purple-text text-darken-4" routerLink="/about">À propos</a></li>
+        <li><a class="purple-text text-darken-4" routerLink="/memoire">Sujets de Mémoire</a></li>
+        <li><a class="purple-text text-darken-4" routerLink="/Plagiat">Plagiat</a></li>
+        <li><a class="purple-text text-darken-4" routerLink="/Temoignages">Témoignages</a></li>
+        <li><a class="purple-text text-darken-4" routerLink="/Portfolio">Portfolio</a></li>
+        <li>
+          <a class="waves-effect btn-small purple darken-3 white-text z-depth-0" (click)="logOut()">Déconnexion</a>
+        </li>
+        <li>
+          <a class="dropdown-trigger btn purple darken-3" data-target="profile-dropdown">
+            <i class="material-icons white-text">account_circle</i>
+          </a>
+        </li>
       </ul>
     </div>
   </nav>
 
-  <!-- Mobile Menu -->
-  <ul class="sidenav" id="mobile-menu">
-    <li><a routerLink="/">Accueil</a></li>
-    <li><a routerLink="/about">À propos</a></li>
-    <li><a routerLink="/memoire">Sujets de Mémoire</a></li>
-    <li><a routerLink="/Plagiat">Plagiat</a></li>
-    <li><a routerLink="/Temoignages">Temoignages</a></li>
-    <li><a routerLink="/Portfolio">Portfolio</a></li>
-    <li><a class="waves-effect waves-light btn-small white purple-text" (click)="logOut()">Déconnexion</a></li>
-    <li><a href="#" class="dropdown-trigger btn purple" data-target="profile-dropdown"><i
-      class="material-icons">account_circle</i></a></li>
+  <!-- Dropdown -->
+  <ul id="profile-dropdown" class="dropdown-content">
+    <li><a routerLink="/profil">Mon Profil</a></li>
+    <li><a (click)="logOut()">Déconnexion</a></li>
   </ul>
 
-  
+  <!-- Mobile Menu -->
+  <ul class="sidenav purple darken-3 white-text" id="mobile-menu">
+    <li><a class="white-text" routerLink="/">Accueil</a></li>
+    <li><a class="white-text" routerLink="/about">À propos</a></li>
+    <li><a class="white-text" routerLink="/memoire">Sujets de Mémoire</a></li>
+    <li><a class="white-text" routerLink="/Plagiat">Plagiat</a></li>
+    <li><a class="white-text" routerLink="/Temoignages">Témoignages</a></li>
+    <li><a class="white-text" routerLink="/Portfolio">Portfolio</a></li>
+    <li><a class="white-text" (click)="logOut()">Déconnexion</a></li>
+    <li>
+      <a class="dropdown-trigger white-text" data-target="mobile-dropdown">
+        <i class="material-icons">account_circle</i>
+      </a>
+    </li>
+  </ul>
 
-<div class="container section">
+
+
+
+  <div class="container section">
    <div style="background-color: rgba(129, 8, 250, 0.152); height: 50px;width: 100%;">
     <h2 class="center-align purple-text text-darken-2">Nos Applications Professionnelles</h2>
   </div><br /><br />
@@ -44,26 +68,26 @@
             <h5 class="purple-text"> 20+ applications professionnelles</h5>
             <p>Découvrez plus de 20 applications robustes et professionnelles que nous avons développées avec nos étudiants, allant de la gestion des
                  utilisateurs à la création d'applications mobiles et web sur mesure. Chacune de nos solutions est
-                  conçue pour répondre à des besoins spécifiques, en mettant l'accent sur l'efficacité, l'ergonomie 
+                  conçue pour répondre à des besoins spécifiques, en mettant l'accent sur l'efficacité, l'ergonomie
                   et l'innovation. Nos applications sont déjà utilisées dans divers
                  secteurs, notamment la santé, l'éducation, le commerce en ligne, et bien plus encore..</p>
         </div>
 
-        
-    
+
+
         <div style="margin-top: 10px;">
             <img src="assets/images/portfolio1.png" alt="Équipe fondatrice" class="responsive-img z-depth-2"
             style="max-width: 100%; border: 3px solid #9c27b0; border-radius: 12px;"
             >
             <p>
-              Que vous soyez une petite entreprise ou une grande organisation, nos outils sont personnalisables et évolutifs 
-              pour accompagner votre croissance. Grâce à une expertise éprouvée et une maîtrise des technologies modernes, nous créons des solutions qui transforment les défis complexes en opportunités simples et performantes. 
+              Que vous soyez une petite entreprise ou une grande organisation, nos outils sont personnalisables et évolutifs
+              pour accompagner votre croissance. Grâce à une expertise éprouvée et une maîtrise des technologies modernes, nous créons des solutions qui transforment les défis complexes en opportunités simples et performantes.
               Faites le choix de l'excellence et explorez des logiciels qui allient design intuitif et puissance fonctionnelle.
           </p>
         </div>
     </div>
-    
-    
+
+
     <!-- Portfolio Grid -->
     <div class="row">
       <!-- Application 1 -->
@@ -81,7 +105,7 @@
           </div>
         </div>
       </div>
-      
+
       <!-- Application 2 -->
       <div class="col s12 m6 l4">
         <div class="card">
@@ -97,7 +121,7 @@
           </div>
         </div>
       </div>
-      
+
       <!-- Application 3 -->
       <div class="col s12 m6 l4">
         <div class="card">
@@ -113,7 +137,7 @@
           </div>
         </div>
       </div>
-      
+
       <!-- Application 4 -->
       <div class="col s12 m6 l4">
         <div class="card">
@@ -257,14 +281,14 @@
           </div>
         </div>
       </div>
-  
+
       <!-- Plus d'applications (dynamique) -->
       <div class="col s12">
         <button class="btn-large purple waves-effect waves-light center-align" (click)="loadMoreApplications()">Voir plus d'applications</button>
       </div>
     </div>
   </div>
-  
+
   <!-- Modal Structure (Example) -->
   <div id="app-modal" class="modal">
     <div class="modal-content">
@@ -276,7 +300,7 @@
       <a href="#" class="modal-close waves-effect waves-green btn-flat">Fermer</a>
     </div>
   </div>
-  
+
     <!-- Footer Section -->
   <footer class="page-footer purple darken-3">
     <div class="container">

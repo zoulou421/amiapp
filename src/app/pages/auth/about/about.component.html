@@ -1,35 +1,62 @@
 
 <div>
   <!-- Navigation Bar -->
-  <nav class="nav-extended purple darken-2">
+  <nav class="nav-extended white">
     <div class="nav-wrapper container">
-      <a href="#" class="brand-logo left" ><i class="material-icons"><img src="assets/images/ami-logo.png?v=1" alt="AMI" style="height: 40px; vertical-align: middle;"  /></i> </a>
-      <a href="#" data-target="mobile-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <!-- Logo -->
+      <a href="#" class="brand-logo left">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEguW77e9JG5zR-ARR6q0g5M5lWF6gYFiH67mSXu_eOe9YwWDUBOQd4xBTCVYEqfC8ez1u4AcTh9QgKT6rJ19rHwlMGikKk6X4IyDytfDsHYLfoxx1rXIjHIpwhBM36G74pqV7CBjPvRHHrpAUVvM1xnMsKK3OsR1kBfwIXhfKvFdtmDdjYkylfzJJPBjzo/s1600/logo-ami-platform-removebg-preview.png?v=1"
+             alt="AMI" style="height: 40px;" />
+      </a>
+
+      <!-- Mobile menu trigger -->
+      <a href="#" data-target="mobile-menu" class="sidenav-trigger right">
+        <i class="material-icons purple-text text-darken-4">menu</i>
+      </a>
+
+      <!-- Desktop Menu -->
       <ul class="right hide-on-med-and-down">
-        <li><a routerLink="/">Accueil</a></li>
-        <li><a routerLink="/about">À propos</a></li>
-        <li><a routerLink="/memoire">Sujets de Mémoire</a></li>
-        <li><a routerLink="/Plagiat">Plagiat</a></li>
-        <li><a routerLink="/Temoignages">Temoignages</a></li>
-        <li><a routerLink="/Portfolio">Portfolio</a></li>
-        <li><a class="waves-effect waves-light btn-small white purple-text" (click)="logOut()">Déconnexion</a></li>
-        <li><a href="#" class="dropdown-trigger btn purple" data-target="profile-dropdown"><i class="material-icons">account_circle</i></a></li>
+        <li><a class="purple-text text-darken-4" routerLink="/">Accueil</a></li>
+        <li><a class="purple-text text-darken-4" routerLink="/about">À propos</a></li>
+        <li><a class="purple-text text-darken-4" routerLink="/memoire">Sujets de Mémoire</a></li>
+        <li><a class="purple-text text-darken-4" routerLink="/Plagiat">Plagiat</a></li>
+        <li><a class="purple-text text-darken-4" routerLink="/Temoignages">Témoignages</a></li>
+        <li><a class="purple-text text-darken-4" routerLink="/Portfolio">Portfolio</a></li>
+        <li>
+          <a class="waves-effect btn-small purple darken-3 white-text z-depth-0" (click)="logOut()">Déconnexion</a>
+        </li>
+        <li>
+          <a class="dropdown-trigger btn purple darken-3" data-target="profile-dropdown">
+            <i class="material-icons white-text">account_circle</i>
+          </a>
+        </li>
       </ul>
     </div>
   </nav>
 
-   <!-- Mobile Menu -->
-   <ul class="sidenav" id="mobile-menu">
-      <li><a routerLink="/">Accueil</a></li>
-      <li><a routerLink="/about">À propos</a></li>
-      <li><a routerLink="/memoire">Sujets de Mémoire</a></li>
-      <li><a routerLink="/Plagiat">Plagiat</a></li>
-      <li><a routerLink="/Temoignages">Temoignages</a></li>
-      <li><a routerLink="/Portfolio">Portfolio</a></li>
-      <li><a class="waves-effect waves-light btn-small white purple-text" (click)="logOut()">Déconnexion</a></li>
-    </ul>
+  <!-- Dropdown -->
+  <ul id="profile-dropdown" class="dropdown-content">
+    <li><a routerLink="/profil">Mon Profil</a></li>
+    <li><a (click)="logOut()">Déconnexion</a></li>
+  </ul>
 
-     <!-- Parallax Section -->
+  <!-- Mobile Menu -->
+  <ul class="sidenav purple darken-3 white-text" id="mobile-menu">
+    <li><a class="white-text" routerLink="/">Accueil</a></li>
+    <li><a class="white-text" routerLink="/about">À propos</a></li>
+    <li><a class="white-text" routerLink="/memoire">Sujets de Mémoire</a></li>
+    <li><a class="white-text" routerLink="/Plagiat">Plagiat</a></li>
+    <li><a class="white-text" routerLink="/Temoignages">Témoignages</a></li>
+    <li><a class="white-text" routerLink="/Portfolio">Portfolio</a></li>
+    <li><a class="white-text" (click)="logOut()">Déconnexion</a></li>
+    <li>
+      <a class="dropdown-trigger white-text" data-target="mobile-dropdown">
+        <i class="material-icons">account_circle</i>
+      </a>
+    </li>
+  </ul>
+
+  <!-- Parallax Section -->
   <div class="parallax-containerAbout" style="height: 500px;width:100%;"><!--style="height: 500px;width:100%;"-->
     <div class="parallaxAbout" [ngStyle]="{'background-image': 'url(assets/images/data-science-big-data.jpg?v=1)'}">
       <!--img src="assets/images/myheader.jpg" alt="AMI"-->
@@ -38,9 +65,9 @@
         <p style="font-size: 1.5rem;">Une Histoire | Une Vision | Des Objectifs</p>
 
       </div>
-      
+
     </div>
-   
+
   </div>
 
     <!-- Section Qui sommes-nous ? -->
@@ -49,8 +76,8 @@
         <div class="row">
             <div class="col s12 m6">
                 <h5 class="purple-text">Présentation</h5>
-                <p>Notre équipe est composée d'experts académiques et techniques passionnés par la réussite des étudiants. 
-                Fondée par un groupe de professionnels de l'éducation et de la technologie, la plateforme est un pont 
+                <p>Notre équipe est composée d'experts académiques et techniques passionnés par la réussite des étudiants.
+                Fondée par un groupe de professionnels de l'éducation et de la technologie, la plateforme est un pont
                 entre la théorie académique et les besoins réels des étudiants.</p>
             </div>
             <div class="col s12 m6" style="margin-top: 10px;">
@@ -62,7 +89,7 @@
         <div class="row">
             <div class="col s12">
                 <h5 class="purple-text">Historique</h5>
-                <p>Créée en Octobre 2024, notre plateforme a commencé comme une initiative locale pour aider les étudiants en informatique 
+                <p>Créée en Octobre 2024, notre plateforme a commencé comme une initiative locale pour aider les étudiants en informatique
                 à structurer leurs mémoires. Aujourd'hui, nous sommes une référence pour des milliers d'étudiants dans plusieurs pays.</p>
             </div>
         </div>
@@ -74,7 +101,7 @@
         <div class="row">
             <div class="col s12 m6">
                 <h5 class="purple-text">Vision</h5>
-                <p>Faciliter la réussite académique et professionnelle des étudiants grâce à un accompagnement personnalisé 
+                <p>Faciliter la réussite académique et professionnelle des étudiants grâce à un accompagnement personnalisé
                 et à des outils modernes adaptés à leurs besoins.</p>
             </div>
             <div class="col s12 m6">
