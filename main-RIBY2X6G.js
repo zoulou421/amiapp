@@ -29,6 +29,16 @@ Content-Type: `+h.contentType+`\r
       overflow: hidden;
       perspective: 1500px;
       background: linear-gradient(135deg, #4a148c, #7b1fa2);
+
+      
+
+      transform-style: preserve-3d;
+      transform: translateZ(0);
+      
+
+      width: 100vw;
+      max-width: 100%;
+      box-sizing: border-box;
     }
 
     .parallax-3d-container[_ngcontent-%COMP%]   .parallax-layer[_ngcontent-%COMP%] {
@@ -39,6 +49,12 @@ Content-Type: `+h.contentType+`\r
       background-size: cover;
       will-change: transform;
       transition: transform 0.3s ease-out;
+
+      
+
+      backface-visibility: hidden;
+      
+
     }
 
     .parallax-3d-container[_ngcontent-%COMP%]   .layer-back[_ngcontent-%COMP%] {
