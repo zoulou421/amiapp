@@ -86,6 +86,14 @@
       overflow: hidden;
       perspective: 1500px;
       background: linear-gradient(135deg, #4a148c, #7b1fa2);
+
+      /* Fix Edge rendering bug: force GPU compositing */
+      transform-style: preserve-3d;
+      transform: translateZ(0);
+      /* Forcer largeur complète */
+      width: 100vw;
+      max-width: 100%;
+      box-sizing: border-box;
     }
 
     .parallax-3d-container .parallax-layer {
@@ -96,6 +104,10 @@
       background-size: cover;
       will-change: transform;
       transition: transform 0.3s ease-out;
+
+      /* Amélioration compatibilité Edge */
+      backface-visibility: hidden;
+      /* z-index géré dans chaque couche */
     }
 
     .parallax-3d-container .layer-back {
@@ -188,7 +200,6 @@
       0%, 100% { opacity: 0.4; }
       50% { opacity: 1; }
     }
-
 
   </style>
 
