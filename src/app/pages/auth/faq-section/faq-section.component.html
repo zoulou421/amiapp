@@ -1,0 +1,18 @@
+<section class="faq-section container" aria-label="Foire Aux Questions">
+  <h2 class="faq-title center-align">Foire Aux Questions</h2>
+  <div class="faq-list">
+    <div class="faq-item" *ngFor="let faq of faqs; let i = index">
+      <button class="faq-question" (click)="toggle(i)" [attr.aria-expanded]="faq.open" [attr.aria-controls]="'faq-answer-'+i">
+        <span>{{ faq.question }}</span>
+        <i class="material-icons faq-icon" [class.open]="faq.open">expand_more</i>
+      </button>
+      <div
+        [@expandCollapse]="faq.open ? 'open' : 'closed'"
+        class="faq-answer"
+        [id]="'faq-answer-'+i"
+      >
+        <p>{{ faq.answer }}</p>
+      </div>
+    </div>
+  </div>
+</section>

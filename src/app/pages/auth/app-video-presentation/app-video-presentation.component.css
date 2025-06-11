@@ -1,0 +1,70 @@
+.video-section {
+  margin: 4rem auto 2rem auto;
+  max-width: 900px;
+  padding: 0 1rem;
+  /* ... (ton background dégradé déjà proposé) ... */
+  color: #fff; /* Police principale en blanc */
+
+  /*ajout*/
+  border-radius: 24px;
+  /* Dégradé violet dynamique */
+  background: linear-gradient(135deg, #7b1fa2 0%, #4a148c 60%, #9c27b0 100%);
+  /* Optionnel : motif SVG discret en surimpression */
+  position: relative;
+  box-shadow: 0 8px 32px rgba(76, 0, 130, 0.15);
+  overflow: hidden;
+}
+.section-title {
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #fff !important; /* Titre bien visible */
+  text-shadow: 0 2px 8px rgba(76,0,130,0.2); /* Optionnel, pour renforcer le contraste */
+}
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(76, 0, 130, 0.15);
+  margin-bottom: 1.5rem;
+}
+iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 16px;
+  background: #000;
+}
+.video-description {
+  font-size: 1.1rem;
+  color: #4a148c;
+  max-width: 700px;
+  margin: 0 auto;
+  color: #f5f5f5; /* Blanc cassé, doux pour la description */
+}
+
+.video-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* Un motif SVG léger pour donner du relief, facultatif */
+  background: url("data:image/svg+xml,%3Csvg width='100' height='100' opacity='0.07' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='45' stroke='white' stroke-width='8'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+.video-wrapper,
+.section-title,
+.video-description {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 600px) {
+  .section-title,
+  .video-description {
+    color: #fff; /* Toujours blanc sur mobile pour la lisibilité */
+  }
+}
