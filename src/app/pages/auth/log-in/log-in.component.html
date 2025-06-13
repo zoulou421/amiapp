@@ -1,11 +1,7 @@
-
-<br /> <br /> <br />
 <div class="login-container">
-  <!-- Illustration avec filigrane violet -->
   <aside class="login-illustration" aria-hidden="true"></aside>
-  <!-- Formulaire -->
-  <section class="login-form-wrapper" role="main" aria-label="Formulaire de connexion étudiant">
 
+  <section class="login-form-wrapper" role="main" aria-label="Formulaire de connexion étudiant">
     <header class="login-header" tabindex="0">
       <h1 class="welcome-message">Votre espace étudiant</h1>
       <p class="subtitle">Commencez votre apprentissage avec nous !</p>
@@ -19,14 +15,7 @@
 
         <mat-form-field appearance="fill" class="login-field" floatLabel="auto" tabindex="0">
           <mat-label>Email</mat-label>
-          <input
-            matInput
-            formControlName="email"
-            autocomplete="email"
-            required
-            aria-required="true"
-            maxlength="320"
-          />
+          <input matInput formControlName="email" autocomplete="email" required aria-required="true" maxlength="320" />
           <mat-error *ngIf="isEmailValid as message">{{ message }}</mat-error>
         </mat-form-field>
 
@@ -80,61 +69,55 @@
       </p>
     </footer>
   </section>
-  <br /> <br /> <br />
-
 </div>
 
 <style>
-  /* Conteneur principal avec flex en ligne, hauteur 100vh */
+  /* Conteneur principal en flex horizontal, position relative pour superposition */
   .login-container {
+    position: relative;
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
     background: #1a0036;
-    color: #fff;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
   }
 
-  /* Illustration plus large, même hauteur, avec filigrane violet */
+  /* Illustration large avec filigrane violet */
   .login-illustration {
     flex: 2;
-    height: 100vh;
-    border-top-left-radius: 24px;
-    border-bottom-left-radius: 24px;
-    background-image: linear-gradient(rgba(124, 42, 232, 0.35), rgba(142, 36, 170, 0.35)),
-    url('https://st.depositphotos.com/1011643/2013/i/450/depositphotos_20130467-stock-photo-beautiful-female-african-american-university.jpg');
+    min-height: 100vh;
+    background-image:
+      linear-gradient(rgba(124, 42, 232, 0.35), rgba(142, 36, 170, 0.35)),
+      url('https://st.depositphotos.com/1011643/2013/i/450/depositphotos_20130467-stock-photo-beautiful-female-african-american-university.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    border-top-left-radius: 24px;
+    border-bottom-left-radius: 24px;
     box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.6);
-    animation: gradientShift 15s ease infinite;
     transition: transform 0.3s ease;
   }
-
   .login-illustration:hover {
     transform: scale(1.02);
   }
 
-  @keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
-
-  /* Formulaire à droite, même hauteur, largeur raisonnable */
+  /* Formulaire à droite */
   .login-form-wrapper {
     flex: 1;
     max-width: 600px;
-    background: rgba(255, 255, 255, 0.98);
+    background: rgba(255 255 255 / 0.98);
     color: #1a0036;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 3rem 4rem;
     border-top-right-radius: 24px;
     border-bottom-right-radius: 24px;
-    height: 100vh;
+    min-height: 100vh;
     overflow-y: auto;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+    position: relative;
+    z-index: 10; /* au-dessus de l’image */
   }
 
   /* Header */
@@ -146,11 +129,22 @@
     font-weight: 700;
     margin-bottom: 0.5rem;
     color: #7c2ae8;
+    animation: slideInHeader 0.6s ease-out forwards;
   }
   .subtitle {
     font-size: 1.25rem;
     color: #6a1b9a;
     line-height: 1.4;
+  }
+  @keyframes slideInHeader {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   /* Champs longs, peu hauts */
@@ -251,26 +245,40 @@
     outline: none;
   }
 
-  /* Responsive */
-  @media (max-width: 1100px) {
+  /* Responsive : superposition du formulaire sur l’image sur petits écrans */
+  @media (max-width: 900px) {
     .login-container {
-      flex-direction: column;
-      padding: 2rem;
-      gap: 2rem;
+      position: relative;
+      display: block;
       height: auto;
+      padding: 0;
+      background: transparent;
     }
     .login-illustration {
+      position: relative;
       width: 100%;
       height: 300px;
-      border-radius: 24px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+      border-radius: 0;
+      box-shadow: none;
+      filter: brightness(0.6);
     }
     .login-form-wrapper {
-      max-width: 100%;
+      position: absolute;
+      top: 20px; /* décale un peu vers le bas */
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 400px;
+      background: rgba(255 255 255 / 0.95);
       border-radius: 24px;
-      padding: 3rem 2.5rem;
-      height: auto;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      padding: 2rem 2.5rem;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+      z-index: 20;
+      min-height: auto;
+      overflow: visible;
+    }
+    .login-header {
+      margin-bottom: 1.5rem;
     }
   }
 </style>

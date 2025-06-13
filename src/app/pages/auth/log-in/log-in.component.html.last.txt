@@ -1,55 +1,21 @@
 <div class="login-container">
   <!-- Illustration avec filigrane violet -->
   <aside class="login-illustration" aria-hidden="true"></aside>
+
   <!-- Formulaire -->
-  <section class="login-form-wrapper" role="main" aria-label="Formulaire de création de compte étudiant">
+  <section class="login-form-wrapper" role="main" aria-label="Formulaire de connexion étudiant">
+
     <header class="login-header" tabindex="0">
-      <h1 class="welcome-message">Créez votre espace étudiant</h1>
-      <p class="subtitle">Rejoignez-nous pour commencer votre voyage d’apprentissage !</p>
+      <h1 class="welcome-message">Votre espace étudiant</h1>
+      <p class="subtitle">Commencez votre apprentissage avec nous !</p>
     </header>
 
-
-    <form [formGroup]="form" (ngSubmit)="signUp()" novalidate>
+    <form [formGroup]="form" (ngSubmit)="logIn()" novalidate>
       <fieldset class="form-fields" aria-describedby="form-description">
         <legend id="form-description" class="visually-hidden">
-          Créez votre compte en saisissant vos informations
+          Formulaire de connexion : saisissez votre email et mot de passe
         </legend>
 
-        <!-- Prénom -->
-        <mat-form-field appearance="fill" class="login-field" floatLabel="auto" tabindex="0">
-          <mat-label>Prénom</mat-label>
-          <input
-            matInput
-            formControlName="names"
-            autocomplete="given-name"
-            required
-            aria-required="true"
-            maxlength="50"
-            placeholder="Entrez votre prénom"
-          />
-          <mat-error *ngIf="form.get('names')?.hasError('required') && form.get('names')?.touched">
-            Le prénom est obligatoire
-          </mat-error>
-        </mat-form-field>
-
-        <!-- Nom de famille -->
-        <mat-form-field appearance="fill" class="login-field" floatLabel="auto" tabindex="0">
-          <mat-label>Nom de famille</mat-label>
-          <input
-            matInput
-            formControlName="lastName"
-            autocomplete="family-name"
-            required
-            aria-required="true"
-            maxlength="50"
-            placeholder="Entrez votre nom de famille"
-          />
-          <mat-error *ngIf="form.get('lastName')?.hasError('required') && form.get('lastName')?.touched">
-            Le nom de famille est obligatoire
-          </mat-error>
-        </mat-form-field>
-
-        <!-- Email -->
         <mat-form-field appearance="fill" class="login-field" floatLabel="auto" tabindex="0">
           <mat-label>Email</mat-label>
           <input
@@ -59,28 +25,20 @@
             required
             aria-required="true"
             maxlength="320"
-            placeholder="Entrez votre email"
           />
-          <mat-error *ngIf="form.get('email')?.hasError('required') && form.get('email')?.touched">
-            L’email est obligatoire
-          </mat-error>
-          <mat-error *ngIf="form.get('email')?.hasError('email') && form.get('email')?.touched">
-            Veuillez saisir un email valide
-          </mat-error>
+          <mat-error *ngIf="isEmailValid as message">{{ message }}</mat-error>
         </mat-form-field>
 
-        <!-- Mot de passe -->
         <mat-form-field appearance="fill" class="login-field" floatLabel="auto" tabindex="0">
           <mat-label>Mot de passe</mat-label>
           <input
             matInput
             [type]="hide ? 'password' : 'text'"
             formControlName="password"
-            autocomplete="new-password"
+            autocomplete="current-password"
             required
             aria-required="true"
             maxlength="128"
-            placeholder="Entrez votre mot de passe"
           />
           <button
             mat-icon-button
@@ -92,46 +50,35 @@
           >
             <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
           </button>
-          <mat-error *ngIf="form.get('password')?.hasError('required') && form.get('password')?.touched">
-            Le mot de passe est obligatoire
-          </mat-error>
+          <mat-error>Ce champ est obligatoire</mat-error>
         </mat-form-field>
 
-        <!--div class="forgot-password">
+        <div class="forgot-password">
           <a routerLink="/auth/forgot-password" tabindex="0">Mot de passe oublié ?</a>
-        </div-->
+        </div>
       </fieldset>
 
       <div class="login-btn-row">
-        <button
-          mat-flat-button
-          color="accent"
-          type="submit"
-          class="login-btn"
-          aria-label="Créer mon compte"
-          [disabled]="form.invalid"
-        >
-          Je crée mon compte
+        <button mat-flat-button color="accent" type="submit" class="login-btn" aria-label="Se connecter">
+          Se Connecter
         </button>
       </div>
     </form>
 
-    <!--hr class="divider" aria-hidden="true" /-->
+    <hr class="divider" aria-hidden="true" />
 
-    <!--section class="alternative-login" aria-label="Inscription alternative">
-      <p class="alternative-text">Ou inscrivez-vous avec</p>
-      <app-button-providers [isLogin]="false"></app-button-providers>
-    </section-->
+    <section class="alternative-login" aria-label="Connexion alternative">
+      <p class="alternative-text">Ou connectez-vous avec</p>
+      <app-button-providers [isLogin]="true"></app-button-providers>
+    </section>
 
     <footer class="signup-redirect">
       <p>
-        Avez-vous déjà un compte ?
-        <a routerLink="/auth/login-in" tabindex="0">Se connecter</a>
+        Pas encore de compte ?
+        <a routerLink="/auth/sign-up" tabindex="0">Créez votre compte ici</a>
       </p>
     </footer>
   </section>
-  <br /> <br /> <br />
-
 </div>
 
 <style>
@@ -165,9 +112,15 @@
   }
 
   @keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
   }
 
   /* Formulaire à droite, même hauteur, largeur raisonnable */
@@ -191,16 +144,30 @@
   .login-header {
     margin-bottom: 2.5rem;
   }
+
   .welcome-message {
     font-size: 2.4rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
     color: #7c2ae8;
+    animation: slideInHeader 0.6s ease-out forwards;
   }
+
   .subtitle {
     font-size: 1.25rem;
     color: #6a1b9a;
     line-height: 1.4;
+  }
+
+  @keyframes slideInHeader {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   /* Champs longs, peu hauts */
@@ -208,13 +175,16 @@
     display: flex;
     flex-direction: column;
   }
+
   .login-field {
     width: 100%;
     margin-bottom: 2rem;
   }
+
   ::ng-deep .mat-mdc-text-field-wrapper {
     min-height: 40px !important;
   }
+
   ::ng-deep .mat-mdc-input-element {
     font-size: 1.15rem !important;
     padding: 0 16px !important;
@@ -227,6 +197,7 @@
     margin-top: -1.2rem;
     margin-bottom: 2rem;
   }
+
   .forgot-password a {
     color: #8e24aa;
     font-weight: 600;
@@ -234,6 +205,7 @@
     text-decoration: underline;
     transition: color 0.3s;
   }
+
   .forgot-password a:hover,
   .forgot-password a:focus {
     color: #6a1b9a;
@@ -244,6 +216,7 @@
   .login-btn-row {
     margin-bottom: 3rem;
   }
+
   .login-btn {
     width: 100%;
     background: linear-gradient(90deg, #6a1b9a 25%, #8e24aa 100%);
@@ -255,6 +228,7 @@
     box-shadow: 0 8px 30px rgba(106, 27, 154, 0.35);
     transition: background 0.3s, box-shadow 0.3s, transform 0.15s;
   }
+
   .login-btn:hover,
   .login-btn:focus {
     background: linear-gradient(90deg, #8e24aa 0%, #6a1b9a 100%);
@@ -262,6 +236,7 @@
     outline: none;
     transform: scale(1.05);
   }
+
   .login-btn:active {
     transform: scale(0.97);
   }
@@ -277,37 +252,40 @@
   .alternative-login {
     text-align: center;
   }
+
   .alternative-text {
     color: #6a1b9a;
     font-size: 1.1rem;
     margin-bottom: 1.8rem;
   }
 
-  /* Footer redirection connexion */
+  /* Footer création compte */
   .signup-redirect {
     font-size: 1.15rem;
     color: #6a1b9a;
     text-align: center;
   }
+
   .signup-redirect a {
     color: #8e24aa;
     font-weight: 600;
     text-decoration: underline;
     transition: color 0.3s;
   }
+
   .signup-redirect a:hover,
   .signup-redirect a:focus {
     color: #6a1b9a;
     outline: none;
   }
 
-  /* Responsive */
-  @media (max-width: 1100px) {
+  /* Responsive : adaptation pour laptop et mobiles */
+  @media (max-width: 1400px) {
     .login-container {
       flex-direction: column;
       padding: 2rem;
       gap: 2rem;
-      height: auto;
+      height: auto; /* hauteur auto pour permettre défilement global */
     }
     .login-illustration {
       width: 100%;
@@ -319,8 +297,14 @@
       max-width: 100%;
       border-radius: 24px;
       padding: 3rem 2.5rem;
+      min-height: 100vh;
       height: auto;
+      overflow-y: visible;
+      justify-content: flex-start;
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    }
+    .login-header {
+      margin-bottom: 1.5rem;
     }
   }
 </style>
