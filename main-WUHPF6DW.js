@@ -910,32 +910,42 @@ Content-Type: `+h.contentType+`\r
   }`]})};var Bd=class n{isLogin=!1;_authService=V(dt);_router=V($e);providerAction(e){e==="google"?this.signUpWithGoogle():this.signUpWithGithub()}signUpWithGoogle(){return I(this,null,function*(){try{let e=yield this._authService.signInWithGoogleProvider();this._router.navigateByUrl("/"),console.log(e)}catch(e){console.log(e)}})}signUpWithGithub(){return I(this,null,function*(){try{let e=yield this._authService.signInWithGithubProvider();this._router.navigateByUrl("/"),console.log(e)}catch(e){console.log("GitHub sign-in error:",e)}})}static \u0275fac=function(t){return new(t||n)};static \u0275cmp=Ae({type:n,selectors:[["app-button-providers"]],inputs:{isLogin:"isLogin"},standalone:!0,features:[Re],decls:15,vars:2,consts:[[1,"button-providers"],[3,"click"],["xmlns","http://www.w3.org/2000/svg","viewBox","0 0 48 48","width","32px","height","32px"],["fill","#FFC107","d","M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"],["fill","#FF3D00","d","M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"],["fill","#4CAF50","d","M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"],["fill","#1976D2","d","M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"],["xmlns","http://www.w3.org/2000/svg","width","32","height","32","fill","none","viewBox","0 0 16 16","aria-hidden","true",1,"!tw-fill-current","tw-mr-2","tw-text-black","dark:tw-text-white"],["fill","#fff","fill-rule","evenodd","d","M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0Z","clip-rule","evenodd"],["fill","#1B1F23","fill-rule","evenodd","d","M8 1a7 7 0 0 0-2.21 13.64c.35.06.47-.15.47-.34v-1.19c-1.95.42-2.36-.94-2.36-.94-.32-.8-.78-1.02-.78-1.02-.64-.44.05-.43.05-.43.7.05 1.07.72 1.07.72.62 1.07 1.64.76 2.04.59.06-.46.24-.76.44-.94-1.55-.18-3.19-.78-3.19-3.46 0-.76.28-1.39.72-1.88-.07-.17-.3-.88.07-1.85 0 0 .59-.19 1.93.72a6.7 6.7 0 0 1 3.5 0c1.34-.9 1.93-.72 1.93-.72.38.97.14 1.68.07 1.85.44.5.72 1.12.72 1.88 0 2.69-1.64 3.28-3.2 3.45.25.22.47.65.47 1.3v1.92c0 .19.12.4.48.34A7 7 0 0 0 8 1","clip-rule","evenodd"]],template:function(t,i){t&1&&(d(0,"div",0)(1,"button",1),J("click",function(){return i.providerAction("google")}),Dh(),d(2,"svg",2),O(3,"path",3)(4,"path",4)(5,"path",5)(6,"path",6),f(),Mh(),d(7,"span"),p(8),f()(),d(9,"button",1),J("click",function(){return i.providerAction("github")}),Dh(),d(10,"svg",7),O(11,"path",8)(12,"path",9),f(),Mh(),d(13,"span"),p(14),f()()()),t&2&&($(8),_t("",i.isLogin?"Log in":"Sign up"," with Google"),$(6),_t("",i.isLogin?"Log in":"Sign up"," with Github"))},styles:[".button-providers[_ngcontent-%COMP%]{display:flex;flex-direction:column;align-items:center;gap:20px}.button-providers[_ngcontent-%COMP%]   button[_ngcontent-%COMP%]{background:transparent;font-family:inherit;border:1px solid white;width:100%;max-width:250px;color:var(--text);display:flex;align-items:center;justify-content:center;border-radius:4px;min-height:48px;cursor:pointer;font-weight:700;transition:all ease-in .25s}.button-providers[_ngcontent-%COMP%]   button[_ngcontent-%COMP%]:hover{background:var(--text);color:var(--dark-text)}.button-providers[_ngcontent-%COMP%]   button[_ngcontent-%COMP%]   svg[_ngcontent-%COMP%]{margin-right:20px}"]})};function t2(n,e){if(n&1&&(d(0,"mat-error"),p(1),f()),n&2){let t=e.ngIf;$(),gt(t)}}var zd=class n{hide=!0;formBuilder=V(ys);authService=V(dt);router=V($e);_snackBar=V(Ks);form=this.formBuilder.group({email:this.formBuilder.control("",{validators:[st.required,st.email],nonNullable:!0}),password:this.formBuilder.control("",{validators:st.required,nonNullable:!0})});get isEmailValid(){let e=this.form.get("email");return e?.invalid&&e.touched?e.hasError("required")?"This field is required":"Enter a valid email":!1}logIn(){return I(this,null,function*(){if(this.form.invalid)return;let e={email:this.form.value.email||"",password:this.form.value.password||""};try{yield this.authService.logInWithEmailAndPassword(e),this.openSnackBar().afterDismissed().subscribe(()=>{this.router.navigateByUrl("/")})}catch(t){console.error(t)}})}openSnackBar(){return this._snackBar.open("Successfully Logged in \u{1F600}","Close",{duration:2500,verticalPosition:"top",horizontalPosition:"end"})}static \u0275fac=function(t){return new(t||n)};static \u0275cmp=Ae({type:n,selectors:[["app-log-in"]],standalone:!0,features:[Re],decls:42,vars:7,consts:[[1,"login-container"],["aria-hidden","true",1,"login-illustration"],["role","main","aria-label","Formulaire de connexion \xE9tudiant",1,"login-form-wrapper"],["tabindex","0",1,"login-header"],[1,"welcome-message"],[1,"subtitle"],["novalidate","",3,"ngSubmit","formGroup"],["aria-describedby","form-description",1,"form-fields"],["id","form-description",1,"visually-hidden"],["appearance","fill","floatLabel","auto","tabindex","0",1,"login-field"],["matInput","","formControlName","email","autocomplete","email","required","","aria-required","true","maxlength","320"],[4,"ngIf"],["matInput","","formControlName","password","autocomplete","current-password","required","","aria-required","true","maxlength","128",3,"type"],["mat-icon-button","","matSuffix","","type","button",3,"click"],[1,"forgot-password"],["routerLink","/auth/forgot-password","tabindex","0"],[1,"login-btn-row"],["mat-flat-button","","color","accent","type","submit","aria-label","Se connecter",1,"login-btn"],["aria-hidden","true",1,"divider"],["aria-label","Connexion alternative",1,"alternative-login"],[1,"alternative-text"],[3,"isLogin"],[1,"signup-redirect"],["routerLink","/auth/sign-up","tabindex","0"]],template:function(t,i){t&1&&(d(0,"div",0),O(1,"aside",1),d(2,"section",2)(3,"header",3)(4,"h1",4),p(5,"Votre espace \xE9tudiant"),f(),d(6,"p",5),p(7,"Commencez votre apprentissage avec nous !"),f()(),d(8,"form",6),J("ngSubmit",function(){return i.logIn()}),d(9,"fieldset",7)(10,"legend",8),p(11," Formulaire de connexion : saisissez votre email et mot de passe "),f(),d(12,"mat-form-field",9)(13,"mat-label"),p(14,"Email"),f(),O(15,"input",10),Ce(16,t2,2,1,"mat-error",11),f(),d(17,"mat-form-field",9)(18,"mat-label"),p(19,"Mot de passe"),f(),O(20,"input",12),d(21,"button",13),J("click",function(){return i.hide=!i.hide}),d(22,"mat-icon"),p(23),f()(),d(24,"mat-error"),p(25,"Ce champ est obligatoire"),f()(),d(26,"div",14)(27,"a",15),p(28,"Mot de passe oubli\xE9 ?"),f()()(),d(29,"div",16)(30,"button",17),p(31," Se Connecter "),f()()(),O(32,"hr",18),d(33,"section",19)(34,"p",20),p(35,"Ou connectez-vous avec"),f(),O(36,"app-button-providers",21),f(),d(37,"footer",22)(38,"p"),p(39," Pas encore de compte ? "),d(40,"a",23),p(41,"Cr\xE9ez votre compte ici"),f()()()()()),t&2&&($(8),ue("formGroup",i.form),$(8),ue("ngIf",i.isEmailValid),$(4),ue("type",i.hide?"password":"text"),$(),Xe("aria-label",i.hide?"Afficher mot de passe":"Masquer mot de passe")("aria-pressed",i.hide),$(2),gt(i.hide?"visibility_off":"visibility"),$(13),ue("isLogin",!0))},dependencies:[$i,Nd,Ys,Md,Od,Qs,Fd,Xs,Ud,yn,rs,eu,es,Kt,Xt,Qt,ci,Er,Yt,co,bl,Li,lo,jt,Cn,Bd],styles:[`
 
   .login-container[_ngcontent-%COMP%] {
+    position: relative;
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
     background: #1a0036;
-    color: #fff;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
   }
 
   
 
   .login-illustration[_ngcontent-%COMP%] {
     flex: 2;
-    height: 100vh;
+    min-height: 100vh;
     border-top-left-radius: 24px;
     border-bottom-left-radius: 24px;
-    background-image: linear-gradient(rgba(124, 42, 232, 0.35), rgba(142, 36, 170, 0.35)),
-    url('https://st.depositphotos.com/1011643/2013/i/450/depositphotos_20130467-stock-photo-beautiful-female-african-american-university.jpg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.6);
-    animation: _ngcontent-%COMP%_gradientShift 15s ease infinite;
-    transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
   }
-
-  .login-illustration[_ngcontent-%COMP%]:hover {
-    transform: scale(1.02);
+  .login-illustration[_ngcontent-%COMP%]::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(270deg, rgba(124, 42, 232, 0.35), rgba(142, 36, 170, 0.35), rgba(124, 42, 232, 0.35));
+    background-size: 600% 600%;
+    animation: _ngcontent-%COMP%_gradientShift 15s ease infinite;
+    z-index: 1;
+  }
+  .login-illustration[_ngcontent-%COMP%]::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('https://st.depositphotos.com/1011643/2013/i/450/depositphotos_20130467-stock-photo-beautiful-female-african-american-university.jpg') center/cover no-repeat;
+    filter: brightness(0.6);
+    border-top-left-radius: 24px;
+    border-bottom-left-radius: 24px;
+    z-index: 0;
   }
 
   @keyframes _ngcontent-%COMP%_gradientShift {
@@ -955,16 +965,19 @@ Content-Type: `+h.contentType+`\r
   .login-form-wrapper[_ngcontent-%COMP%] {
     flex: 1;
     max-width: 600px;
-    background: rgba(255, 255, 255, 0.98);
+    background: rgba(255 255 255 / 0.95);
     color: #1a0036;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 3rem 4rem;
     border-top-right-radius: 24px;
     border-bottom-right-radius: 24px;
-    height: 100vh;
+    min-height: 100vh;
     overflow-y: auto;
+    position: relative;
+    z-index: 10; 
+
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
   }
 
@@ -973,7 +986,6 @@ Content-Type: `+h.contentType+`\r
   .login-header[_ngcontent-%COMP%] {
     margin-bottom: 2.5rem;
   }
-
   .welcome-message[_ngcontent-%COMP%] {
     font-size: 2.4rem;
     font-weight: 700;
@@ -981,13 +993,11 @@ Content-Type: `+h.contentType+`\r
     color: #7c2ae8;
     animation: _ngcontent-%COMP%_slideInHeader 0.6s ease-out forwards;
   }
-
   .subtitle[_ngcontent-%COMP%] {
     font-size: 1.25rem;
     color: #6a1b9a;
     line-height: 1.4;
   }
-
   @keyframes _ngcontent-%COMP%_slideInHeader {
     from {
       opacity: 0;
@@ -1005,16 +1015,13 @@ Content-Type: `+h.contentType+`\r
     display: flex;
     flex-direction: column;
   }
-
   .login-field[_ngcontent-%COMP%] {
     width: 100%;
     margin-bottom: 2rem;
   }
-
     .mat-mdc-text-field-wrapper {
     min-height: 40px !important;
   }
-
     .mat-mdc-input-element {
     font-size: 1.15rem !important;
     padding: 0 16px !important;
@@ -1028,7 +1035,6 @@ Content-Type: `+h.contentType+`\r
     margin-top: -1.2rem;
     margin-bottom: 2rem;
   }
-
   .forgot-password[_ngcontent-%COMP%]   a[_ngcontent-%COMP%] {
     color: #8e24aa;
     font-weight: 600;
@@ -1036,7 +1042,6 @@ Content-Type: `+h.contentType+`\r
     text-decoration: underline;
     transition: color 0.3s;
   }
-
   .forgot-password[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]:hover, 
    .forgot-password[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]:focus {
     color: #6a1b9a;
@@ -1048,7 +1053,6 @@ Content-Type: `+h.contentType+`\r
   .login-btn-row[_ngcontent-%COMP%] {
     margin-bottom: 3rem;
   }
-
   .login-btn[_ngcontent-%COMP%] {
     width: 100%;
     background: linear-gradient(90deg, #6a1b9a 25%, #8e24aa 100%);
@@ -1060,7 +1064,6 @@ Content-Type: `+h.contentType+`\r
     box-shadow: 0 8px 30px rgba(106, 27, 154, 0.35);
     transition: background 0.3s, box-shadow 0.3s, transform 0.15s;
   }
-
   .login-btn[_ngcontent-%COMP%]:hover, 
    .login-btn[_ngcontent-%COMP%]:focus {
     background: linear-gradient(90deg, #8e24aa 0%, #6a1b9a 100%);
@@ -1068,7 +1071,6 @@ Content-Type: `+h.contentType+`\r
     outline: none;
     transform: scale(1.05);
   }
-
   .login-btn[_ngcontent-%COMP%]:active {
     transform: scale(0.97);
   }
@@ -1086,7 +1088,6 @@ Content-Type: `+h.contentType+`\r
   .alternative-login[_ngcontent-%COMP%] {
     text-align: center;
   }
-
   .alternative-text[_ngcontent-%COMP%] {
     color: #6a1b9a;
     font-size: 1.1rem;
@@ -1100,7 +1101,6 @@ Content-Type: `+h.contentType+`\r
     color: #6a1b9a;
     text-align: center;
   }
-
   .signup-redirect[_ngcontent-%COMP%]   a[_ngcontent-%COMP%] {
     color: #8e24aa;
     font-weight: 600;
@@ -1122,33 +1122,34 @@ Content-Type: `+h.contentType+`\r
       height: auto;
       padding: 0;
       background: transparent;
-      min-height: 100vh;
     }
     .login-illustration[_ngcontent-%COMP%] {
       position: relative;
       width: 100%;
-      height: 350px;
-      min-height: 350px;
+      height: 300px;
       border-radius: 0;
       box-shadow: none;
+      filter: brightness(0.6);
       z-index: 1;
     }
     .login-form-wrapper[_ngcontent-%COMP%] {
       position: absolute;
-      top: 30px;
+      top: 20px;
       left: 50%;
       transform: translateX(-50%);
-      width: 92vw;
-      max-width: 430px;
-      background: rgba(255,255,255,0.98);
+      width: 90%;
+      max-width: 400px;
+      background: rgba(255 255 255 / 0.95);
       border-radius: 24px;
-      padding: 2rem 1.2rem;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+      padding: 2rem 2.5rem;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
       z-index: 10;
       min-height: auto;
       overflow: visible;
     }
-    .login-header[_ngcontent-%COMP%] { margin-bottom: 1.5rem; }
+    .login-header[_ngcontent-%COMP%] {
+      margin-bottom: 1.5rem;
+    }
   }`]})};var tT=()=>V($e),nT=()=>V(dt).authState$,Ar=()=>{let n=tT();return nT().pipe(ge(e=>e?!0:(n.navigateByUrl("auth/login-in"),!1)))},iT=()=>{let n=tT();return nT().pipe(ge(e=>e?(n.navigateByUrl("/"),!1):!0))};var n2=()=>({"background-image":"url(assets/images/data-science-big-data.jpg?v=1)"}),qd=class n{_router=V($e);authservice=V(dt);ngOnInit(){}ngAfterViewInit(){let e=document.querySelectorAll(".sidenav");M.Sidenav.init(e)}logOut(){return I(this,null,function*(){try{yield this.authservice.logOut(),this._router.navigateByUrl("/auth/login-in")}catch(e){console.log(e)}})}subscribeNewsletter(){}static \u0275fac=function(t){return new(t||n)};static \u0275cmp=Ae({type:n,selectors:[["app-about"]],standalone:!0,features:[Re],decls:193,vars:2,consts:[[1,"nav-extended","white"],[1,"nav-wrapper","container"],["href","#",1,"brand-logo","left"],["src","https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEguW77e9JG5zR-ARR6q0g5M5lWF6gYFiH67mSXu_eOe9YwWDUBOQd4xBTCVYEqfC8ez1u4AcTh9QgKT6rJ19rHwlMGikKk6X4IyDytfDsHYLfoxx1rXIjHIpwhBM36G74pqV7CBjPvRHHrpAUVvM1xnMsKK3OsR1kBfwIXhfKvFdtmDdjYkylfzJJPBjzo/s1600/logo-ami-platform-removebg-preview.png?v=1","alt","AMI",2,"height","40px"],["href","#","data-target","mobile-menu",1,"sidenav-trigger","right"],[1,"material-icons","purple-text","text-darken-4"],[1,"right","hide-on-med-and-down"],["routerLink","/",1,"purple-text","text-darken-4"],["routerLink","/about",1,"purple-text","text-darken-4"],["routerLink","/memoire",1,"purple-text","text-darken-4"],["routerLink","/Plagiat",1,"purple-text","text-darken-4"],["routerLink","/Temoignages",1,"purple-text","text-darken-4"],["routerLink","/Portfolio",1,"purple-text","text-darken-4"],[1,"waves-effect","btn-small","purple","darken-3","white-text","z-depth-0",3,"click"],["data-target","profile-dropdown",1,"dropdown-trigger","btn","purple","darken-3"],[1,"material-icons","white-text"],["id","profile-dropdown",1,"dropdown-content"],["routerLink","/profil"],[3,"click"],["id","mobile-menu",1,"sidenav","purple","darken-3","white-text"],["routerLink","/",1,"white-text"],["routerLink","/about",1,"white-text"],["routerLink","/memoire",1,"white-text"],["routerLink","/Plagiat",1,"white-text"],["routerLink","/Temoignages",1,"white-text"],["routerLink","/Portfolio",1,"white-text"],[1,"white-text",3,"click"],["data-target","mobile-dropdown",1,"dropdown-trigger","white-text"],[1,"material-icons"],[1,"parallax-containerAbout",2,"height","500px","width","100%"],[1,"parallaxAbout",3,"ngStyle"],[1,"center-align","white-text"],[2,"font-size","3.5rem","font-weight","bold"],[2,"font-size","1.5rem"],[1,"container","section","scrollspy"],[1,"center-align","purple-text","text-darken-2"],[1,"row"],[1,"col","s12","m6"],[1,"purple-text"],[1,"col","s12","m6",2,"margin-top","10px"],["src","assets/images/apropos1.jpg","alt","\xC9quipe fondatrice",1,"responsive-img","z-depth-2",2,"max-width","80%","border","3px solid #9c27b0","border-radius","12px"],[1,"col","s12"],["src","assets/images/apropos2.jpg","alt","Vision",1,"responsive-img","z-depth-2",2,"max-width","80%","border","3px solid #9c27b0","border-radius","12px"],[1,"col","s12","m4","center-align"],["src","https://via.placeholder.com/150","alt","Universit\xE9 1 mise \xE0 jour en cours",1,"responsive-img"],["href","#",1,"purple-text","text-darken-2"],["src","https://via.placeholder.com/150","alt","Universit\xE9 2 mise \xE0 jour en cours",1,"responsive-img"],["src","https://via.placeholder.com/150","alt","Entreprise partenaire mise \xE0 jour en cours",1,"responsive-img"],[1,"page-footer","gradient-footer"],[1,"container"],[1,"col","l3","s12"],[1,"white-text"],[1,"grey-text","text-lighten-4"],[1,"col","l4","s12"],[1,"newsletter-form",3,"submit"],[1,"input-field"],["type","email","id","newsletter","placeholder","Votre email","required","",1,"validate","white-text"],["type","submit",1,"btn","white","purple-text","text-darken-3","waves-effect","waves-dark"],[1,"col","l5","s12"],["href","https://wa.me/2250700000000","target","_blank",1,"white-text","text-lighten-2"],[1,"social-icons"],["href","https://www.linkedin.com/company/ami-platform","target","_blank",1,"btn-floating","btn-small","white"],[1,"fab","fa-linkedin-in","purple-text"],["href","https://www.facebook.com/ami.platform","target","_blank",1,"btn-floating","btn-small","white"],[1,"fab","fa-facebook-f","purple-text"],["href","https://www.instagram.com/ami.platform","target","_blank",1,"btn-floating","btn-small","white"],[1,"fab","fa-instagram","purple-text"],["href","https://twitter.com/ami_platform","target","_blank",1,"btn-floating","btn-small","white"],[1,"fab","fa-x-twitter","purple-text"],["href","https://www.youtube.com/@ami-platform","target","_blank",1,"btn-floating","btn-small","white"],[1,"fab","fa-youtube","purple-text"],[1,"footer-copyright"],[1,"container","center-align","white-text"]],template:function(t,i){t&1&&(d(0,"div")(1,"nav",0)(2,"div",1)(3,"a",2),O(4,"img",3),f(),d(5,"a",4)(6,"i",5),p(7,"menu"),f()(),d(8,"ul",6)(9,"li")(10,"a",7),p(11,"Accueil"),f()(),d(12,"li")(13,"a",8),p(14,"\xC0 propos"),f()(),d(15,"li")(16,"a",9),p(17,"Sujets de M\xE9moire"),f()(),d(18,"li")(19,"a",10),p(20,"Plagiat"),f()(),d(21,"li")(22,"a",11),p(23,"T\xE9moignages"),f()(),d(24,"li")(25,"a",12),p(26,"Portfolio"),f()(),d(27,"li")(28,"a",13),J("click",function(){return i.logOut()}),p(29,"D\xE9connexion"),f()(),d(30,"li")(31,"a",14)(32,"i",15),p(33,"account_circle"),f()()()()()(),d(34,"ul",16)(35,"li")(36,"a",17),p(37,"Mon Profil"),f()(),d(38,"li")(39,"a",18),J("click",function(){return i.logOut()}),p(40,"D\xE9connexion"),f()()(),d(41,"ul",19)(42,"li")(43,"a",20),p(44,"Accueil"),f()(),d(45,"li")(46,"a",21),p(47,"\xC0 propos"),f()(),d(48,"li")(49,"a",22),p(50,"Sujets de M\xE9moire"),f()(),d(51,"li")(52,"a",23),p(53,"Plagiat"),f()(),d(54,"li")(55,"a",24),p(56,"T\xE9moignages"),f()(),d(57,"li")(58,"a",25),p(59,"Portfolio"),f()(),d(60,"li")(61,"a",26),J("click",function(){return i.logOut()}),p(62,"D\xE9connexion"),f()(),d(63,"li")(64,"a",27)(65,"i",28),p(66,"account_circle"),f()()()(),d(67,"div",29)(68,"div",30)(69,"div",31),O(70,"br")(71,"br")(72,"br")(73,"br")(74,"br")(75,"br")(76,"br")(77,"br"),d(78,"h1",32),p(79,"Pr\xE9sentation de l'\xE9quipe"),f(),d(80,"p",33),p(81,"Une Histoire | Une Vision | Des Objectifs"),f()()()(),d(82,"div",34)(83,"h1",35),p(84,"Qui sommes-nous ?"),f(),d(85,"div",36)(86,"div",37)(87,"h5",38),p(88,"Pr\xE9sentation"),f(),d(89,"p"),p(90,"Notre \xE9quipe est compos\xE9e d'experts acad\xE9miques et techniques passionn\xE9s par la r\xE9ussite des \xE9tudiants. Fond\xE9e par un groupe de professionnels de l'\xE9ducation et de la technologie, la plateforme est un pont entre la th\xE9orie acad\xE9mique et les besoins r\xE9els des \xE9tudiants."),f()(),d(91,"div",39),O(92,"img",40),f()(),d(93,"div",36)(94,"div",41)(95,"h5",38),p(96,"Historique"),f(),d(97,"p"),p(98,"Cr\xE9\xE9e en Octobre 2024, notre plateforme a commenc\xE9 comme une initiative locale pour aider les \xE9tudiants en informatique \xE0 structurer leurs m\xE9moires. Aujourd'hui, nous sommes une r\xE9f\xE9rence pour des milliers d'\xE9tudiants dans plusieurs pays."),f()()()(),d(99,"div",34)(100,"h1",35),p(101,"Notre mission"),f(),d(102,"div",36)(103,"div",37)(104,"h5",38),p(105,"Vision"),f(),d(106,"p"),p(107,"Faciliter la r\xE9ussite acad\xE9mique et professionnelle des \xE9tudiants gr\xE2ce \xE0 un accompagnement personnalis\xE9 et \xE0 des outils modernes adapt\xE9s \xE0 leurs besoins."),f()(),d(108,"div",37),O(109,"img",42),f()(),d(110,"div",36)(111,"div",41)(112,"h5",38),p(113,"Objectifs"),f(),d(114,"ul")(115,"li"),p(116,"Offrir une assistance personnalis\xE9e pour la r\xE9daction de m\xE9moires."),f(),d(117,"li"),p(118,"\xC9largir nos services pour inclure des formations en ligne et des ateliers."),f(),d(119,"li"),p(120,"Devenir un acteur incontournable de l'accompagnement acad\xE9mique en ligne."),f()()()()(),d(121,"div",34)(122,"h1",35),p(123,"Nos partenaires"),f(),d(124,"div",36)(125,"div",41)(126,"h5",38),p(127,"Universit\xE9s et entreprises"),f(),d(128,"p"),p(129,"Nous collaborons avec plusieurs institutions prestigieuses pour garantir la qualit\xE9 de nos services."),f()()(),d(130,"div",36)(131,"div",43),O(132,"img",44),d(133,"p")(134,"a",45),p(135,"Universit\xE9 1"),f()()(),d(136,"div",43),O(137,"img",46),d(138,"p")(139,"a",45),p(140,"Universit\xE9 2"),f()()(),d(141,"div",43),O(142,"img",47),d(143,"p")(144,"a",45),p(145,"Entreprise partenaire"),f()()()(),d(146,"div",36)(147,"div",41)(148,"h5",38),p(149,"Les avis de nos partenaires"),f(),d(150,"blockquote"),p(151,`"Une plateforme r\xE9volutionnaire qui a chang\xE9 notre fa\xE7on d'accompagner les \xE9tudiants." - Universit\xE9 1`),f(),d(152,"blockquote"),p(153,'"AMI nous a permis de mieux pr\xE9parer nos \xE9tudiants aux d\xE9fis acad\xE9miques." - Universit\xE9 2'),f()()()(),d(154,"footer",48)(155,"div",49)(156,"div",36)(157,"div",50)(158,"h5",51),p(159,"AMI"),f(),d(160,"p",52),p(161," Aide M\xE9moire Informatique est une plateforme d\xE9di\xE9e \xE0 l'accompagnement des \xE9tudiants dans leurs projets de fin d\u2019\xE9tudes. "),f()(),d(162,"div",53)(163,"h5",51),p(164,"S\u2019abonner \xE0 la newsletter"),f(),d(165,"form",54),J("submit",function(){return i.subscribeNewsletter()}),d(166,"div",55),O(167,"input",56),f(),d(168,"button",57),p(169,"S\u2019abonner"),f()()(),d(170,"div",58)(171,"h5",51),p(172,"Contact & R\xE9seaux"),f(),d(173,"p",51),p(174,"WhatsApp : "),d(175,"a",59),p(176," +225 07 00 00 00 00 "),f()(),d(177,"div",60)(178,"a",61),O(179,"i",62),f(),d(180,"a",63),O(181,"i",64),f(),d(182,"a",65),O(183,"i",66),f(),d(184,"a",67),O(185,"i",68),f(),d(186,"a",69),O(187,"i",70),f()()()()(),d(188,"div",71)(189,"div",72),p(190," \xA9 2024 AMI - Tous droits r\xE9serv\xE9s. | D\xE9velopp\xE9 par "),d(191,"strong"),p(192,"Bonevy BEBY"),f()()()()()),t&2&&($(68),ue("ngStyle",ub(1,n2)))},dependencies:[os,yn,Kt,jt,Ib,Xt,Qt,Yt],styles:[".header-banner[_ngcontent-%COMP%]{padding:50px 0;text-align:center;color:#fff}.header-banner[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%]{font-size:3rem}.header-banner[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]{font-size:1.5rem}.parallax-container[_ngcontent-%COMP%]{height:500px;position:relative;overflow:hidden}.parallaxAbout[_ngcontent-%COMP%]{background-size:cover;background-position:center;background-repeat:no-repeat;height:100%}.header-banner[_ngcontent-%COMP%]{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;color:#fff;background-color:#00000080;padding:20px;border-radius:10px}.header-banner[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%]{font-size:2.5rem;margin-bottom:10px}.header-banner[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]{font-size:1.2rem;margin-bottom:20px}.cta-button[_ngcontent-%COMP%]{background-color:#26a69a;color:#fff;padding:10px 20px;font-size:1.1rem;text-transform:uppercase;border-radius:5px;text-decoration:none}.cta-button[_ngcontent-%COMP%]:hover{background-color:#00796b}.section[_ngcontent-%COMP%]{padding:4rem 0}.header[_ngcontent-%COMP%]{font-size:2.5rem;font-weight:700;color:#333}.grey-text[_ngcontent-%COMP%]{color:#616161}.page-footer[_ngcontent-%COMP%]{padding:1rem 0}.nav-wrapper[_ngcontent-%COMP%]   .brand-logo[_ngcontent-%COMP%]{font-size:2rem;font-weight:700}@media only screen and (max-width: 992px){.nav-wrapper[_ngcontent-%COMP%]   ul[_ngcontent-%COMP%]{display:flex;justify-content:center}}.page-footer[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]{margin:0}",`.gradient-footer[_ngcontent-%COMP%] {
       background: linear-gradient(to right, #6a1b9a, #8e24aa, #9c27b0);
     }
