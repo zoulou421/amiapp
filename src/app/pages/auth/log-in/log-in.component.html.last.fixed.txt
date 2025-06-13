@@ -1,10 +1,7 @@
 <div class="login-container">
-  <!-- Illustration avec filigrane violet -->
   <aside class="login-illustration" aria-hidden="true"></aside>
 
-  <!-- Formulaire -->
   <section class="login-form-wrapper" role="main" aria-label="Formulaire de connexion étudiant">
-
     <header class="login-header" tabindex="0">
       <h1 class="welcome-message">Votre espace étudiant</h1>
       <p class="subtitle">Commencez votre apprentissage avec nous !</p>
@@ -18,14 +15,7 @@
 
         <mat-form-field appearance="fill" class="login-field" floatLabel="auto" tabindex="0">
           <mat-label>Email</mat-label>
-          <input
-            matInput
-            formControlName="email"
-            autocomplete="email"
-            required
-            aria-required="true"
-            maxlength="320"
-          />
+          <input matInput formControlName="email" autocomplete="email" required aria-required="true" maxlength="320" />
           <mat-error *ngIf="isEmailValid as message">{{ message }}</mat-error>
         </mat-form-field>
 
@@ -82,33 +72,43 @@
 </div>
 
 <style>
-  /* Conteneur principal avec flex en ligne, hauteur 100vh */
+  /* Conteneur principal en flex horizontal, position relative pour superposition */
   .login-container {
+    position: relative;
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
     background: #1a0036;
-    color: #fff;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
   }
 
-  /* Illustration plus large, même hauteur, avec filigrane violet */
+  /* Illustration avec animation dégradé violet */
   .login-illustration {
     flex: 2;
-    height: 100vh;
+    min-height: 100vh;
     border-top-left-radius: 24px;
     border-bottom-left-radius: 24px;
-    background-image: linear-gradient(rgba(124, 42, 232, 0.35), rgba(142, 36, 170, 0.35)),
-    url('https://st.depositphotos.com/1011643/2013/i/450/depositphotos_20130467-stock-photo-beautiful-female-african-american-university.jpg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.6);
-    animation: gradientShift 15s ease infinite;
-    transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
   }
-
-  .login-illustration:hover {
-    transform: scale(1.02);
+  .login-illustration::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(270deg, rgba(124, 42, 232, 0.35), rgba(142, 36, 170, 0.35), rgba(124, 42, 232, 0.35));
+    background-size: 600% 600%;
+    animation: gradientShift 15s ease infinite;
+    z-index: 1;
+  }
+  .login-illustration::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('https://st.depositphotos.com/1011643/2013/i/450/depositphotos_20130467-stock-photo-beautiful-female-african-american-university.jpg') center/cover no-repeat;
+    filter: brightness(0.6);
+    border-top-left-radius: 24px;
+    border-bottom-left-radius: 24px;
+    z-index: 0;
   }
 
   @keyframes gradientShift {
@@ -123,20 +123,22 @@
     }
   }
 
-  /* Formulaire à droite, même hauteur, largeur raisonnable */
+  /* Formulaire à droite */
   .login-form-wrapper {
     flex: 1;
     max-width: 600px;
-    background: rgba(255, 255, 255, 0.98);
+    background: rgba(255 255 255 / 0.95);
     color: #1a0036;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 3rem 4rem;
     border-top-right-radius: 24px;
     border-bottom-right-radius: 24px;
-    height: 100vh;
+    min-height: 100vh;
     overflow-y: auto;
+    position: relative;
+    z-index: 10; /* au-dessus de l’image */
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
   }
 
@@ -144,7 +146,6 @@
   .login-header {
     margin-bottom: 2.5rem;
   }
-
   .welcome-message {
     font-size: 2.4rem;
     font-weight: 700;
@@ -152,13 +153,11 @@
     color: #7c2ae8;
     animation: slideInHeader 0.6s ease-out forwards;
   }
-
   .subtitle {
     font-size: 1.25rem;
     color: #6a1b9a;
     line-height: 1.4;
   }
-
   @keyframes slideInHeader {
     from {
       opacity: 0;
@@ -175,16 +174,13 @@
     display: flex;
     flex-direction: column;
   }
-
   .login-field {
     width: 100%;
     margin-bottom: 2rem;
   }
-
   ::ng-deep .mat-mdc-text-field-wrapper {
     min-height: 40px !important;
   }
-
   ::ng-deep .mat-mdc-input-element {
     font-size: 1.15rem !important;
     padding: 0 16px !important;
@@ -197,7 +193,6 @@
     margin-top: -1.2rem;
     margin-bottom: 2rem;
   }
-
   .forgot-password a {
     color: #8e24aa;
     font-weight: 600;
@@ -205,7 +200,6 @@
     text-decoration: underline;
     transition: color 0.3s;
   }
-
   .forgot-password a:hover,
   .forgot-password a:focus {
     color: #6a1b9a;
@@ -216,7 +210,6 @@
   .login-btn-row {
     margin-bottom: 3rem;
   }
-
   .login-btn {
     width: 100%;
     background: linear-gradient(90deg, #6a1b9a 25%, #8e24aa 100%);
@@ -228,7 +221,6 @@
     box-shadow: 0 8px 30px rgba(106, 27, 154, 0.35);
     transition: background 0.3s, box-shadow 0.3s, transform 0.15s;
   }
-
   .login-btn:hover,
   .login-btn:focus {
     background: linear-gradient(90deg, #8e24aa 0%, #6a1b9a 100%);
@@ -236,7 +228,6 @@
     outline: none;
     transform: scale(1.05);
   }
-
   .login-btn:active {
     transform: scale(0.97);
   }
@@ -252,7 +243,6 @@
   .alternative-login {
     text-align: center;
   }
-
   .alternative-text {
     color: #6a1b9a;
     font-size: 1.1rem;
@@ -265,7 +255,6 @@
     color: #6a1b9a;
     text-align: center;
   }
-
   .signup-redirect a {
     color: #8e24aa;
     font-weight: 600;
@@ -278,7 +267,7 @@
     outline: none;
   }
 
-  /* Responsive : superposition élégante sur mobile */
+  /* Responsive : superposition du formulaire sur l’image sur petits écrans */
   @media (max-width: 900px) {
     .login-container {
       position: relative;
@@ -286,32 +275,33 @@
       height: auto;
       padding: 0;
       background: transparent;
-      min-height: 100vh;
     }
     .login-illustration {
       position: relative;
       width: 100%;
-      height: 350px;
-      min-height: 350px;
+      height: 300px;
       border-radius: 0;
       box-shadow: none;
+      filter: brightness(0.6);
       z-index: 1;
     }
     .login-form-wrapper {
       position: absolute;
-      top: 30px;
+      top: 20px;
       left: 50%;
       transform: translateX(-50%);
-      width: 92vw;
-      max-width: 430px;
-      background: rgba(255,255,255,0.98);
+      width: 90%;
+      max-width: 400px;
+      background: rgba(255 255 255 / 0.95);
       border-radius: 24px;
-      padding: 2rem 1.2rem;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+      padding: 2rem 2.5rem;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
       z-index: 10;
       min-height: auto;
       overflow: visible;
     }
-    .login-header { margin-bottom: 1.5rem; }
+    .login-header {
+      margin-bottom: 1.5rem;
+    }
   }
 </style>
