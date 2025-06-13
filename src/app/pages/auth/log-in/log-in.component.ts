@@ -98,4 +98,5 @@ export class LogInComponent {
       horizontalPosition: 'end',
     });
   }
+
 }

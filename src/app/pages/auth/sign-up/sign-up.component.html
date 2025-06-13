@@ -1,101 +1,325 @@
-<div class="form" >
-    <div class="form__container" >
+<div class="login-container">
+  <!-- Illustration avec filigrane violet -->
+  <aside class="login-illustration" aria-hidden="true"></aside>
 
-        <div class="container center-align">
-            <h6 style="color: purple;font-weight: bolder;">Création de votre Compte</h6>
-            <i class="material-icons large">account_circle</i>
-          </div>
-
-        <form [formGroup]="form" (ngSubmit)="signUp()">
-            <!-- First Name -->
-            <div>
-                <mat-form-field appearance="fill">
-                    <mat-label>Votre prénom</mat-label>
-                    <input matInput formControlName="names" placeholder="Enter your first name" />
-                    <mat-error *ngIf="form.get('names')?.hasError('required') && form.get('names')?.touched">
-                        Le prénom est obligatoire
-                    </mat-error>
-                </mat-form-field>
-            </div>
-
-            <!-- Last Name -->
-            <div>
-                <mat-form-field appearance="fill">
-                    <mat-label>Votre nom de famille</mat-label>
-                    <input matInput formControlName="lastName" placeholder="Enter your last name" />
-                    <mat-error *ngIf="form.get('lastName')?.hasError('required') && form.get('lastName')?.touched">
-                        Le nom de famille est obligatoire
-                    </mat-error>
-                </mat-form-field>
-            </div>
-
-            <!-- Email -->
-            <div>
-                <mat-form-field appearance="fill">
-                    <mat-label>Email</mat-label>
-                    <input matInput formControlName="email" placeholder="Enter your email" />
-                    <mat-error *ngIf="form.get('email')?.hasError('required') && form.get('email')?.touched">
-                        Email est obligatoire
-                    </mat-error>
-                    <mat-error *ngIf="form.get('email')?.hasError('email') && form.get('email')?.touched">
-                        Svp, veuillez saisir un email valide
-                    </mat-error>
-                </mat-form-field>
-            </div>
-
-            <!-- Password -->
-            <div>
-                <mat-form-field appearance="fill">
-                    <mat-label>Entrer votre Mot de passe</mat-label>
-                    <input matInput [type]="hide ? 'password' : 'text'" formControlName="password"
-                        placeholder="Enter your password" />
-                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-                        [attr.aria-pressed]="hide" type="button">
-                        <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
-                    </button>
-                    <mat-error *ngIf="form.get('password')?.hasError('required') && form.get('password')?.touched">
-                        Mot de passe est obligatoire
-                    </mat-error>
-                </mat-form-field>
-            </div>
-
-            <!-- Submit Button -->
-            <div>
-                <button mat-flat-button color="accent" type="submit" [disabled]="form.invalid">Je crée mon compte</button>
-            </div>
-        </form>
-
-        <hr />
-        <!-- Social Sign-In -->
-        <!--span class="small-text providers">Have Google or GitHub?</span-->
-        <!-- Social Sign-In -->
-        <div class="social-sign-in">
-
-            <span class="small-text providers">Avez-vous Google ou GitHub?</span>
-            <app-button-providers />
-
-            <!--div class="social-buttons">
-                <button class="social-button google" type="button"-->
-                    <!--img src="path-to-google-icon.svg" alt="Google" /-->
-                    <!--img src="https://static.cdnlogo.com/logos/g/38/google-icon.svg" alt="Google" />
-
-                    Sign in with Google
-                </button>
-                <button class="social-button github" type="button"-->
-                    <!--img src="path-to-github-icon.svg" alt="GitHub" />
-                    <img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/github-512.png" alt="GitHub" />
-
-                    Sign in with GitHub
-                </button>
-            </div-->
-        </div>
+  <!-- Formulaire -->
+  <section class="login-form-wrapper" role="main" aria-label="Formulaire de création de compte étudiant">
+    <header class="login-header" tabindex="0">
+      <h1 class="welcome-message">Créez votre espace étudiant</h1>
+      <p class="subtitle">Rejoignez-nous pour commencer votre voyage d’apprentissage !</p>
+    </header>
 
 
+    <form [formGroup]="form" (ngSubmit)="signUp()" novalidate>
+      <fieldset class="form-fields" aria-describedby="form-description">
+        <legend id="form-description" class="visually-hidden">
+          Créez votre compte en saisissant vos informations
+        </legend>
 
-        <!-- Log in Redirect -->
-        <span class="small-text log-in-redirect">
-            Avez-vous déjà un compte ? 
-        <a routerLink="/auth/login-in">Se Connecter </a>
-        </span>
-    </div>
+        <!-- Prénom -->
+        <mat-form-field appearance="fill" class="login-field" floatLabel="auto" tabindex="0">
+          <mat-label>Prénom</mat-label>
+          <input
+            matInput
+            formControlName="names"
+            autocomplete="given-name"
+            required
+            aria-required="true"
+            maxlength="50"
+            placeholder="Entrez votre prénom"
+          />
+          <mat-error *ngIf="form.get('names')?.hasError('required') && form.get('names')?.touched">
+            Le prénom est obligatoire
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Nom de famille -->
+        <mat-form-field appearance="fill" class="login-field" floatLabel="auto" tabindex="0">
+          <mat-label>Nom de famille</mat-label>
+          <input
+            matInput
+            formControlName="lastName"
+            autocomplete="family-name"
+            required
+            aria-required="true"
+            maxlength="50"
+            placeholder="Entrez votre nom de famille"
+          />
+          <mat-error *ngIf="form.get('lastName')?.hasError('required') && form.get('lastName')?.touched">
+            Le nom de famille est obligatoire
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Email -->
+        <mat-form-field appearance="fill" class="login-field" floatLabel="auto" tabindex="0">
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            formControlName="email"
+            autocomplete="email"
+            required
+            aria-required="true"
+            maxlength="320"
+            placeholder="Entrez votre email"
+          />
+          <mat-error *ngIf="form.get('email')?.hasError('required') && form.get('email')?.touched">
+            L’email est obligatoire
+          </mat-error>
+          <mat-error *ngIf="form.get('email')?.hasError('email') && form.get('email')?.touched">
+            Veuillez saisir un email valide
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Mot de passe -->
+        <mat-form-field appearance="fill" class="login-field" floatLabel="auto" tabindex="0">
+          <mat-label>Mot de passe</mat-label>
+          <input
+            matInput
+            [type]="hide ? 'password' : 'text'"
+            formControlName="password"
+            autocomplete="new-password"
+            required
+            aria-required="true"
+            maxlength="128"
+            placeholder="Entrez votre mot de passe"
+          />
+          <button
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide"
+            [attr.aria-label]="hide ? 'Afficher mot de passe' : 'Masquer mot de passe'"
+            [attr.aria-pressed]="hide"
+            type="button"
+          >
+            <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+          </button>
+          <mat-error *ngIf="form.get('password')?.hasError('required') && form.get('password')?.touched">
+            Le mot de passe est obligatoire
+          </mat-error>
+        </mat-form-field>
+
+        <!--div class="forgot-password">
+          <a routerLink="/auth/forgot-password" tabindex="0">Mot de passe oublié ?</a>
+        </div-->
+      </fieldset>
+
+      <div class="login-btn-row">
+        <button
+          mat-flat-button
+          color="accent"
+          type="submit"
+          class="login-btn"
+          aria-label="Créer mon compte"
+          [disabled]="form.invalid"
+        >
+          Je crée mon compte
+        </button>
+      </div>
+    </form>
+
+    <!--hr class="divider" aria-hidden="true" /-->
+
+    <!--section class="alternative-login" aria-label="Inscription alternative">
+      <p class="alternative-text">Ou inscrivez-vous avec</p>
+      <app-button-providers [isLogin]="false"></app-button-providers>
+    </section-->
+
+    <footer class="signup-redirect">
+      <p>
+        Avez-vous déjà un compte ?
+        <a routerLink="/auth/login-in" tabindex="0">Se connecter</a>
+      </p>
+    </footer>
+  </section>
 </div>
+
+<style>
+  /* Conteneur principal avec flex en ligne, hauteur 100vh */
+  .login-container {
+    display: flex;
+    height: 100vh;
+    background: #1a0036;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  /* Illustration plus large, même hauteur, avec filigrane violet */
+  .login-illustration {
+    flex: 2;
+    height: 100vh;
+    border-top-left-radius: 24px;
+    border-bottom-left-radius: 24px;
+    background-image: linear-gradient(rgba(124, 42, 232, 0.35), rgba(142, 36, 170, 0.35)),
+    url('https://st.depositphotos.com/1011643/2013/i/450/depositphotos_20130467-stock-photo-beautiful-female-african-american-university.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.6);
+    animation: gradientShift 15s ease infinite;
+    transition: transform 0.3s ease;
+  }
+
+  .login-illustration:hover {
+    transform: scale(1.02);
+  }
+
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* Formulaire à droite, même hauteur, largeur raisonnable */
+  .login-form-wrapper {
+    flex: 1;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.98);
+    color: #1a0036;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem 4rem;
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+    height: 100vh;
+    overflow-y: auto;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Header */
+  .login-header {
+    margin-bottom: 2.5rem;
+  }
+  .welcome-message {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #7c2ae8;
+  }
+  .subtitle {
+    font-size: 1.25rem;
+    color: #6a1b9a;
+    line-height: 1.4;
+  }
+
+  /* Champs longs, peu hauts */
+  .form-fields {
+    display: flex;
+    flex-direction: column;
+  }
+  .login-field {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  ::ng-deep .mat-mdc-text-field-wrapper {
+    min-height: 40px !important;
+  }
+  ::ng-deep .mat-mdc-input-element {
+    font-size: 1.15rem !important;
+    padding: 0 16px !important;
+    height: 38px !important;
+  }
+
+  /* Lien mot de passe oublié */
+  .forgot-password {
+    text-align: right;
+    margin-top: -1.2rem;
+    margin-bottom: 2rem;
+  }
+  .forgot-password a {
+    color: #8e24aa;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: underline;
+    transition: color 0.3s;
+  }
+  .forgot-password a:hover,
+  .forgot-password a:focus {
+    color: #6a1b9a;
+    outline: none;
+  }
+
+  /* Bouton */
+  .login-btn-row {
+    margin-bottom: 3rem;
+  }
+  .login-btn {
+    width: 100%;
+    background: linear-gradient(90deg, #6a1b9a 25%, #8e24aa 100%);
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 1.4rem;
+    border-radius: 30px;
+    padding: 1.5rem 0;
+    box-shadow: 0 8px 30px rgba(106, 27, 154, 0.35);
+    transition: background 0.3s, box-shadow 0.3s, transform 0.15s;
+  }
+  .login-btn:hover,
+  .login-btn:focus {
+    background: linear-gradient(90deg, #8e24aa 0%, #6a1b9a 100%);
+    box-shadow: 0 10px 40px rgba(106, 27, 154, 0.5);
+    outline: none;
+    transform: scale(1.05);
+  }
+  .login-btn:active {
+    transform: scale(0.97);
+  }
+
+  /* Séparateur */
+  .divider {
+    border: none;
+    border-top: 1.5px solid #6a1b9a;
+    margin: 2rem 0 2.5rem;
+  }
+
+  /* Connexions alternatives */
+  .alternative-login {
+    text-align: center;
+  }
+  .alternative-text {
+    color: #6a1b9a;
+    font-size: 1.1rem;
+    margin-bottom: 1.8rem;
+  }
+
+  /* Footer redirection connexion */
+  .signup-redirect {
+    font-size: 1.15rem;
+    color: #6a1b9a;
+    text-align: center;
+  }
+  .signup-redirect a {
+    color: #8e24aa;
+    font-weight: 600;
+    text-decoration: underline;
+    transition: color 0.3s;
+  }
+  .signup-redirect a:hover,
+  .signup-redirect a:focus {
+    color: #6a1b9a;
+    outline: none;
+  }
+
+  /* Responsive */
+  @media (max-width: 1100px) {
+    .login-container {
+      flex-direction: column;
+      padding: 2rem;
+      gap: 2rem;
+      height: auto;
+    }
+    .login-illustration {
+      width: 100%;
+      height: 300px;
+      border-radius: 24px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    }
+    .login-form-wrapper {
+      max-width: 100%;
+      border-radius: 24px;
+      padding: 3rem 2.5rem;
+      height: auto;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    }
+  }
+</style>

@@ -12,11 +12,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
    /* background-color: #f5f5f5;*/ /* Light background color */
     padding: 20px;
 
-    background:url("https://st.depositphotos.com/1011643/2013/i/450/depositphotos_20130467-stock-photo-beautiful-female-african-american-university.jpg");
+    /* background:url("https://st.depositphotos.com/1011643/2013/i/450/depositphotos_20130467-stock-photo-beautiful-female-african-american-university.jpg");*/
     background-repeat: no-repeat;
     background-size: cover;
   }
-  
+
   .form__container {
     width: 100%;
     max-width: 500px;
@@ -25,37 +25,37 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   }
-  
+
   h1 {
     font-size: 24px;
     margin-bottom: 20px;
     text-align: center;
   }
-  
+
   /* Form Field Styling */
   mat-form-field {
     width: 100%;
     margin-bottom: 20px;
   }
-  
+
   /* Mat Error Styling */
   mat-error {
     font-size: 14px;
     color: #d32f2f; /* Red color for error messages */
   }
-  
+
   /* Button Styling */
   button {
     width: 100%;
     padding: 10px;
     background-color: #1976d2;
   }
-  
+
   button.mat-flat-button {
     font-size: 16px;
     text-transform: uppercase;
   }
-  
+
   /* Password Toggle Button Styling */
   button[mat-icon-button] {
     position: absolute;
@@ -63,7 +63,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     top: 50%;
     transform: translateY(-50%);
   }
-  
+
   /* Redirect and Social Sign-In Text */
   .small-text {
     display: block;
@@ -72,16 +72,16 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     text-align: center;
     margin-top: 20px;
   }
-  
+
   .providers {
     margin-bottom: 20px;
   }
-  
+
   /* Link Styling */
   a {
     color: #1976d2; /* Primary color for links */
   }
-  
+
   a:hover {
     text-decoration: underline;
   }
@@ -92,21 +92,21 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     text-align: center;
     margin-top: 20px;
   }
-  
+
   .small-text.providers {
     display: block;
     font-size: 14px;
     color: #555;
     margin-bottom: 20px;
   }
-  
+
   /* Social Buttons Container */
   .social-buttons {
     display: flex;
     justify-content: center;
     gap: 10px;
   }
-  
+
   /* Individual Social Button Styling */
   .social-button {
     display: flex;
@@ -122,29 +122,29 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     transition: background-color 0.3s, border-color 0.3s;
     text-transform: uppercase;
   }
-  
+
   .social-button img {
     width: 24px; /* Adjust size of the icon */
     height: auto;
     margin-right: 8px;
   }
-  
+
   .social-button:hover {
     background-color: #f5f5f5; /* Light grey background on hover */
   }
-  
+
   .social-button.google {
     border-color: #db4437; /* Google red border */
   }
-  
+
   .social-button.github {
     border-color: #333; /* GitHub black border */
   }
-  
+
   .social-button.google:hover {
     background-color: #fbe9e7; /* Light red background for Google */
   }
-  
+
   .social-button.github:hover {
     background-color: #e8e8e8; /* Light grey background for GitHub */
   }
@@ -200,5 +200,5 @@ h3 {
 }
 
 
-  
-  
+
+
