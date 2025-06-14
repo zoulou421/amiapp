@@ -1,66 +1,33 @@
-<div class="login-container">
-  <!-- Illustration avec filigrane violet -->
-  <aside class="login-illustration" aria-hidden="true"></aside>
-  <!-- Formulaire -->
-  <section class="login-form-wrapper" role="main" aria-label="Formulaire de création de compte étudiant">
-    <header class="login-header" tabindex="0">
-      <h1 class="welcome-message">Créez votre espace étudiant</h1>
-      <p class="subtitle">Rejoignez-nous pour commencer votre voyage d’apprentissage !</p>
-    </header>
-
-
+<div class="register-root">
+  <div class="register-bg-anim"></div>
+  <div class="register-card">
+    <div class="register-logo">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEguW77e9JG5zR-ARR6q0g5M5lWF6gYFiH67mSXu_eOe9YwWDUBOQd4xBTCVYEqfC8ez1u4AcTh9QgKT6rJ19rHwlMGikKk6X4IyDytfDsHYLfoxx1rXIjHIpwhBM36G74pqV7CBjPvRHHrpAUVvM1xnMsKK3OsR1kBfwIXhfKvFdtmDdjYkylfzJJPBjzo/s1600/logo-ami-platform-removebg-preview.png" alt="Logo" />
+    </div>
+    <h2 class="register-title">Créer votre espace étudiant</h2>
+    <p class="register-subtitle">Rejoignez-nous et commencez votre aventure d’apprentissage !</p>
     <form [formGroup]="form" (ngSubmit)="signUp()" novalidate>
-      <fieldset class="form-fields" aria-describedby="form-description">
-        <legend id="form-description" class="visually-hidden">
-          Créez votre compte en saisissant vos informations
-        </legend>
-
-        <!-- Prénom -->
-        <mat-form-field appearance="fill" class="login-field" floatLabel="auto" tabindex="0">
+      <div class="register-fields">
+        <mat-form-field appearance="outline" class="register-field">
           <mat-label>Prénom</mat-label>
-          <input
-            matInput
-            formControlName="names"
-            autocomplete="given-name"
-            required
-            aria-required="true"
-            maxlength="50"
-            placeholder="Entrez votre prénom"
-          />
+          <input matInput formControlName="names" autocomplete="given-name" required maxlength="50" placeholder="Entrez votre prénom" />
+          <mat-icon matPrefix>person</mat-icon>
           <mat-error *ngIf="form.get('names')?.hasError('required') && form.get('names')?.touched">
             Le prénom est obligatoire
           </mat-error>
         </mat-form-field>
-
-        <!-- Nom de famille -->
-        <mat-form-field appearance="fill" class="login-field" floatLabel="auto" tabindex="0">
+        <mat-form-field appearance="outline" class="register-field">
           <mat-label>Nom de famille</mat-label>
-          <input
-            matInput
-            formControlName="lastName"
-            autocomplete="family-name"
-            required
-            aria-required="true"
-            maxlength="50"
-            placeholder="Entrez votre nom de famille"
-          />
+          <input matInput formControlName="lastName" autocomplete="family-name" required maxlength="50" placeholder="Entrez votre nom de famille" />
+          <mat-icon matPrefix>badge</mat-icon>
           <mat-error *ngIf="form.get('lastName')?.hasError('required') && form.get('lastName')?.touched">
             Le nom de famille est obligatoire
           </mat-error>
         </mat-form-field>
-
-        <!-- Email -->
-        <mat-form-field appearance="fill" class="login-field" floatLabel="auto" tabindex="0">
+        <mat-form-field appearance="outline" class="register-field">
           <mat-label>Email</mat-label>
-          <input
-            matInput
-            formControlName="email"
-            autocomplete="email"
-            required
-            aria-required="true"
-            maxlength="320"
-            placeholder="Entrez votre email"
-          />
+          <input matInput formControlName="email" autocomplete="email" required maxlength="320" placeholder="Entrez votre email" />
+          <mat-icon matPrefix>mail</mat-icon>
           <mat-error *ngIf="form.get('email')?.hasError('required') && form.get('email')?.touched">
             L’email est obligatoire
           </mat-error>
@@ -68,259 +35,205 @@
             Veuillez saisir un email valide
           </mat-error>
         </mat-form-field>
-
-        <!-- Mot de passe -->
-        <mat-form-field appearance="fill" class="login-field" floatLabel="auto" tabindex="0">
+        <mat-form-field appearance="outline" class="register-field">
           <mat-label>Mot de passe</mat-label>
-          <input
-            matInput
-            [type]="hide ? 'password' : 'text'"
-            formControlName="password"
-            autocomplete="new-password"
-            required
-            aria-required="true"
-            maxlength="128"
-            placeholder="Entrez votre mot de passe"
-          />
-          <button
-            mat-icon-button
-            matSuffix
-            (click)="hide = !hide"
-            [attr.aria-label]="hide ? 'Afficher mot de passe' : 'Masquer mot de passe'"
-            [attr.aria-pressed]="hide"
-            type="button"
-          >
+          <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" autocomplete="new-password" required maxlength="128" placeholder="Entrez votre mot de passe" />
+          <button mat-icon-button matSuffix (click)="hide = !hide" type="button" tabindex="-1" [attr.aria-label]="hide ? 'Afficher mot de passe' : 'Masquer mot de passe'" [attr.aria-pressed]="hide">
             <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
           </button>
+          <mat-icon matPrefix>lock</mat-icon>
           <mat-error *ngIf="form.get('password')?.hasError('required') && form.get('password')?.touched">
             Le mot de passe est obligatoire
           </mat-error>
         </mat-form-field>
-
-        <!--div class="forgot-password">
-          <a routerLink="/auth/forgot-password" tabindex="0">Mot de passe oublié ?</a>
-        </div-->
-      </fieldset>
-
-      <div class="login-btn-row">
-        <button
-          mat-flat-button
-          color="accent"
-          type="submit"
-          class="login-btn"
-          aria-label="Créer mon compte"
-          [disabled]="form.invalid"
-        >
-          Je crée mon compte
-        </button>
       </div>
+      <button mat-raised-button color="primary" class="register-btn" type="submit" [disabled]="form.invalid">
+        Je crée mon compte
+      </button>
     </form>
-
-    <!--hr class="divider" aria-hidden="true" /-->
-
-    <!--section class="alternative-login" aria-label="Inscription alternative">
-      <p class="alternative-text">Ou inscrivez-vous avec</p>
-      <app-button-providers [isLogin]="false"></app-button-providers>
-    </section-->
-
-    <footer class="signup-redirect">
-      <p>
-        Avez-vous déjà un compte ?
-        <a routerLink="/auth/login-in" tabindex="0">Se connecter</a>
-      </p>
-    </footer>
-  </section>
-  <br /> <br /> <br />
-
+    <!--div class="register-divider">
+      <span>Ou inscrivez-vous avec</span>
+    </div>
+    <app-button-providers [isLogin]="false"></app-button-providers-->
+    <div class="register-login">
+      <span>Déjà inscrit ?</span>
+      <a routerLink="/auth/login-in" class="register-link">Se connecter</a>
+    </div>
+  </div>
 </div>
-
 <style>
-  /* Conteneur principal avec flex en ligne, hauteur 100vh */
-  .login-container {
+  .register-root {
+    min-height: 100vh;
     display: flex;
-    height: 100vh;
-    background: #1a0036;
-    color: #fff;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-
-  /* Illustration plus large, même hauteur, avec filigrane violet */
-  .login-illustration {
-    flex: 2;
-    height: 100vh;
-    border-top-left-radius: 24px;
-    border-bottom-left-radius: 24px;
-    background-image: linear-gradient(rgba(124, 42, 232, 0.35), rgba(142, 36, 170, 0.35)),
-    url('https://st.depositphotos.com/1011643/2013/i/450/depositphotos_20130467-stock-photo-beautiful-female-african-american-university.jpg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.6);
-    animation: gradientShift 15s ease infinite;
-    transition: transform 0.3s ease;
-  }
-
-  .login-illustration:hover {
-    transform: scale(1.02);
-  }
-
-  @keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
-
-  /* Formulaire à droite, même hauteur, largeur raisonnable */
-  .login-form-wrapper {
-    flex: 1;
-    max-width: 600px;
-    background: rgba(255, 255, 255, 0.98);
-    color: #1a0036;
-    display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    padding: 3rem 4rem;
-    border-top-right-radius: 24px;
-    border-bottom-right-radius: 24px;
-    height: 100vh;
-    overflow-y: auto;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+    background: #181c2f;
+    position: relative;
+    overflow: hidden;
   }
 
-  /* Header */
-  .login-header {
-    margin-bottom: 2.5rem;
-  }
-  .welcome-message {
-    font-size: 2.4rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    color: #7c2ae8;
-  }
-  .subtitle {
-    font-size: 1.25rem;
-    color: #6a1b9a;
-    line-height: 1.4;
+  .register-bg-anim {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: radial-gradient(ellipse 60% 80% at 60% 40%, #7c2ae8cc 0%, transparent 80%),
+    radial-gradient(ellipse 40% 60% at 20% 80%, #00e0ff44 0%, transparent 80%);
+    animation: bgMove 18s linear infinite alternate;
   }
 
-  /* Champs longs, peu hauts */
-  .form-fields {
+  @keyframes bgMove {
+    0% { background-position: 60% 40%, 20% 80%; }
+    100% { background-position: 65% 35%, 15% 85%; }
+  }
+
+  .register-card {
+    position: relative;
+    z-index: 1;
+    background: rgba(255,255,255,0.98);
+    border-radius: 24px;
+    box-shadow: 0 8px 40px rgba(44, 62, 80, 0.18);
+    padding: 2.5rem 2rem 2rem 2rem;
+    max-width: 440px;
+    width: 95vw;
     display: flex;
     flex-direction: column;
-  }
-  .login-field {
-    width: 100%;
-    margin-bottom: 2rem;
-  }
-  ::ng-deep .mat-mdc-text-field-wrapper {
-    min-height: 40px !important;
-  }
-  ::ng-deep .mat-mdc-input-element {
-    font-size: 1.15rem !important;
-    padding: 0 16px !important;
-    height: 38px !important;
+    align-items: center;
+    animation: cardIn 0.9s cubic-bezier(.68,-0.55,.27,1.55) both;
   }
 
-  /* Lien mot de passe oublié */
-  .forgot-password {
-    text-align: right;
-    margin-top: -1.2rem;
-    margin-bottom: 2rem;
-  }
-  .forgot-password a {
-    color: #8e24aa;
-    font-weight: 600;
-    font-size: 1rem;
-    text-decoration: underline;
-    transition: color 0.3s;
-  }
-  .forgot-password a:hover,
-  .forgot-password a:focus {
-    color: #6a1b9a;
-    outline: none;
+  @keyframes cardIn {
+    0% { opacity: 0; transform: translateY(40px) scale(0.95);}
+    100% { opacity: 1; transform: translateY(0) scale(1);}
   }
 
-  /* Bouton */
-  .login-btn-row {
-    margin-bottom: 3rem;
+  .register-logo img {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1.2rem;
+    filter: drop-shadow(0 2px 8px #7c2ae888);
+    animation: logoPop 1.2s cubic-bezier(.68,-0.55,.27,1.55);
   }
-  .login-btn {
-    width: 100%;
-    background: linear-gradient(90deg, #6a1b9a 25%, #8e24aa 100%);
-    color: #fff !important;
+
+  @keyframes logoPop {
+    0% { opacity: 0; transform: scale(0.7);}
+    70% { opacity: 1; transform: scale(1.08);}
+    100% { opacity: 1; transform: scale(1);}
+  }
+
+  .register-title {
+    font-size: 2rem;
     font-weight: 700;
-    font-size: 1.4rem;
-    border-radius: 30px;
-    padding: 1.5rem 0;
-    box-shadow: 0 8px 30px rgba(106, 27, 154, 0.35);
-    transition: background 0.3s, box-shadow 0.3s, transform 0.15s;
-  }
-  .login-btn:hover,
-  .login-btn:focus {
-    background: linear-gradient(90deg, #8e24aa 0%, #6a1b9a 100%);
-    box-shadow: 0 10px 40px rgba(106, 27, 154, 0.5);
-    outline: none;
-    transform: scale(1.05);
-  }
-  .login-btn:active {
-    transform: scale(0.97);
+    color: #7c2ae8;
+    margin-bottom: .2rem;
+    letter-spacing: -.5px;
   }
 
-  /* Séparateur */
-  .divider {
-    border: none;
-    border-top: 1.5px solid #6a1b9a;
-    margin: 2rem 0 2.5rem;
-  }
-
-  /* Connexions alternatives */
-  .alternative-login {
+  .register-subtitle {
+    font-size: 1.05rem;
+    color: #6a1b9a;
+    margin-bottom: 2rem;
     text-align: center;
   }
-  .alternative-text {
-    color: #6a1b9a;
-    font-size: 1.1rem;
-    margin-bottom: 1.8rem;
+
+  .register-fields {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
   }
 
-  /* Footer redirection connexion */
-  .signup-redirect {
-    font-size: 1.15rem;
-    color: #6a1b9a;
-    text-align: center;
+  .register-field {
+    width: 100%;
   }
-  .signup-redirect a {
-    color: #8e24aa;
+
+  ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    border-radius: 14px;
+    border-width: 2px;
+  }
+
+  ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline-thick {
+    border-color: #7c2ae8;
+  }
+
+  ::ng-deep .mat-input-element {
+    font-size: 1.12rem;
+  }
+
+  .register-btn {
+    width: 100%;
+    min-width: 120px;
+    padding: 0.8rem 0;
+    font-size: 1.13rem;
+    font-weight: 700;
+    border-radius: 22px;
+    box-shadow: 0 4px 24px #7c2ae822;
+    background: linear-gradient(90deg, #7c2ae8 60%, #00e0ff 100%);
+    color: #fff;
+    transition: background 0.3s, box-shadow 0.3s, transform 0.12s;
+    margin-bottom: 1.5rem;
+  }
+  .register-btn:hover, .register-btn:focus {
+    background: linear-gradient(90deg, #00e0ff 0%, #7c2ae8 100%);
+    box-shadow: 0 6px 30px #00e0ff33;
+    transform: scale(1.04);
+  }
+
+  .register-divider {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    margin: 1.5rem 0;
+  }
+  .register-divider span {
+    background: #fff;
+    color: #bdbdbd;
+    padding: 0 1.2rem;
+    position: relative;
+    z-index: 1;
+    font-size: 0.97rem;
+  }
+  .register-divider::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0; right: 0;
+    height: 1.5px;
+    background: linear-gradient(90deg, #7c2ae8 0%, #00e0ff 100%);
+    z-index: 0;
+  }
+
+  .register-login {
+    width: 100%;
+    text-align: center;
+    margin-top: 1.6rem;
+    font-size: 1.08rem;
+    color: #6a1b9a;
+  }
+  .register-login .register-link {
+    color: #7c2ae8;
     font-weight: 600;
-    text-decoration: underline;
-    transition: color 0.3s;
+    margin-left: .3rem;
+    text-decoration: none;
+    transition: color 0.2s;
   }
-  .signup-redirect a:hover,
-  .signup-redirect a:focus {
-    color: #6a1b9a;
-    outline: none;
+  .register-login .register-link:hover, .register-login .register-link:focus {
+    color: #00e0ff;
+    text-decoration: underline;
   }
 
-  /* Responsive */
-  @media (max-width: 1100px) {
-    .login-container {
-      flex-direction: column;
-      padding: 2rem;
-      gap: 2rem;
-      height: auto;
+  @media (max-width: 600px) {
+    .register-card {
+      padding: 1.3rem 0.7rem 1.2rem 0.7rem;
+      border-radius: 14px;
+      max-width: 98vw;
     }
-    .login-illustration {
-      width: 100%;
-      height: 300px;
-      border-radius: 24px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    .register-logo img {
+      width: 46px;
+      height: 46px;
     }
-    .login-form-wrapper {
-      max-width: 100%;
-      border-radius: 24px;
-      padding: 3rem 2.5rem;
-      height: auto;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-    }
+    .register-title { font-size: 1.25rem;}
   }
+
 </style>
