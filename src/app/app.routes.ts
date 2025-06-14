@@ -9,6 +9,7 @@ import { RendezvousListComponent } from './pages/auth/rendezvous-list/rendezvous
 import { TemoignagesComponent } from './pages/auth/temoignages/temoignages.component';
 import { PlagiatComponent } from './pages/auth/plagiat/plagiat.component';
 import { PortfolioComponent } from './pages/auth/portfolio/portfolio.component';
+import {ForgotPasswordComponent} from "./pages/auth/forgot-password/forgot-password.component";
 
 export const routes: Routes = [
     {
@@ -50,7 +51,7 @@ export const routes: Routes = [
         canActivate: [authGuard],
         component: PortfolioComponent,
     },
-    
+
     {
         path: 'auth',
         canActivate: [publicGuard],
@@ -63,6 +64,10 @@ export const routes: Routes = [
                 path: 'login-in',
                 component: LogInComponent,
             },
+          {
+            path: 'forgot-password',
+            component: ForgotPasswordComponent,
+          },
         ],
     },
     {

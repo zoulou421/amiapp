@@ -1,0 +1,227 @@
+<div class="login-root">
+  <div class="login-bg-anim"></div>
+  <div class="login-card">
+    <div class="login-logo">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEguW77e9JG5zR-ARR6q0g5M5lWF6gYFiH67mSXu_eOe9YwWDUBOQd4xBTCVYEqfC8ez1u4AcTh9QgKT6rJ19rHwlMGikKk6X4IyDytfDsHYLfoxx1rXIjHIpwhBM36G74pqV7CBjPvRHHrpAUVvM1xnMsKK3OsR1kBfwIXhfKvFdtmDdjYkylfzJJPBjzo/s1600/logo-ami-platform-removebg-preview.png" alt="Logo" />
+    </div>
+    <h2 class="login-title">Bienvenue !</h2>
+    <p class="login-subtitle">Connectez-vous pour accéder à votre espace</p>
+    <form [formGroup]="form" (ngSubmit)="logIn()" novalidate>
+      <div class="login-fields">
+        <mat-form-field appearance="outline" class="login-field">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" autocomplete="email" required maxlength="320" />
+          <mat-icon matPrefix>person</mat-icon>
+          <mat-error *ngIf="isEmailValid as message">{{ message }}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="login-field">
+          <mat-label>Mot de passe</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" autocomplete="current-password" required maxlength="128" />
+          <button mat-icon-button matSuffix (click)="hide = !hide" type="button" tabindex="-1">
+            <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+          </button>
+          <mat-icon matPrefix>lock</mat-icon>
+          <mat-error>Ce champ est obligatoire</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="login-actions">
+        <a routerLink="/auth/forgot-password" class="login-link">Mot de passe oublié ?</a>
+        <button mat-raised-button color="primary" class="login-btn" type="submit">Se connecter</button>
+      </div>
+    </form>
+    <div class="login-divider">
+      <span>Ou</span>
+    </div>
+    <app-button-providers [isLogin]="true"></app-button-providers>
+    <div class="login-signup">
+      <span>Pas encore de compte ?</span>
+      <a routerLink="/auth/sign-up" class="login-link">Créer un compte</a>
+    </div>
+  </div>
+</div>
+<style>
+  .login-root {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #181c2f;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .login-bg-anim {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: radial-gradient(ellipse 60% 80% at 60% 40%, #7c2ae8cc 0%, transparent 80%),
+    radial-gradient(ellipse 40% 60% at 20% 80%, #00e0ff44 0%, transparent 80%);
+    animation: bgMove 18s linear infinite alternate;
+  }
+
+  @keyframes bgMove {
+    0% { background-position: 60% 40%, 20% 80%; }
+    100% { background-position: 65% 35%, 15% 85%; }
+  }
+
+  .login-card {
+    position: relative;
+    z-index: 1;
+    background: rgba(255,255,255,0.98);
+    border-radius: 24px;
+    box-shadow: 0 8px 40px rgba(44, 62, 80, 0.18);
+    padding: 2.5rem 2rem 2rem 2rem;
+    max-width: 400px;
+    width: 95vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: cardIn 0.9s cubic-bezier(.68,-0.55,.27,1.55) both;
+  }
+
+  @keyframes cardIn {
+    0% { opacity: 0; transform: translateY(40px) scale(0.95);}
+    100% { opacity: 1; transform: translateY(0) scale(1);}
+  }
+
+  .login-logo img {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1.2rem;
+    filter: drop-shadow(0 2px 8px #7c2ae888);
+    animation: logoPop 1.2s cubic-bezier(.68,-0.55,.27,1.55);
+  }
+
+  @keyframes logoPop {
+    0% { opacity: 0; transform: scale(0.7);}
+    70% { opacity: 1; transform: scale(1.08);}
+    100% { opacity: 1; transform: scale(1);}
+  }
+
+  .login-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #7c2ae8;
+    margin-bottom: .2rem;
+    letter-spacing: -.5px;
+  }
+
+  .login-subtitle {
+    font-size: 1.05rem;
+    color: #6a1b9a;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .login-fields {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .login-field {
+    width: 100%;
+  }
+
+  ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    border-radius: 14px;
+    border-width: 2px;
+  }
+
+  ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline-thick {
+    border-color: #7c2ae8;
+  }
+
+  ::ng-deep .mat-input-element {
+    font-size: 1.12rem;
+  }
+
+  .login-actions {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.7rem;
+  }
+
+  .login-link {
+    color: #7c2ae8;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s;
+    font-size: 0.98rem;
+  }
+  .login-link:hover, .login-link:focus {
+    color: #00e0ff;
+    text-decoration: underline;
+  }
+
+  .login-btn {
+    min-width: 120px;
+    padding: 0.7rem 0;
+    font-size: 1.13rem;
+    font-weight: 700;
+    border-radius: 22px;
+    box-shadow: 0 4px 24px #7c2ae822;
+    background: linear-gradient(90deg, #7c2ae8 60%, #00e0ff 100%);
+    color: #fff;
+    transition: background 0.3s, box-shadow 0.3s, transform 0.12s;
+  }
+  .login-btn:hover, .login-btn:focus {
+    background: linear-gradient(90deg, #00e0ff 0%, #7c2ae8 100%);
+    box-shadow: 0 6px 30px #00e0ff33;
+    transform: scale(1.04);
+  }
+
+  .login-divider {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    margin: 1.5rem 0;
+  }
+  .login-divider span {
+    background: #fff;
+    color: #bdbdbd;
+    padding: 0 1.2rem;
+    position: relative;
+    z-index: 1;
+    font-size: 0.97rem;
+  }
+  .login-divider::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0; right: 0;
+    height: 1.5px;
+    background: linear-gradient(90deg, #7c2ae8 0%, #00e0ff 100%);
+    z-index: 0;
+  }
+
+  .login-signup {
+    width: 100%;
+    text-align: center;
+    margin-top: 1.6rem;
+    font-size: 1.08rem;
+    color: #6a1b9a;
+  }
+  .login-signup .login-link {
+    margin-left: .3rem;
+  }
+
+  @media (max-width: 600px) {
+    .login-card {
+      padding: 1.3rem 0.7rem 1.2rem 0.7rem;
+      border-radius: 14px;
+      max-width: 98vw;
+    }
+    .login-logo img {
+      width: 46px;
+      height: 46px;
+    }
+    .login-title { font-size: 1.25rem;}
+  }
+
+</style>
