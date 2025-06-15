@@ -24,7 +24,7 @@ interface FaqItem {
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, MatToolbarModule, MatButtonModule, RouterLink, AppVideoPresentationComponent, FaqSectionComponent, FormsModule],
+  imports: [CommonModule, ReactiveFormsModule, MatToolbarModule, MatButtonModule, RouterLink, AppVideoPresentationComponent, FormsModule],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
   //ajout
