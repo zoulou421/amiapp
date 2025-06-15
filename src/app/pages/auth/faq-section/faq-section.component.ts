@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {animate, state, style, transition, trigger} from "@angular/animations";
+import {NgForOf} from "@angular/common";
 
 interface FaqItem {
   question: string;
@@ -10,7 +11,9 @@ interface FaqItem {
 @Component({
   selector: 'app-faq-section',
   standalone: true,
-  imports: [],
+  imports: [
+    NgForOf
+  ],
   templateUrl: './faq-section.component.html',
   styleUrls:  ['./faq-section.component.css'],
   animations: [

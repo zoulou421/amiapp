@@ -10,8 +10,6 @@ import { TemoignagesComponent } from './pages/auth/temoignages/temoignages.compo
 import { PlagiatComponent } from './pages/auth/plagiat/plagiat.component';
 import { PortfolioComponent } from './pages/auth/portfolio/portfolio.component';
 import {ForgotPasswordComponent} from "./pages/auth/forgot-password/forgot-password.component";
-import {ProductListComponent} from "./pages/auth/product-list/product-list.component";
-import {ProductDetailComponent} from "./pages/auth/product-detail/product-detail.component";
 import {CartComponent} from "./pages/auth/cart/cart.component";
 
 export const routes: Routes = [
@@ -54,24 +52,6 @@ export const routes: Routes = [
         canActivate: [authGuard],
         component: PortfolioComponent,
     },
-
-  {
-    path: 'product',
-    canActivate: [authGuard],
-    component: ProductListComponent,
-  },
-
-  {
-    path: 'product/:id',
-    canActivate: [authGuard],
-    component: ProductDetailComponent,
-  },
-
-  {
-    path: 'cart',
-    canActivate: [authGuard],
-    component: CartComponent,
-  },
 
     {
         path: 'auth',
