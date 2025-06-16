@@ -32,10 +32,10 @@ jobs:
       - name: Move Files to Root
         run: |
           mkdir -p ./dist/amiapp/ && mv ./dist/amiapp/browser/* ./dist/amiapp/
-          
+
       # Étape 6 : Déployez sur GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{secrets.GH_SECRETAMIAPP}}  # Token d'accès pour l'authentification
-          publish_dir: ./dist/amiapp/  # Répertoire à publier sur GitHub Pages
+          #github_token: ${{secrets.GH_SECRETAMIAPP}}  # Token d'accès pour l'authentification
+          #publish_dir: ./dist/amiapp/  # Répertoire à publier sur GitHub Pages
